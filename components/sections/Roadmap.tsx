@@ -46,10 +46,10 @@ export function Roadmap() {
           className="text-center mb-16 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Strategic Roadmap</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-4 sm:mb-6">
-            Our Path to the
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 font-mono">
+            our path to the
             <br />
-            <span className="text-[#00E273]">Future</span>
+            <span className="text-[#00E273]">future</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
             From first steps to full transformation. This is how we build the future, one breakthrough at a time.

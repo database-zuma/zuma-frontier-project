@@ -55,10 +55,10 @@ export function Vision() {
           className="text-center mb-12 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Our Vision</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-4 sm:mb-6">
-            The Dawn of a
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 font-mono">
+            the dawn of a
             <br />
-            <span className="text-[#00E273]">New Era</span>
+            <span className="text-[#00E273]">new era</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
             We stand at the frontier of transformation. Where artificial intelligence 

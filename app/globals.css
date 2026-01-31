@@ -44,16 +44,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modal.com Typography Scale - Plus Jakarta Sans */
+/* Typography: Space Mono for headings - Futuristic computer look */
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.03em;
-  font-weight: 600;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
-/* Tighter tracking for large text */
+/* Large titles - even more striking */
 .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-9xl {
-  letter-spacing: -0.04em;
-  font-weight: 500;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+/* Utility class for mono headings */
+.font-heading {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: -0.02em;
 }
 
 /* Slightly looser for small text */

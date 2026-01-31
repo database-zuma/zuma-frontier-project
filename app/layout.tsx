@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-// Modal.com style: Premium geometric sans-serif with tight letter-spacing
-// Plus Jakarta Sans is similar to Söhne (Modal's font)
+// Body: Plus Jakarta Sans - Premium geometric sans-serif
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -11,10 +10,12 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
+// Headings: Space Mono - Futuristic computer aesthetic
+const spaceMono = Space_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakarta.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}
       >
         {children}
       </body>

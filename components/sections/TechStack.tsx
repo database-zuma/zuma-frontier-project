@@ -54,10 +54,10 @@ export function TechStack() {
           className="text-center mb-16 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Technology</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white mb-4 sm:mb-6">
-            Built on
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 font-mono">
+            built on
             <br />
-            <span className="text-[#00E273]">Enterprise-Grade AI</span>
+            <span className="text-[#00E273]">enterprise-grade ai</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-white/40 max-w-2xl mx-auto font-light px-4 sm:px-0">
             The same AI powering Fortune 500 companies, now driving Zuma&apos;s operations.
