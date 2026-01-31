@@ -47,7 +47,10 @@ The landing page is **live and functional** with all core sections implemented.
 | **Primary Color** | `#00E273` (Zuma Green) |
 | **Dark Background** | `#0A0A0A` |
 | **Light Background** | `#FFFFFF` |
-| **Font Weights** | Extralight (200), Light (300), Normal (400) |
+| **Font Family** | Inter (Modal.com style) |
+| **Font Weight** | 500 (medium) - clean, modern |
+| **Letter Spacing** | -0.36px (tight tracking like Modal.com) |
+| **Mono Font** | JetBrains Mono |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + subtle borders |
 | **Section Pattern** | Dark → Light → Dark → Light alternating |
 
@@ -186,12 +189,19 @@ git add -A && git commit -m "message" && git push origin main
 
 ---
 
+## Changelog
+
+| Date | Version | Changes |
+|------|---------|---------|
+| Jan 31, 2026 | v1.1 | Switched font to Inter (Modal.com style) with tight letter-spacing |
+| Jan 31, 2026 | v1.0 | Initial MVP - all sections complete, deployed to Vercel |
+
 ## Session History
 
 | Date | Session | Work Done |
 |------|---------|-----------|
 | Jan 31, 2026 | `ses_3ebd5b2f7ffe3uYSN5ChG8CQF1` | Initial setup, Hero section, design iterations |
-| Jan 31, 2026 | Current | Completed all sections, deployed to production |
+| Jan 31, 2026 | Current | Completed all sections, font update, deployed to production |
 
 ---
 

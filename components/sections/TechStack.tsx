@@ -1,6 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Brain, Sparkles } from "lucide-react";
+
+// AI Foundation - Premium tier
+const aiFoundation = [
+  { 
+    name: "Claude Opus 4.5", 
+    description: "Strategic AI",
+    icon: Brain,
+  },
+  { 
+    name: "Kimi K2.5", 
+    description: "Reasoning AI",
+    icon: Sparkles,
+  },
+];
 
 const technologies = [
   { name: "Next.js", category: "Frontend" },
@@ -40,14 +55,69 @@ export function TechStack() {
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Technology</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white mb-4 sm:mb-6">
-            Powered by
+            Built on
             <br />
-            <span className="text-[#00E273]">Possibility</span>
+            <span className="text-[#00E273]">Enterprise-Grade AI</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-white/40 max-w-2xl mx-auto font-light px-4 sm:px-0">
-            Cutting-edge technology. Human-centered design. Infinite potential.
+            The same AI powering Fortune 500 companies, now driving Zuma&apos;s operations.
           </p>
         </motion.div>
+
+        {/* AI Foundation - Premium Tier */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <p className="text-xs text-white/40 uppercase tracking-[0.2em] mb-6 text-center font-light flex items-center justify-center gap-2">
+            <Brain className="w-4 h-4 text-[#00E273]" />
+            AI Foundation
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            {aiFoundation.map((ai, index) => (
+              <motion.div
+                key={ai.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group"
+              >
+                <div 
+                  className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-center transition-all duration-300 hover:scale-105 min-w-[200px]"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 226, 115, 0.15) 0%, rgba(0, 226, 115, 0.05) 100%)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(0, 226, 115, 0.3)',
+                    boxShadow: '0 0 40px rgba(0, 226, 115, 0.1)',
+                  }}
+                >
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/20 group-hover:to-transparent transition-all duration-500" />
+                  
+                  <div className="relative z-10">
+                    <ai.icon className="w-8 h-8 text-[#00E273] mx-auto mb-3" />
+                    <p className="text-white font-medium text-lg mb-1">
+                      {ai.name}
+                    </p>
+                    <p className="text-xs text-[#00E273] font-light">
+                      {ai.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="h-px w-16 bg-white/10" />
+          <p className="text-xs text-white/30 uppercase tracking-[0.15em] font-light">Tech Stack</p>
+          <div className="h-px w-16 bg-white/10" />
+        </div>
 
         {/* Tech Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
