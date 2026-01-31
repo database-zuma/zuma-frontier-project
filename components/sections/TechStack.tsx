@@ -205,29 +205,30 @@ const TechLogo = ({ name, color }: { name: string; color: string }) => {
 };
 
 // Scrolling Row Component
-const ScrollingRow = ({ 
-  technologies, 
+const ScrollingRow = ({
+  technologies,
   direction = "right",
   speed = 30,
-}: { 
+}: {
   technologies: typeof techRows[0];
   direction?: "left" | "right";
   speed?: number;
 }) => {
-  // Double the items for seamless loop
-  const items = [...technologies, ...technologies, ...technologies];
-  
+  // Create enough copies for seamless loop (need at least 2 full sets visible + 1 for buffer)
+  const items = [...technologies, ...technologies, ...technologies, ...technologies];
+
   return (
     <div className="relative overflow-hidden py-4">
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-      
+      <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+
       {/* Scrolling container */}
       <motion.div
         className="flex gap-6 sm:gap-8"
+        initial={{ x: direction === "right" ? 0 : "-50%" }}
         animate={{
-          x: direction === "right" ? [0, -33.33 * technologies.length * 8] : [-33.33 * technologies.length * 8, 0],
+          x: direction === "right" ? ["0%", "-50%"] : ["-50%", "0%"],
         }}
         transition={{
           x: {
