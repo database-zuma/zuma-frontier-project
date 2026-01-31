@@ -3,19 +3,57 @@
 import { motion } from "framer-motion";
 import { Brain } from "lucide-react";
 
-// Claude Logo Component
+// Claude Logo Component - Anthropic's distinctive "A" symbol
 const ClaudeLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 32 32" className={className} fill="currentColor">
-    <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4z"/>
-    <path d="M16 8c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3zM12 18c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3zM20 18c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3z"/>
+  <svg viewBox="0 0 40 40" className={className} fill="none">
+    {/* Outer glow ring */}
+    <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+    {/* Main circle */}
+    <circle cx="20" cy="20" r="15" stroke="currentColor" strokeWidth="2" opacity="0.8" />
+    {/* Stylized "A" mark - Claude's signature */}
+    <path 
+      d="M20 8 L12 28 M20 8 L28 28 M14 22 L26 22" 
+      stroke="currentColor" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
+    {/* Inner accent dot */}
+    <circle cx="20" cy="17" r="2" fill="currentColor" opacity="0.6" />
   </svg>
 );
 
-// Kimi Logo Component
+// Kimi Logo Component - Moonshot AI's crescent moon motif
 const KimiLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 32 32" className={className} fill="currentColor">
-    <path d="M16 2L4 9v14l12 7 12-7V9L16 2zm0 2.5l10 5.75v11.5l-10 5.75-10-5.75V10.25l10-5.75z"/>
-    <path d="M16 8l-6 3.5v7L16 22l6-3.5v-7L16 8zm0 2l4 2.5v5L16 20l-4-2.5v-5L16 10z"/>
+  <svg viewBox="0 0 40 40" className={className} fill="none">
+    {/* Outer orbital ring */}
+    <circle cx="20" cy="20" r="17" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+    {/* Main crescent moon shape */}
+    <path 
+      d="M26 8 
+         C32 12 34 20 32 28 
+         C30 34 24 38 16 36 
+         C22 34 26 28 26 20 
+         C26 14 24 10 20 8 
+         C22 7 24 7 26 8Z" 
+      fill="currentColor" 
+      opacity="0.9"
+    />
+    {/* Inner crescent highlight */}
+    <path 
+      d="M24 12 
+         C28 15 29 20 28 26 
+         C27 30 24 33 20 33 
+         C24 31 26 26 26 20 
+         C26 16 25 13 22 11 
+         C23 11 24 11 24 12Z" 
+      fill="currentColor" 
+      opacity="0.4"
+    />
+    {/* Star accent */}
+    <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.8" />
+    <circle cx="10" cy="18" r="1.2" fill="currentColor" opacity="0.5" />
+    <circle cx="14" cy="24" r="1" fill="currentColor" opacity="0.4" />
   </svg>
 );
 

@@ -4,26 +4,118 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// Wireframe Sandals Component
-function WireframeSandal({ 
+// Abstract 3D Geometric Shape - Floating Polyhedron
+function FloatingPolyhedron({ 
   className = "",
   style = {},
   delay = 0,
   duration = 20,
+  variant = "cube",
 }: { 
   className?: string;
   style?: React.CSSProperties;
   delay?: number;
   duration?: number;
+  variant?: "cube" | "icosahedron" | "torus" | "crystal";
 }) {
+  const shapes = {
+    // Isometric cube wireframe
+    cube: (
+      <g stroke="rgba(255,255,255,0.5)" strokeWidth="0.8" fill="none">
+        {/* Front face */}
+        <path d="M50 30 L80 45 L80 85 L50 70 Z" strokeWidth="1" />
+        {/* Top face */}
+        <path d="M50 30 L80 45 L110 30 L80 15 Z" strokeWidth="1" />
+        {/* Right face */}
+        <path d="M80 45 L110 30 L110 70 L80 85 Z" strokeWidth="1" />
+        {/* Inner edges with gradient opacity */}
+        <path d="M50 30 L50 70" opacity="0.6" />
+        <path d="M80 15 L80 85" opacity="0.3" strokeDasharray="2 2" />
+        <path d="M110 30 L110 70" opacity="0.6" />
+        {/* Vertices glow */}
+        <circle cx="50" cy="30" r="2" fill="rgba(0,226,115,0.6)" />
+        <circle cx="80" cy="15" r="2" fill="rgba(0,226,115,0.4)" />
+        <circle cx="110" cy="30" r="2" fill="rgba(0,226,115,0.6)" />
+        <circle cx="80" cy="85" r="2" fill="rgba(0,226,115,0.5)" />
+      </g>
+    ),
+    // Low-poly sphere / icosahedron wireframe
+    icosahedron: (
+      <g stroke="rgba(255,255,255,0.4)" strokeWidth="0.6" fill="none">
+        {/* Outer pentagon ring */}
+        <path d="M80 10 L120 35 L105 80 L55 80 L40 35 Z" strokeWidth="1" opacity="0.7" />
+        {/* Inner star connections */}
+        <path d="M80 10 L55 80" opacity="0.4" />
+        <path d="M80 10 L105 80" opacity="0.4" />
+        <path d="M120 35 L55 80" opacity="0.4" />
+        <path d="M40 35 L105 80" opacity="0.4" />
+        <path d="M40 35 L120 35" opacity="0.5" />
+        {/* Center connection */}
+        <path d="M80 10 L80 50 L55 80" opacity="0.3" />
+        <path d="M80 50 L105 80" opacity="0.3" />
+        <path d="M80 50 L40 35" opacity="0.3" />
+        <path d="M80 50 L120 35" opacity="0.3" />
+        {/* Vertices */}
+        <circle cx="80" cy="10" r="2.5" fill="rgba(0,226,115,0.7)" />
+        <circle cx="120" cy="35" r="2" fill="rgba(0,226,115,0.5)" />
+        <circle cx="40" cy="35" r="2" fill="rgba(0,226,115,0.5)" />
+        <circle cx="80" cy="50" r="3" fill="rgba(0,226,115,0.8)" />
+      </g>
+    ),
+    // Torus / ring wireframe
+    torus: (
+      <g stroke="rgba(255,255,255,0.4)" strokeWidth="0.6" fill="none">
+        {/* Outer ellipse */}
+        <ellipse cx="80" cy="50" rx="50" ry="20" strokeWidth="1" opacity="0.6" />
+        {/* Inner ellipse */}
+        <ellipse cx="80" cy="50" rx="30" ry="12" strokeWidth="0.8" opacity="0.5" />
+        {/* Vertical rings */}
+        <ellipse cx="50" cy="50" rx="8" ry="20" opacity="0.4" />
+        <ellipse cx="80" cy="50" rx="8" ry="25" opacity="0.5" />
+        <ellipse cx="110" cy="50" rx="8" ry="20" opacity="0.4" />
+        {/* Cross sections */}
+        <path d="M30 50 Q50 30 80 25 Q110 30 130 50" opacity="0.3" />
+        <path d="M30 50 Q50 70 80 75 Q110 70 130 50" opacity="0.3" />
+        {/* Glow points */}
+        <circle cx="30" cy="50" r="2" fill="rgba(0,226,115,0.5)" />
+        <circle cx="130" cy="50" r="2" fill="rgba(0,226,115,0.5)" />
+        <circle cx="80" cy="25" r="2" fill="rgba(0,226,115,0.6)" />
+      </g>
+    ),
+    // Crystal / gem wireframe  
+    crystal: (
+      <g stroke="rgba(255,255,255,0.5)" strokeWidth="0.7" fill="none">
+        {/* Top pyramid */}
+        <path d="M80 5 L50 40 L80 55 L110 40 Z" strokeWidth="1" opacity="0.7" />
+        {/* Middle band */}
+        <path d="M50 40 L35 55 L50 70 L80 55 L110 70 L125 55 L110 40" opacity="0.6" />
+        <path d="M80 55 L50 70" opacity="0.5" />
+        <path d="M80 55 L110 70" opacity="0.5" />
+        {/* Bottom pyramid */}
+        <path d="M50 70 L80 95 L110 70" strokeWidth="1" opacity="0.7" />
+        <path d="M35 55 L80 95 L125 55" opacity="0.4" />
+        {/* Internal structure */}
+        <path d="M80 5 L80 95" opacity="0.2" strokeDasharray="3 3" />
+        <path d="M35 55 L125 55" opacity="0.2" strokeDasharray="3 3" />
+        {/* Facet highlights */}
+        <path d="M80 5 L80 55" opacity="0.4" />
+        {/* Glow vertices */}
+        <circle cx="80" cy="5" r="3" fill="rgba(0,226,115,0.8)" />
+        <circle cx="80" cy="95" r="2.5" fill="rgba(0,226,115,0.6)" />
+        <circle cx="35" cy="55" r="2" fill="rgba(0,226,115,0.4)" />
+        <circle cx="125" cy="55" r="2" fill="rgba(0,226,115,0.4)" />
+      </g>
+    ),
+  };
+
   return (
     <motion.div
       className={`absolute ${className}`}
       style={style}
       animate={{
-        y: [-15, 15, -15],
-        rotate: [-3, 3, -3],
-        opacity: [0.4, 0.7, 0.4],
+        y: [-10, 10, -10],
+        rotateY: [0, 180, 360],
+        opacity: [0.3, 0.6, 0.3],
       }}
       transition={{
         duration: duration,
@@ -33,42 +125,23 @@ function WireframeSandal({
       }}
     >
       <svg 
-        viewBox="0 0 200 120" 
+        viewBox="0 0 160 100" 
         className="w-full h-full"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Wireframe grid pattern for sandal */}
-        <g stroke="rgba(255,255,255,0.6)" strokeWidth="0.8">
-          {/* Main sole outline */}
-          <path d="M20 60 Q20 30 50 25 Q80 20 120 25 Q160 30 180 50 Q185 70 170 85 Q150 100 100 105 Q50 100 30 85 Q15 75 20 60Z" />
-          
-          {/* Lengthwise wires */}
-          <path d="M40 35 Q35 60 40 90" opacity="0.5" />
-          <path d="M70 28 Q65 60 70 98" opacity="0.5" />
-          <path d="M100 25 Q95 60 100 102" opacity="0.5" />
-          <path d="M130 28 Q125 60 130 98" opacity="0.5" />
-          <path d="M160 40 Q155 60 160 85" opacity="0.5" />
-          
-          {/* Crosswise wires */}
-          <path d="M25 45 Q100 40 175 50" opacity="0.4" />
-          <path d="M22 60 Q100 55 178 65" opacity="0.4" />
-          <path d="M28 75 Q100 70 172 80" opacity="0.4" />
-          <path d="M40 88 Q100 85 160 92" opacity="0.4" />
-          
-          {/* Strap wires */}
-          <path d="M60 28 Q55 15 70 12 Q85 10 95 15" opacity="0.6" />
-          <path d="M70 28 Q68 18 80 16" opacity="0.5" />
-          <path d="M80 28 Q80 20 88 18" opacity="0.5" />
-          
-          {/* Diagonal cross wires for 3D effect */}
-          <path d="M50 35 L70 55 L60 75 L80 90" opacity="0.3" />
-          <path d="M90 30 L110 50 L100 80 L120 95" opacity="0.3" />
-          <path d="M130 35 L150 55 L140 80 L155 90" opacity="0.3" />
-          
-          {/* Edge detail wires */}
-          <path d="M25 55 Q100 50 175 60" strokeWidth="0.5" opacity="0.3" />
-          <path d="M35 40 Q100 35 165 45" strokeWidth="0.5" opacity="0.3" />
+        {/* Subtle glow behind shape */}
+        <defs>
+          <filter id={`glow-${variant}`} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <g filter={`url(#glow-${variant})`}>
+          {shapes[variant]}
         </g>
       </svg>
     </motion.div>
@@ -82,30 +155,41 @@ function AnimatedBackground() {
       {/* Base dark gradient */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
       
-      {/* Wireframe Sandals - Floating geometric wireframes */}
-      <WireframeSandal 
-        className="w-64 h-40 opacity-40"
-        style={{ top: '10%', right: '5%' }}
+      {/* Floating 3D Geometric Wireframes */}
+      <FloatingPolyhedron 
+        className="w-48 h-32 opacity-50"
+        style={{ top: '8%', right: '8%' }}
         delay={0}
-        duration={18}
+        duration={15}
+        variant="crystal"
       />
-      <WireframeSandal 
-        className="w-48 h-32 opacity-30"
-        style={{ top: '60%', right: '15%', transform: 'rotate(-15deg)' }}
+      <FloatingPolyhedron 
+        className="w-40 h-28 opacity-40"
+        style={{ top: '55%', right: '12%' }}
+        delay={3}
+        duration={20}
+        variant="cube"
+      />
+      <FloatingPolyhedron 
+        className="w-52 h-36 opacity-35"
+        style={{ top: '28%', right: '22%' }}
+        delay={1.5}
+        duration={18}
+        variant="icosahedron"
+      />
+      <FloatingPolyhedron 
+        className="w-36 h-24 opacity-30"
+        style={{ bottom: '25%', right: '5%' }}
         delay={2}
         duration={22}
+        variant="torus"
       />
-      <WireframeSandal 
-        className="w-56 h-36 opacity-35"
-        style={{ top: '30%', right: '25%', transform: 'rotate(10deg)' }}
+      <FloatingPolyhedron 
+        className="w-32 h-22 opacity-25"
+        style={{ top: '75%', right: '30%' }}
         delay={4}
-        duration={20}
-      />
-      <WireframeSandal 
-        className="w-40 h-28 opacity-25"
-        style={{ bottom: '20%', right: '8%', transform: 'rotate(-20deg)' }}
-        delay={1}
         duration={25}
+        variant="cube"
       />
       
       {/* Animated gradient orbs */}
