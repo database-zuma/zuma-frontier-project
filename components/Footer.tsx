@@ -44,15 +44,26 @@ export function Footer() {
           <div>
             <h4 className="text-white font-normal mb-4">Connect</h4>
             <div className="flex gap-4">
-              {[Github, Twitter, Linkedin].map((Icon, i) => (
-                <a 
-                  key={i}
-                  href="#" 
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:text-[#00E273] hover:bg-white/10 transition-all"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a 
+                href="https://github.com/database-zuma/zuma-frontier-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:text-[#00E273] hover:bg-white/10 transition-all"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:text-[#00E273] hover:bg-white/10 transition-all"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40 hover:text-[#00E273] hover:bg-white/10 transition-all"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
