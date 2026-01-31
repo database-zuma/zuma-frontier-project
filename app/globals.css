@@ -25,7 +25,7 @@
   --color-foreground: var(--foreground);
   --color-zuma-green: var(--zuma-green);
   --color-zuma-green-dark: var(--zuma-green-dark);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 }
 
@@ -37,27 +37,29 @@ html {
 body {
   background: var(--background);
   color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   font-weight: 500;
-  letter-spacing: -0.36px;
+  letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modal.com Typography Scale */
+/* Modal.com Typography Scale - Plus Jakarta Sans */
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.02em;
-  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-weight: 600;
 }
 
 /* Tighter tracking for large text */
 .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-9xl {
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  font-weight: 500;
 }
 
-/* Normal tracking for small text */
+/* Slightly looser for small text */
 .text-sm, .text-xs {
   letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
 /* Glassmorphism Utilities */
