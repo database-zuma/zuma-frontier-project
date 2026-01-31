@@ -4,12 +4,109 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+// Wireframe Sandals Component
+function WireframeSandal({ 
+  className = "",
+  style = {},
+  delay = 0,
+  duration = 20,
+}: { 
+  className?: string;
+  style?: React.CSSProperties;
+  delay?: number;
+  duration?: number;
+}) {
+  return (
+    <motion.div
+      className={`absolute ${className}`}
+      style={style}
+      animate={{
+        y: [-15, 15, -15],
+        rotate: [-3, 3, -3],
+        opacity: [0.4, 0.7, 0.4],
+      }}
+      transition={{
+        duration: duration,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: delay,
+      }}
+    >
+      <svg 
+        viewBox="0 0 200 120" 
+        className="w-full h-full"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Wireframe grid pattern for sandal */}
+        <g stroke="rgba(255,255,255,0.6)" strokeWidth="0.8">
+          {/* Main sole outline */}
+          <path d="M20 60 Q20 30 50 25 Q80 20 120 25 Q160 30 180 50 Q185 70 170 85 Q150 100 100 105 Q50 100 30 85 Q15 75 20 60Z" />
+          
+          {/* Lengthwise wires */}
+          <path d="M40 35 Q35 60 40 90" opacity="0.5" />
+          <path d="M70 28 Q65 60 70 98" opacity="0.5" />
+          <path d="M100 25 Q95 60 100 102" opacity="0.5" />
+          <path d="M130 28 Q125 60 130 98" opacity="0.5" />
+          <path d="M160 40 Q155 60 160 85" opacity="0.5" />
+          
+          {/* Crosswise wires */}
+          <path d="M25 45 Q100 40 175 50" opacity="0.4" />
+          <path d="M22 60 Q100 55 178 65" opacity="0.4" />
+          <path d="M28 75 Q100 70 172 80" opacity="0.4" />
+          <path d="M40 88 Q100 85 160 92" opacity="0.4" />
+          
+          {/* Strap wires */}
+          <path d="M60 28 Q55 15 70 12 Q85 10 95 15" opacity="0.6" />
+          <path d="M70 28 Q68 18 80 16" opacity="0.5" />
+          <path d="M80 28 Q80 20 88 18" opacity="0.5" />
+          
+          {/* Diagonal cross wires for 3D effect */}
+          <path d="M50 35 L70 55 L60 75 L80 90" opacity="0.3" />
+          <path d="M90 30 L110 50 L100 80 L120 95" opacity="0.3" />
+          <path d="M130 35 L150 55 L140 80 L155 90" opacity="0.3" />
+          
+          {/* Edge detail wires */}
+          <path d="M25 55 Q100 50 175 60" strokeWidth="0.5" opacity="0.3" />
+          <path d="M35 40 Q100 35 165 45" strokeWidth="0.5" opacity="0.3" />
+        </g>
+      </svg>
+    </motion.div>
+  );
+}
+
 // Animated background component
 function AnimatedBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* Base dark gradient */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
+      
+      {/* Wireframe Sandals - Floating geometric wireframes */}
+      <WireframeSandal 
+        className="w-64 h-40 opacity-40"
+        style={{ top: '10%', right: '5%' }}
+        delay={0}
+        duration={18}
+      />
+      <WireframeSandal 
+        className="w-48 h-32 opacity-30"
+        style={{ top: '60%', right: '15%', transform: 'rotate(-15deg)' }}
+        delay={2}
+        duration={22}
+      />
+      <WireframeSandal 
+        className="w-56 h-36 opacity-35"
+        style={{ top: '30%', right: '25%', transform: 'rotate(10deg)' }}
+        delay={4}
+        duration={20}
+      />
+      <WireframeSandal 
+        className="w-40 h-28 opacity-25"
+        style={{ bottom: '20%', right: '8%', transform: 'rotate(-20deg)' }}
+        delay={1}
+        duration={25}
+      />
       
       {/* Animated gradient orbs */}
       <motion.div

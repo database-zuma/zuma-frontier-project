@@ -1,19 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Sparkles } from "lucide-react";
+import { Brain } from "lucide-react";
+
+// Claude Logo Component
+const ClaudeLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" className={className} fill="currentColor">
+    <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4z"/>
+    <path d="M16 8c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3zM12 18c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3zM20 18c-.5 0-1 .1-1.5.3-.4.2-.8.5-1.1.8-.3.4-.6.8-.8 1.3-.2.5-.3 1-.3 1.5s.1 1 .3 1.5c.2.5.5.9.8 1.3.3.4.7.7 1.1.9.5.2 1 .3 1.5.3s1-.1 1.5-.3c.5-.2.9-.5 1.2-.9.4-.4.6-.8.8-1.3.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.8-1.3-.4-.4-.8-.7-1.2-.9-.5-.2-1-.3-1.5-.3z"/>
+  </svg>
+);
+
+// Kimi Logo Component
+const KimiLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" className={className} fill="currentColor">
+    <path d="M16 2L4 9v14l12 7 12-7V9L16 2zm0 2.5l10 5.75v11.5l-10 5.75-10-5.75V10.25l10-5.75z"/>
+    <path d="M16 8l-6 3.5v7L16 22l6-3.5v-7L16 8zm0 2l4 2.5v5L16 20l-4-2.5v-5L16 10z"/>
+  </svg>
+);
 
 // AI Foundation - Premium tier
 const aiFoundation = [
   { 
     name: "Claude Opus 4.5", 
     description: "Strategic AI",
-    icon: Brain,
+    logo: ClaudeLogo,
   },
   { 
     name: "Kimi K2.5", 
     description: "Reasoning AI",
-    icon: Sparkles,
+    logo: KimiLogo,
   },
 ];
 
@@ -315,7 +331,7 @@ export function TechStack() {
                   <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/20 group-hover:to-transparent transition-all duration-500" />
                   
                   <div className="relative z-10">
-                    <ai.icon className="w-8 h-8 text-[#00E273] mx-auto mb-3" />
+                    <ai.logo className="w-8 h-8 text-[#00E273] mx-auto mb-3" />
                     <p className="text-white font-medium text-lg mb-1">
                       {ai.name}
                     </p>
