@@ -26,10 +26,10 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#00E273] flex items-center justify-center text-white font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00E273] to-[#00b35f] flex items-center justify-center text-white font-normal">
               Z
             </div>
-            <span className="font-semibold text-gray-900">Zuma Frontier</span>
+            <span className="font-normal text-gray-900 tracking-tight">Zuma Frontier</span>
           </a>
 
           {/* Desktop Nav */}
@@ -38,7 +38,7 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-sm font-light text-gray-500 hover:text-gray-900 transition-colors"
               >
                 {item.label}
               </a>

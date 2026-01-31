@@ -6,7 +6,7 @@
   --zuma-green-dark: #00b35f;
   --zuma-green-light: #00FF88;
   
-  /* Light Theme (Mistral Style) */
+  /* Light Theme */
   --background: #ffffff;
   --foreground: #1a1a1a;
   
@@ -42,10 +42,56 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #1a1a1a 0%, #00E273 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Futuristic Glow */
+.glow-green {
+  box-shadow: 
+    0 0 20px rgba(0, 226, 115, 0.3),
+    0 0 40px rgba(0, 226, 115, 0.2),
+    0 0 60px rgba(0, 226, 115, 0.1);
+}
+
 /* Selection */
 ::selection {
   background: rgba(0, 226, 115, 0.2);
   color: #1a1a1a;
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reduced Motion */
