@@ -2,202 +2,228 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+
+// Logo ticker component
+function LogoTicker() {
+  const logos = [
+    { name: "Branch Super App", color: "#00E273" },
+    { name: "Warehouse App", color: "#00E273" },
+    { name: "Multi-MoltBot", color: "#00E273" },
+    { name: "Creative Hub", color: "#00E273" },
+    { name: "AI Agents", color: "#00E273" },
+    { name: "Automation", color: "#00E273" },
+    { name: "Operations", color: "#00E273" },
+    { name: "Intelligence", color: "#00E273" },
+  ];
+
+  return (
+    <div className="w-full overflow-hidden py-8 border-t border-gray-100">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="text-center mb-6"
+      >
+        <p className="text-sm text-gray-400 uppercase tracking-wider">Meet our projects</p>
+      </motion.div>
+      <div className="relative flex overflow-x-hidden">
+        <div className="animate-marquee whitespace-nowrap flex items-center gap-16">
+          {logos.map((logo, i) => (
+            <div key={i} className="flex items-center gap-2 text-gray-400 hover:text-[#00E273] transition-colors">
+              <div 
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: logo.color }}
+              >
+                {logo.name.charAt(0)}
+              </div>
+              <span className="text-sm font-medium">{logo.name}</span>
+            </div>
+          ))}
+        </div>
+        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16">
+          {logos.map((logo, i) => (
+            <div key={i} className="flex items-center gap-2 text-gray-400 hover:text-[#00E273] transition-colors">
+              <div 
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold"
+                style={{ backgroundColor: logo.color }}
+              >
+                {logo.name.charAt(0)}
+              </div>
+              <span className="text-sm font-medium">{logo.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#020202]">
-      {/* Full Width Aurora Background */}
+    <section className="relative min-h-screen bg-white overflow-hidden">
+      {/* Background gradient - subtle orange to white like Mistral */}
       <div className="absolute inset-0">
-        {/* Deep base */}
-        <div className="absolute inset-0 bg-[#020202]" />
-        
-        {/* Large blurry aurora - Zuma Green */}
         <div 
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[800px]"
+          className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at center top, rgba(0, 226, 115, 0.25) 0%, rgba(0, 226, 115, 0.1) 40%, transparent 70%)',
-            filter: 'blur(100px)',
-          }}
-        />
-        
-        {/* Secondary aurora - blue/purple */}
-        <div 
-          className="absolute top-1/3 right-0 w-[800px] h-[600px]"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.1) 40%, transparent 70%)',
-            filter: 'blur(120px)',
-          }}
-        />
-        
-        {/* Bottom glow */}
-        <div 
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px]"
-          style={{
-            background: 'radial-gradient(ellipse at center bottom, rgba(0, 226, 115, 0.15) 0%, transparent 60%)',
-            filter: 'blur(80px)',
+            background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 226, 115, 0.15), transparent)',
           }}
         />
       </div>
 
-      {/* Full Width FRONTIER Header */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 pt-20 md:pt-32 pb-8"
-      >
-        {/* Badge above */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-6"
-        >
-          <Badge 
-            variant="outline" 
-            className="border-[#00E273]/30 text-[#00E273]/80 bg-transparent px-5 py-2 text-xs tracking-[0.2em] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono), monospace' }}
-          >
-            Continuous Improvements Division
-          </Badge>
-        </motion.div>
-
-        {/* Massive FRONTIER - Full Width */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, filter: "blur(20px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          className="text-center px-4"
-        >
-          <h1
-            className="text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] xl:text-[240px] leading-none tracking-tighter"
-            style={{
-              fontFamily: 'var(--font-space-mono), monospace',
-              fontWeight: 700,
-              background: 'linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 25%, #00E273 60%, #00FF88 85%, #00E273 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              filter: 'drop-shadow(0 0 60px rgba(0, 226, 115, 0.5)) drop-shadow(0 0 120px rgba(0, 226, 115, 0.3))',
-            }}
-          >
-            FRONTIER
-          </h1>
-        </motion.div>
-
-        {/* Tagline below FRONTIER */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center text-sm md:text-base text-[#00E273]/60 tracking-[0.3em] uppercase mt-4"
-          style={{ fontFamily: 'var(--font-space-mono), monospace' }}
-        >
-          The Dawn of Intelligent Operations
-        </motion.p>
-      </motion.div>
-
-      {/* Content Area with Glass Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        className="relative z-10 flex-1 flex items-center justify-center px-4 md:px-8 pb-20"
-      >
-        <div className="relative w-full max-w-2xl"
-        >
-          {/* Glass Card */}
-          <div className="relative"
-          >
-            {/* Glass background */}
-            <div 
-              className="absolute inset-0 rounded-3xl"
-              style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
-                backdropFilter: 'blur(40px)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-              }}
-            />
-            
-            {/* Subtle gradient border */}
-            <div 
-              className="absolute -inset-[1px] rounded-3xl opacity-30"
-              style={{
-                background: 'linear-gradient(135deg, rgba(0, 226, 115, 0.4) 0%, transparent 50%, rgba(99, 102, 241, 0.2) 100%)',
-                mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                maskComposite: 'xor',
-                WebkitMaskComposite: 'xor',
-                padding: '1px',
-              }}
-            />
-
-            {/* Card Content */}
-            <div className="relative px-8 md:px-12 py-10 text-center"
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Hero Content */}
+        <div className="pt-32 pb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-8"
             >
-              <p
-                className="text-white/40 text-sm md:text-base mb-8 leading-relaxed"
-                style={{ fontFamily: 'var(--font-space-mono), monospace' }}
+              {/* Headline */}
+              <div className="space-y-2">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="text-6xl sm:text-7xl lg:text-8xl font-bold text-gray-900 leading-none"
+                >
+                  FRONTIER
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00E273]"
+                >
+                  Project.
+                </motion.p>
+              </div>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-lg sm:text-xl text-gray-600 max-w-lg leading-relaxed"
               >
-                Pioneering AI excellence at Zuma Indonesia. 
-                Building the future of operations through intelligent automation and continuous improvement.
-              </p>
+                Accelerating AI adoption at Zuma Indonesia.
+                We help operations teams build intelligent systems
+                to solve the hardest business challenges.
+              </motion.p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="flex flex-wrap gap-4"
               >
                 <Button
                   size="lg"
-                  className="bg-[#00E273] hover:bg-[#00FF88] text-black font-semibold px-8 py-6 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,226,115,0.4)]"
-                  style={{ fontFamily: 'var(--font-space-mono), monospace' }}
+                  className="bg-[#00E273] hover:bg-[#00d166] text-black font-semibold px-8 py-6 text-base rounded-full transition-all duration-300 hover:scale-105 group"
                 >
-                  Explore the Future
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  Get in touch
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   size="lg"
-                  className="text-white/40 hover:text-white hover:bg-white/5 px-8 py-6 text-sm rounded-full transition-all duration-300"
-                  style={{ fontFamily: 'var(--font-space-mono), monospace' }}
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-6 text-base rounded-full transition-all duration-300"
                 >
                   View Projects
                 </Button>
-              </div>
+              </motion.div>
+            </motion.div>
 
-              {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10"
-              >
-                {[
-                  { label: "Projects", value: "4" },
-                  { label: "Status", value: "Active" },
-                  { label: "Year", value: "2026" },
-                ].map((stat, i) => (
-                  <div key={i} className="text-center"
+            {/* Right - Visual Element */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative aspect-square max-w-lg mx-auto">
+                {/* Abstract geometric composition */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {/* Central glowing orb */}
+                  <div 
+                    className="absolute w-64 h-64 rounded-full opacity-60"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(0, 226, 115, 0.4) 0%, rgba(0, 226, 115, 0.1) 50%, transparent 70%)',
+                      filter: 'blur(40px)',
+                    }}
+                  />
+                  
+                  {/* Floating cards */}
+                  <motion.div
+                    animate={{ y: [-10, 10, -10] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-0 right-0 w-48 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
                   >
-                    <div 
-                      className="text-xl md:text-2xl text-[#00E273] mb-1"
-                      style={{ fontFamily: 'var(--font-space-mono), monospace', fontWeight: 700 }}
-                    >
-                      {stat.value}
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#00E273] flex items-center justify-center text-white font-bold">A</div>
+                      <div>
+                        <div className="text-sm font-semibold text-gray-900">AI Agent</div>
+                        <div className="text-xs text-gray-500">Processing...</div>
+                      </div>
                     </div>
-                    <div 
-                      className="text-[10px] text-white/30 uppercase tracking-widest"
-                      style={{ fontFamily: 'var(--font-space-mono), monospace' }}
-                    >
-                      {stat.label}
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ y: [10, -10, 10] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute bottom-0 left-0 w-48 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-gray-500 uppercase">Status</span>
+                      <span className="flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-[#00E273] animate-pulse"></span>
+                        <span className="text-xs text-[#00E273]">Active</span>
+                      </span>
                     </div>
-                  </div>
-                ))}
+                    <div className="text-2xl font-bold text-gray-900">4</div>
+                    <div className="text-xs text-gray-500">Projects Running</div>
+                  </motion.div>
+
+                  <motion.div
+                    animate={{ x: [-5, 5, -5] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 bg-gradient-to-br from-[#00E273] to-[#00b35f] rounded-2xl shadow-2xl p-6 text-white"
+                  >
+                    <div className="text-3xl font-bold mb-1">2026</div>
+                    <div className="text-sm opacity-80">The Future</div>
+                  </motion.div>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#020202] to-transparent pointer-events-none" />
+        {/* Logo Ticker */}
+        <LogoTicker />
+      </div>
+
+      {/* CSS for marquee animation */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee2 {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(0%); }
+        }
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+        .animate-marquee2 {
+          animation: marquee2 25s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
