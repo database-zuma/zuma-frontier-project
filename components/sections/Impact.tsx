@@ -52,22 +52,22 @@ export function Impact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Impact & Metrics</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extralight text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-4 sm:mb-6">
             The Future
             <br />
             <span className="text-[#00E273]">By Numbers</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto font-light">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
             Every metric tells a story of transformation. Every number represents 
             potential unlocked through intelligent automation.
           </p>
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 px-4 sm:px-0">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -78,17 +78,17 @@ export function Impact() {
               className="text-center"
             >
               <div 
-                className="relative p-8 rounded-3xl border border-gray-100"
+                className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-100"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
                   backdropFilter: 'blur(20px)',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.04)',
                 }}
               >
-                <div className="text-5xl sm:text-6xl font-extralight text-gray-900 mb-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-2">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-base font-normal text-gray-800 mb-1">{stat.label}</div>
+                <div className="text-sm sm:text-base font-normal text-gray-800 mb-1">{stat.label}</div>
                 <div className="text-xs text-gray-400 font-light">{stat.description}</div>
               </div>
             </motion.div>

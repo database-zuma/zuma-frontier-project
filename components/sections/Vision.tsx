@@ -52,22 +52,22 @@ export function Vision() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Our Vision</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extralight text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-gray-900 mb-4 sm:mb-6">
             The Dawn of a
             <br />
             <span className="text-[#00E273]">New Era</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto font-light">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
             We stand at the frontier of transformation. Where artificial intelligence 
             meets human ingenuity, and where Zuma Indonesia leads the future of operations.
           </p>
         </motion.div>
 
         {/* Vision Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-0">
           {visionCards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -78,8 +78,8 @@ export function Vision() {
             >
               <div className="group relative h-full">
                 {/* Glass Card - Light version */}
-                <div 
-                  className="relative h-full p-6 rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-gray-100"
+                <div
+                  className="relative h-full p-5 sm:p-6 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-gray-100"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
                     backdropFilter: 'blur(20px)',

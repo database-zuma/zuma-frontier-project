@@ -172,8 +172,8 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Content */}
-        <div className="pt-32 pb-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="pt-24 sm:pt-32 pb-8 sm:pb-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -187,7 +187,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
-                  className="text-6xl sm:text-7xl lg:text-8xl font-extralight text-white leading-[0.9] tracking-tight"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extralight text-white leading-[0.9] tracking-tight"
                 >
                   FRONTIER
                 </motion.h1>
@@ -195,7 +195,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#00E273] tracking-tight"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#00E273] tracking-tight"
                 >
                   Project.
                 </motion.p>
@@ -237,7 +237,34 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Right - Glassmorphism Cards */}
+            {/* Mobile Stats - Shows only on mobile */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="lg:hidden flex flex-wrap gap-4 justify-center"
+            >
+              {[
+                { value: '4', label: 'AI Projects' },
+                { value: '24/7', label: 'Operations' },
+                { value: '2026', label: 'Vision Year' },
+              ].map((stat, i) => (
+                <div 
+                  key={i}
+                  className="px-6 py-4 rounded-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  <div className="text-2xl font-extralight text-[#00E273]">{stat.value}</div>
+                  <div className="text-xs text-white/50 font-light">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Right - Glassmorphism Cards - Desktop only */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
