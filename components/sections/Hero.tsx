@@ -103,7 +103,7 @@ function AnimatedBackground() {
   );
 }
 
-// Logo ticker component - DUMMY PLACEHOLDER CONTENT
+// Logo ticker component - SCROLLING LEFT LIKE MISTRAL
 function LogoTicker() {
   const logos = [
     "Placeholder Partner 1",
@@ -114,7 +114,12 @@ function LogoTicker() {
     "Placeholder Partner 6",
     "Placeholder Partner 7",
     "Placeholder Partner 8",
+    "Placeholder Partner 9",
+    "Placeholder Partner 10",
   ];
+
+  // Double the array for seamless loop
+  const allLogos = [...logos, ...logos];
 
   return (
     <div className="w-full overflow-hidden py-8 border-t border-white/10">
@@ -126,23 +131,34 @@ function LogoTicker() {
       >
         <p className="text-xs text-white/40 uppercase tracking-[0.2em] font-light">Meet our partners</p>
       </motion.div>
-      <div className="relative flex overflow-x-hidden">
-        <div className="animate-marquee whitespace-nowrap flex items-center gap-16">
-          {logos.map((logo, i) => (
-            <div key={i} className="flex items-center gap-3 text-white/30 hover:text-[#00E273] transition-colors duration-300">
+      
+      <div className="relative">
+        {/* Gradient masks for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        
+        {/* Scrolling container - moves LEFT */}
+        <motion.div 
+          className="flex items-center gap-16"
+          animate={{ x: [0, -50 * logos.length * 2] }}
+          transition={{
+            x: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }
+          }}
+        >
+          {allLogos.map((logo, i) => (
+            <div 
+              key={i} 
+              className="flex items-center gap-3 text-white/30 hover:text-[#00E273] transition-colors duration-300 shrink-0"
+            >
               <div className="w-2 h-2 rounded-full bg-[#00E273]"></div>
-              <span className="text-sm font-light tracking-wide">{logo}</span>
+              <span className="text-sm font-light tracking-wide whitespace-nowrap">{logo}</span>
             </div>
           ))}
-        </div>
-        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16">
-          {logos.map((logo, i) => (
-            <div key={i} className="flex items-center gap-3 text-white/30 hover:text-[#00E273] transition-colors duration-300">
-              <div className="w-2 h-2 rounded-full bg-[#00E273]"></div>
-              <span className="text-sm font-light tracking-wide">{logo}</span>
-            </div>
-          ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
