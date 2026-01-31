@@ -6,16 +6,17 @@
 
 ---
 
-## Current Status: v1.5 - Color Spectrum Cards + Refined Design
+## Current Status: v1.6 - Tech Logo Ticker + Tight Typography
 
-The landing page features **Geist Mono** font, **multi-color project cards** with grain texture, and streamlined navigation.
+The landing page features **Geist Mono** with tight letter-spacing, **animated tech logo ticker** with hover glow effects, and **multi-color project cards** with grain texture.
 
 ---
 
 ## Key Achievements
 
 ### Design Excellence
-- **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight)
+- **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight, tight letter-spacing)
+- **Tech logo ticker** - 15 tech logos in 3 scrolling rows with color-matched hover glow
 - **Multi-color project cards** - each with unique spectrum (yellow-green, aqua-cyan, purple-pink, orange-coral)
 - **Full grain texture** on all project card graphics
 - **Less rounded corners** - refined from `rounded-3xl` to `rounded-xl`
@@ -44,7 +45,7 @@ The landing page features **Geist Mono** font, **multi-color project cards** wit
 | **Projects** | ✅ Done | 4 project cards with multi-color spectrums + grain texture, horizontal scroll |
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
-| **Tech Stack** | ✅ Done | AI Foundation tier + 10 tech badges |
+| **Tech Stack** | ✅ Done | AI Foundation tier + 15 tech logos in scrolling ticker with hover glow |
 | **Footer** | ✅ Done | Zuma logo, navigation, social links, copyright |
 
 ### Technical Stack
@@ -70,7 +71,7 @@ The landing page features **Geist Mono** font, **multi-color project cards** wit
 | **Heading Font** | **Geist Mono** (Vercel, light weight) |
 | **Body Weight** | 500 (medium) |
 | **Heading Weight** | 300 (light) for large titles, 400 for h3-h6 |
-| **Letter Spacing** | -0.02em base |
+| **Title Letter Spacing** | -0.04em (tight) for large titles, -0.03em for headings |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + borders |
 | **Section Pattern** | Dark → Light → Dark → Light |
 | **Card Border Radius** | `rounded-xl` / `rounded-lg` (less rounded) |
@@ -83,7 +84,8 @@ The landing page features **Geist Mono** font, **multi-color project cards** wit
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Jan 31, 2026 | **v1.5** | Multi-color project cards (4 spectrums), full grain texture, reduced border radius, removed Impact section, updated navbar links |
+| Jan 31, 2026 | **v1.6** | Tech logo ticker (15 logos, 3 rows, hover glow), tighter title letter-spacing (-0.04em) |
+| Jan 31, 2026 | v1.5 | Multi-color project cards (4 spectrums), full grain texture, reduced border radius, removed Impact section, updated navbar links |
 | Jan 31, 2026 | v1.4 | Geist Mono font (light weight), organic blob graphics for all project cards |
 | Jan 31, 2026 | v1.3 | Plus Jakarta Sans font (premium, Modal-like) |
 | Jan 31, 2026 | v1.2 | AI badges (Claude/Kimi), urgency copy, industry benchmarks |
