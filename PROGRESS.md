@@ -6,9 +6,9 @@
 
 ---
 
-## Current Status: v1.4 - Premium Typography + Organic Graphics
+## Current Status: v1.5 - Color Spectrum Cards + Refined Design
 
-The landing page features **Geist Mono** (Vercel's font) for lean, futuristic headings and **organic blob graphics** on all project cards.
+The landing page features **Geist Mono** font, **multi-color project cards** with grain texture, and streamlined navigation.
 
 ---
 
@@ -16,8 +16,9 @@ The landing page features **Geist Mono** (Vercel's font) for lean, futuristic he
 
 ### Design Excellence
 - **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight)
-- **Organic blob graphics** on all project cards (soft, glowing, Zuma green)
-- **Mistral AI-inspired layout** with Zuma green accents
+- **Multi-color project cards** - each with unique spectrum (yellow-green, aqua-cyan, purple-pink, orange-coral)
+- **Full grain texture** on all project card graphics
+- **Less rounded corners** - refined from `rounded-3xl` to `rounded-xl`
 - **Glassmorphism effects** throughout
 - **Smooth Framer Motion animations**
 - **Dark/Light alternating sections**
@@ -36,15 +37,15 @@ The landing page features **Geist Mono** (Vercel's font) for lean, futuristic he
 
 | Section | Status | Key Features |
 |---------|--------|--------------|
-| **Navbar** | ✅ Done | Fixed top, glassmorphism, responsive |
+| **Navbar** | ✅ Done | Fixed top, glassmorphism, responsive - Links: Projects, Vision, Technology, Roadmap, Contact |
 | **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards |
 | **Industry Ticker** | ✅ Done | Scrolling benchmarks (Walmart, Target, etc.) |
 | **Vision** | ✅ Done | "The Dawn of a New Era", 4 glass cards |
-| **Projects** | ✅ Done | 4 project cards, horizontal scroll, abstract graphics |
-| **Impact** | ✅ Done | 4 animated counters with scroll trigger |
+| **Projects** | ✅ Done | 4 project cards with multi-color spectrums + grain texture, horizontal scroll |
+| ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
 | **Tech Stack** | ✅ Done | AI Foundation tier + 10 tech badges |
-| **Footer** | ✅ Done | Navigation, social links, copyright |
+| **Footer** | ✅ Done | Zuma logo, navigation, social links, copyright |
 
 ### Technical Stack
 
@@ -64,7 +65,7 @@ The landing page features **Geist Mono** (Vercel's font) for lean, futuristic he
 |---------|-------|
 | **Primary Color** | `#00E273` (Zuma Green) |
 | **Dark Background** | `#0A0A0A` |
-| **Light Background** | `#FFFFFF` |
+| **Light Background** | `#faf9f7` (matte off-white) |
 | **Body Font** | Plus Jakarta Sans (premium geometric) |
 | **Heading Font** | **Geist Mono** (Vercel, light weight) |
 | **Body Weight** | 500 (medium) |
@@ -72,7 +73,9 @@ The landing page features **Geist Mono** (Vercel's font) for lean, futuristic he
 | **Letter Spacing** | -0.02em base |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + borders |
 | **Section Pattern** | Dark → Light → Dark → Light |
-| **Graphics Style** | Organic blob gradients (soft, glowing, Zuma green) |
+| **Card Border Radius** | `rounded-xl` / `rounded-lg` (less rounded) |
+| **Graphics Style** | Organic blob gradients with full grain texture, 4 color spectrums |
+| **Card Colors** | Yellow-Green, Aqua-Cyan, Purple-Pink, Orange-Coral |
 
 ---
 
@@ -80,7 +83,8 @@ The landing page features **Geist Mono** (Vercel's font) for lean, futuristic he
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Jan 31, 2026 | **v1.4** | Geist Mono font (light weight), organic blob graphics for all project cards |
+| Jan 31, 2026 | **v1.5** | Multi-color project cards (4 spectrums), full grain texture, reduced border radius, removed Impact section, updated navbar links |
+| Jan 31, 2026 | v1.4 | Geist Mono font (light weight), organic blob graphics for all project cards |
 | Jan 31, 2026 | v1.3 | Plus Jakarta Sans font (premium, Modal-like) |
 | Jan 31, 2026 | v1.2 | AI badges (Claude/Kimi), urgency copy, industry benchmarks |
 | Jan 31, 2026 | v1.1 | Inter font with tight letter-spacing |
@@ -99,13 +103,13 @@ Based on Oracle consultation for funding pitch optimization:
   - "What happens if we don't act?"
   - Loss aversion is powerful for decision-makers
 
-- [ ] **Update Impact Metrics to ROI-Focused**
-  - Current: Generic (4+ projects, 24/7, 100%)
-  - Target: Concrete ROI projections
-    - "40% Time Savings (projected)"
-    - "Rp 2.4B Cost Avoidance (estimated)"
-    - "3x Faster Decisions"
-    - "85% Error Reduction"
+- [ ] **Add ROI Metrics Section (replaces Impact)**
+   - Concrete ROI projections
+     - "40% Time Savings (projected)"
+     - "Rp 2.4B Cost Avoidance (estimated)"
+     - "3x Faster Decisions"
+     - "85% Error Reduction"
+
 
 - [ ] **Add Investment Asks to Roadmap**
   - Phase 1: Rp XXX million (current)
@@ -193,10 +197,10 @@ frontier-landing-page/
 │   ├── sections/
 │   │   ├── Hero.tsx          # ✅ Urgency copy, industry ticker
 │   │   ├── Vision.tsx        # ✅ Glass cards
-│   │   ├── Projects.tsx      # ✅ Horizontal scroll
-│   │   ├── Impact.tsx        # ✅ Animated counters
+│   │   ├── Projects.tsx      # ✅ Multi-color cards with grain texture
 │   │   ├── Roadmap.tsx       # ✅ 3-phase timeline
 │   │   └── TechStack.tsx     # ✅ AI Foundation + tech badges
+│   │   └── ~~Impact.tsx~~    # ❌ Removed
 │   ├── AbstractGraphics.tsx  # Project card visuals
 │   ├── Navbar.tsx            # ✅ Glassmorphism
 │   ├── Footer.tsx            # ✅ Navigation + social
