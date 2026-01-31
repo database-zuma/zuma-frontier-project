@@ -12,7 +12,7 @@ export function Navbar() {
   const navItems = [
     { label: "Projects", href: "#projects" },
     { label: "Vision", href: "#vision" },
-    { label: "Impact", href: "#impact" },
+    { label: "Technology", href: "#tech-stack" },
     { label: "Roadmap", href: "#roadmap" },
   ];
 
@@ -65,7 +65,7 @@ export function Navbar() {
           {/* CTAs - Right */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#contact"
+              href="#footer"
               className="text-sm font-normal text-white/60 hover:text-white transition-colors duration-200 px-3"
             >
               Contact
@@ -100,7 +100,7 @@ export function Navbar() {
           className="md:hidden overflow-hidden mt-2"
         >
           <div 
-            className="py-4 px-4 rounded-2xl"
+            className="py-4 px-4 rounded-xl"
             style={{
               background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%)',
               backdropFilter: 'blur(20px)',
@@ -123,7 +123,7 @@ export function Navbar() {
             </div>
             <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-2">
               <a
-                href="#contact"
+                href="#footer"
                 className="text-sm text-white/70 hover:text-white px-4 py-2.5 rounded-lg hover:bg-white/5 transition-colors"
                 onClick={() => setIsOpen(false)}
               >

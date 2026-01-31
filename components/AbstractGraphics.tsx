@@ -2,277 +2,223 @@
 
 import { motion } from "framer-motion";
 
-// Abstract organic blob graphic component - inspired by soft, glowing shapes
+// Grain texture SVG - full coverage noise
+const GrainOverlay = () => (
+  <div 
+    className="absolute inset-0 opacity-[0.15] pointer-events-none"
+    style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+      mixBlendMode: 'overlay',
+    }}
+  />
+);
+
+// Abstract organic blob graphic component - with grain and color variations
 export function AbstractGraphic({ variant = 1 }: { variant?: number }) {
   const graphics = [
-    // Variant 1: Branch Super App - Single large organic blob (main design)
-    <div key="v1" className="relative w-full h-full flex items-center justify-center">
-      {/* Outer glow */}
-      <div 
-        className="absolute w-[70%] h-[70%] rounded-full"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.3) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-      {/* Main blob - bottom layer */}
+    // Variant 1: Branch Super App - Yellow-Green spectrum (warm, energetic)
+    <div key="v1" className="relative w-full h-full overflow-hidden bg-[#0a0a0a]">
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0f0f0f] to-[#0a0a0a]" />
+      
+      {/* Large yellow-green blob */}
       <motion.div
         animate={{ 
-          scale: [1, 1.02, 1],
-          rotate: [0, 2, 0],
+          scale: [1, 1.08, 1],
+          rotate: [0, 3, 0],
         }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[55%] h-[55%]"
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-[120%] h-[100%] -left-[10%] -top-[20%]"
         style={{
-          background: 'radial-gradient(ellipse at 40% 40%, rgba(0, 226, 115, 0.6) 0%, rgba(0, 178, 95, 0.4) 50%, rgba(0, 100, 60, 0.2) 100%)',
-          borderRadius: '60% 40% 50% 50% / 50% 60% 40% 50%',
-          filter: 'blur(20px)',
+          background: 'radial-gradient(ellipse at 40% 60%, rgba(200, 255, 100, 0.5) 0%, rgba(150, 230, 80, 0.3) 25%, rgba(100, 200, 60, 0.15) 50%, transparent 70%)',
+          filter: 'blur(60px)',
         }}
       />
-      {/* Main blob - top layer */}
-      <motion.div
-        animate={{ 
-          scale: [1, 1.03, 1],
-          rotate: [0, -3, 0],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute w-[45%] h-[50%]"
-        style={{
-          background: 'radial-gradient(ellipse at 35% 35%, rgba(0, 255, 136, 0.7) 0%, rgba(0, 226, 115, 0.5) 40%, rgba(0, 178, 95, 0.3) 100%)',
-          borderRadius: '50% 50% 40% 60% / 60% 40% 60% 40%',
-          filter: 'blur(8px)',
-          transform: 'translate(-5%, -5%)',
-        }}
-      />
-      {/* Highlight */}
-      <div 
-        className="absolute w-[20%] h-[15%] rounded-full"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 70%)',
-          filter: 'blur(10px)',
-          transform: 'translate(-30%, -40%)',
-        }}
-      />
-    </div>,
-
-    // Variant 2: Warehouse Super App - Wider, more structured blob
-    <div key="v2" className="relative w-full h-full flex items-center justify-center">
-      {/* Outer glow */}
-      <div 
-        className="absolute w-[80%] h-[60%] rounded-full"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.25) 0%, transparent 70%)',
-          filter: 'blur(50px)',
-        }}
-      />
-      {/* Main blob - wide bottom */}
-      <motion.div
-        animate={{ 
-          scaleX: [1, 1.03, 1],
-          scaleY: [1, 0.98, 1],
-        }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[65%] h-[45%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 40%, rgba(0, 226, 115, 0.5) 0%, rgba(0, 178, 95, 0.3) 60%, rgba(0, 80, 50, 0.15) 100%)',
-          borderRadius: '45% 55% 50% 50% / 60% 60% 40% 40%',
-          filter: 'blur(15px)',
-        }}
-      />
-      {/* Overlay blob */}
-      <motion.div
-        animate={{ 
-          x: [-3, 3, -3],
-          y: [-2, 2, -2],
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[50%] h-[40%]"
-        style={{
-          background: 'radial-gradient(ellipse at 40% 35%, rgba(0, 255, 150, 0.6) 0%, rgba(0, 226, 115, 0.4) 50%, transparent 100%)',
-          borderRadius: '50% 50% 45% 55% / 55% 45% 55% 45%',
-          filter: 'blur(6px)',
-          transform: 'translate(5%, -10%)',
-        }}
-      />
-      {/* Small accent blob */}
-      <motion.div
-        animate={{ 
-          scale: [1, 1.1, 1],
-          opacity: [0.5, 0.7, 0.5],
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[20%] h-[20%]"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 255, 136, 0.5) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(8px)',
-          transform: 'translate(60%, 30%)',
-        }}
-      />
-    </div>,
-
-    // Variant 3: Multi-MoltBot System - Multiple floating blobs (representing AI agents)
-    <div key="v3" className="relative w-full h-full flex items-center justify-center">
-      {/* Ambient glow */}
-      <div 
-        className="absolute w-[90%] h-[90%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.15) 0%, transparent 60%)',
-          filter: 'blur(40px)',
-        }}
-      />
-      {/* Main central blob */}
+      
+      {/* Secondary blob - warmer yellow */}
       <motion.div
         animate={{ 
           scale: [1, 1.05, 1],
+          x: [0, 20, 0],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute w-[100%] h-[80%] left-[20%] top-[10%]"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 230, 100, 0.35) 0%, rgba(220, 200, 80, 0.2) 40%, transparent 65%)',
+          filter: 'blur(50px)',
+        }}
+      />
+      
+      {/* Accent blob - lime */}
+      <motion.div
+        animate={{ 
+          opacity: [0.4, 0.6, 0.4],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute w-[60%] h-[60%] right-[-10%] bottom-[10%]"
+        style={{
+          background: 'radial-gradient(circle, rgba(180, 255, 100, 0.4) 0%, transparent 60%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      
+      <GrainOverlay />
+    </div>,
+
+    // Variant 2: Warehouse Super App - Aqua-Cyan spectrum (cool, tech)
+    <div key="v2" className="relative w-full h-full overflow-hidden bg-[#0a0a0a]">
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1515] via-[#0a0f12] to-[#0a0a0a]" />
+      
+      {/* Large aqua blob */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.06, 1],
+          x: [-10, 10, -10],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-[110%] h-[90%] left-[-5%] top-[5%]"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(100, 240, 200, 0.45) 0%, rgba(80, 220, 180, 0.3) 30%, rgba(60, 200, 160, 0.15) 55%, transparent 75%)',
+          filter: 'blur(55px)',
+        }}
+      />
+      
+      {/* Secondary blob - cyan blue */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.08, 1],
+          y: [0, -15, 0],
+        }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute w-[90%] h-[80%] right-[-15%] top-[20%]"
+        style={{
+          background: 'radial-gradient(ellipse at 40% 40%, rgba(100, 220, 255, 0.35) 0%, rgba(80, 200, 240, 0.2) 45%, transparent 70%)',
+          filter: 'blur(45px)',
+        }}
+      />
+      
+      {/* Accent blob - teal */}
+      <motion.div
+        animate={{ 
+          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.12, 1],
+        }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute w-[50%] h-[50%] left-[10%] bottom-[5%]"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 200, 180, 0.4) 0%, transparent 65%)',
+          filter: 'blur(35px)',
+        }}
+      />
+      
+      <GrainOverlay />
+    </div>,
+
+    // Variant 3: Multi-MoltBot System - Purple-Pink spectrum (AI, futuristic)
+    <div key="v3" className="relative w-full h-full overflow-hidden bg-[#0a0a0a]">
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#120a15] via-[#0f0a12] to-[#0a0a0a]" />
+      
+      {/* Large purple blob */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.07, 1],
+          rotate: [0, -4, 0],
+        }}
+        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-[100%] h-[100%] left-[0%] top-[0%]"
+        style={{
+          background: 'radial-gradient(ellipse at 60% 40%, rgba(180, 120, 255, 0.4) 0%, rgba(150, 100, 220, 0.25) 35%, rgba(120, 80, 190, 0.12) 60%, transparent 80%)',
+          filter: 'blur(65px)',
+        }}
+      />
+      
+      {/* Secondary blob - pink/magenta */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.09, 1],
+          x: [0, 25, 0],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        className="absolute w-[80%] h-[70%] left-[-10%] top-[30%]"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 120, 200, 0.35) 0%, rgba(220, 100, 170, 0.2) 40%, transparent 65%)',
+          filter: 'blur(50px)',
+        }}
+      />
+      
+      {/* Accent blob - violet */}
+      <motion.div
+        animate={{ 
+          opacity: [0.35, 0.55, 0.35],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute w-[45%] h-[55%] right-[5%] bottom-[15%]"
+        style={{
+          background: 'radial-gradient(circle, rgba(140, 100, 255, 0.45) 0%, transparent 60%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      
+      <GrainOverlay />
+    </div>,
+
+    // Variant 4: Creative Hub Agents - Orange-Coral spectrum (creative, warm)
+    <div key="v4" className="relative w-full h-full overflow-hidden bg-[#0a0a0a]">
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a120a] via-[#120d08] to-[#0a0a0a]" />
+      
+      {/* Large coral blob */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.1, 1],
           rotate: [0, 5, 0],
         }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[35%] h-[35%]"
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute w-[120%] h-[110%] left-[-10%] top-[-10%]"
         style={{
-          background: 'radial-gradient(ellipse at 40% 40%, rgba(0, 255, 136, 0.7) 0%, rgba(0, 226, 115, 0.4) 60%, transparent 100%)',
-          borderRadius: '55% 45% 50% 50% / 50% 55% 45% 50%',
-          filter: 'blur(6px)',
+          background: 'radial-gradient(ellipse at 45% 55%, rgba(255, 160, 120, 0.45) 0%, rgba(255, 140, 100, 0.3) 28%, rgba(230, 120, 80, 0.15) 52%, transparent 78%)',
+          filter: 'blur(60px)',
         }}
       />
-      {/* Floating blob 1 - top right */}
+      
+      {/* Secondary blob - orange */}
       <motion.div
         animate={{ 
-          x: [0, 8, 0],
-          y: [0, -5, 0],
+          scale: [1, 1.06, 1],
+          y: [0, 20, 0],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+        className="absolute w-[90%] h-[80%] right-[-5%] top-[10%]"
+        style={{
+          background: 'radial-gradient(ellipse at 40% 40%, rgba(255, 180, 80, 0.4) 0%, rgba(240, 160, 60, 0.22) 42%, transparent 68%)',
+          filter: 'blur(55px)',
+        }}
+      />
+      
+      {/* Accent blob - gold */}
+      <motion.div
+        animate={{ 
+          opacity: [0.4, 0.6, 0.4],
           scale: [1, 1.08, 1],
         }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-        className="absolute w-[22%] h-[22%]"
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        className="absolute w-[55%] h-[50%] left-[15%] bottom-[10%]"
         style={{
-          background: 'radial-gradient(ellipse at 45% 45%, rgba(0, 226, 115, 0.6) 0%, rgba(0, 178, 95, 0.3) 70%, transparent 100%)',
-          borderRadius: '50% 50% 45% 55% / 55% 50% 50% 45%',
-          filter: 'blur(5px)',
-          transform: 'translate(70%, -50%)',
+          background: 'radial-gradient(circle, rgba(255, 200, 100, 0.4) 0%, transparent 62%)',
+          filter: 'blur(38px)',
         }}
       />
-      {/* Floating blob 2 - bottom left */}
-      <motion.div
-        animate={{ 
-          x: [0, -6, 0],
-          y: [0, 6, 0],
-          scale: [1, 1.06, 1],
-        }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-        className="absolute w-[20%] h-[20%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 255, 150, 0.55) 0%, rgba(0, 200, 100, 0.3) 70%, transparent 100%)',
-          borderRadius: '45% 55% 50% 50% / 50% 45% 55% 50%',
-          filter: 'blur(4px)',
-          transform: 'translate(-65%, 55%)',
-        }}
-      />
-      {/* Floating blob 3 - top left */}
-      <motion.div
-        animate={{ 
-          x: [0, -4, 0],
-          y: [0, -8, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
-        className="absolute w-[18%] h-[18%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.5) 0%, rgba(0, 178, 95, 0.25) 70%, transparent 100%)',
-          borderRadius: '50%',
-          filter: 'blur(5px)',
-          transform: 'translate(-55%, -60%)',
-        }}
-      />
-      {/* Small accent - bottom right */}
-      <motion.div
-        animate={{ 
-          scale: [1, 1.15, 1],
-          opacity: [0.4, 0.6, 0.4],
-        }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[12%] h-[12%]"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 255, 136, 0.5) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(4px)',
-          transform: 'translate(55%, 70%)',
-        }}
-      />
-    </div>,
-
-    // Variant 4: Creative Hub Agents - Flowing artistic blob with gradient blend
-    <div key="v4" className="relative w-full h-full flex items-center justify-center">
-      {/* Wide ambient glow */}
-      <div 
-        className="absolute w-[85%] h-[70%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.2) 0%, rgba(168, 85, 247, 0.08) 50%, transparent 70%)',
-          filter: 'blur(50px)',
-        }}
-      />
-      {/* Main flowing blob */}
-      <motion.div
-        animate={{ 
-          borderRadius: [
-            '60% 40% 55% 45% / 55% 60% 40% 45%',
-            '45% 55% 40% 60% / 60% 45% 55% 40%',
-            '55% 45% 60% 40% / 40% 55% 45% 60%',
-            '60% 40% 55% 45% / 55% 60% 40% 45%',
-          ],
-          rotate: [0, 3, -2, 0],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[55%] h-[50%]"
-        style={{
-          background: 'linear-gradient(135deg, rgba(0, 255, 136, 0.5) 0%, rgba(0, 226, 115, 0.4) 40%, rgba(100, 180, 130, 0.3) 70%, rgba(168, 85, 247, 0.15) 100%)',
-          filter: 'blur(12px)',
-        }}
-      />
-      {/* Overlay bright spot */}
-      <motion.div
-        animate={{ 
-          x: [-5, 8, -5],
-          y: [-3, 5, -3],
-          scale: [1, 1.05, 1],
-        }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute w-[35%] h-[35%]"
-        style={{
-          background: 'radial-gradient(ellipse at 40% 40%, rgba(0, 255, 150, 0.65) 0%, rgba(0, 226, 115, 0.35) 50%, transparent 100%)',
-          borderRadius: '50% 50% 45% 55% / 55% 45% 55% 45%',
-          filter: 'blur(6px)',
-          transform: 'translate(-15%, -15%)',
-        }}
-      />
-      {/* Secondary accent blob */}
-      <motion.div
-        animate={{ 
-          scale: [1, 1.1, 1],
-          opacity: [0.4, 0.6, 0.4],
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute w-[25%] h-[22%]"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(0, 226, 115, 0.4) 0%, rgba(120, 100, 200, 0.2) 60%, transparent 100%)',
-          borderRadius: '45% 55% 50% 50% / 50% 45% 55% 50%',
-          filter: 'blur(8px)',
-          transform: 'translate(50%, 40%)',
-        }}
-      />
-      {/* Highlight */}
-      <div 
-        className="absolute w-[15%] h-[12%] rounded-full"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.25) 0%, transparent 70%)',
-          filter: 'blur(8px)',
-          transform: 'translate(-35%, -45%)',
-        }}
-      />
+      
+      <GrainOverlay />
     </div>,
   ];
 
   return (
-    <div className="relative w-full h-full bg-[#0a0a0a]">
+    <div className="relative w-full h-full">
       {graphics[variant - 1] || graphics[0]}
     </div>
   );
@@ -299,7 +245,7 @@ export function ProductCard({
       className="group relative"
     >
       <div 
-        className="relative h-full rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
+        className="relative h-full rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
         style={{
           background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
           backdropFilter: 'blur(20px)',
@@ -314,7 +260,7 @@ export function ProductCard({
           <div 
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
             style={{
-              background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.1) 45%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 55%, transparent 60%)',
+              background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 55%, transparent 60%)',
               transform: 'translateX(-100%)',
               animation: 'shine 3s infinite',
             }}

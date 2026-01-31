@@ -112,7 +112,7 @@ export function Projects() {
                   className="group cursor-pointer flex-shrink-0 snap-start snap-always"
                 >
                   <div 
-                    className="relative w-[300px] sm:w-[340px] lg:w-[380px] h-[440px] sm:h-[480px] rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
+                    className="relative w-[300px] sm:w-[340px] lg:w-[380px] h-[440px] sm:h-[480px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
                     style={{
                       background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
                       backdropFilter: 'blur(20px)',

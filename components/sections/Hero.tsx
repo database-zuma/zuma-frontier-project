@@ -249,7 +249,7 @@ export function Hero() {
               ].map((stat, i) => (
                 <div 
                   key={i}
-                  className="px-6 py-4 rounded-2xl"
+                  className="px-6 py-4 rounded-lg"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
                     backdropFilter: 'blur(10px)',
@@ -273,7 +273,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 right-0 w-56 rounded-2xl p-5"
+                className="absolute top-0 right-0 w-56 rounded-xl p-5"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -304,7 +304,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [8, -8, 8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-20 left-0 w-52 rounded-2xl p-5"
+                className="absolute bottom-20 left-0 w-52 rounded-xl p-5"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -329,7 +329,7 @@ export function Hero() {
                   rotate: [-1, 1, -1],
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 rounded-2xl p-6"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 rounded-xl p-6"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',

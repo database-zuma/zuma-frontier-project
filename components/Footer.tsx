@@ -3,17 +3,23 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="relative py-20 overflow-hidden bg-[#0a0a0a] border-t border-white/10">
+    <footer id="footer" className="relative py-20 overflow-hidden bg-[#0a0a0a] border-t border-white/10">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00E273] to-[#00b35f] flex items-center justify-center text-white font-normal">
-                Z
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/ZUMA_FINAL LOGO_UPDATED-08.png"
+                  alt="Zuma Frontier"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="font-normal text-white">Zuma Frontier</span>
             </div>

@@ -41,7 +41,7 @@ const visionCards = [
 
 export function Vision() {
   return (
-    <section className="relative py-32 overflow-hidden bg-[#faf9f7]">
+    <section id="vision" className="relative py-32 overflow-hidden bg-[#faf9f7]">
       {/* Light section background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
 
@@ -79,7 +79,7 @@ export function Vision() {
               <div className="group relative h-full">
                 {/* Glass Card - Light version */}
                 <div
-                  className="relative h-full p-5 sm:p-6 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-gray-100"
+                  className="relative h-full p-5 sm:p-6 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-gray-100"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
                     backdropFilter: 'blur(20px)',

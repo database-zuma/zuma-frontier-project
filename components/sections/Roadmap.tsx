@@ -74,7 +74,7 @@ export function Roadmap() {
               >
                 {/* Card */}
                 <div 
-                  className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl h-full transition-all duration-500 hover:scale-[1.02]"
+                  className="relative p-6 sm:p-8 rounded-lg sm:rounded-xl h-full transition-all duration-500 hover:scale-[1.02]"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
                     backdropFilter: 'blur(20px)',

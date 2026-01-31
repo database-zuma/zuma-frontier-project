@@ -78,7 +78,7 @@ export function Impact() {
               className="text-center"
             >
               <div 
-                className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-100"
+                className="relative p-6 sm:p-8 rounded-lg sm:rounded-xl border border-gray-100"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
                   backdropFilter: 'blur(20px)',

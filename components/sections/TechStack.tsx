@@ -32,7 +32,7 @@ const technologies = [
 
 export function TechStack() {
   return (
-    <section className="relative py-32 overflow-hidden bg-[#0a0a0a]">
+    <section id="tech-stack" className="relative py-32 overflow-hidden bg-[#0a0a0a]">
       {/* Background glow */}
       <div className="absolute inset-0">
         <div 
@@ -87,7 +87,7 @@ export function TechStack() {
                 className="group"
               >
                 <div 
-                  className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-center transition-all duration-300 hover:scale-105 min-w-[200px]"
+                  className="relative p-6 sm:p-8 rounded-lg sm:rounded-xl text-center transition-all duration-300 hover:scale-105 min-w-[200px]"
                   style={{
                     background: 'linear-gradient(135deg, rgba(0, 226, 115, 0.15) 0%, rgba(0, 226, 115, 0.05) 100%)',
                     backdropFilter: 'blur(20px)',
@@ -95,7 +95,7 @@ export function TechStack() {
                     boxShadow: '0 0 40px rgba(0, 226, 115, 0.1)',
                   }}
                 >
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/20 group-hover:to-transparent transition-all duration-500" />
+                  <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/20 group-hover:to-transparent transition-all duration-500" />
                   
                   <div className="relative z-10">
                     <ai.icon className="w-8 h-8 text-[#00E273] mx-auto mb-3" />
@@ -131,7 +131,7 @@ export function TechStack() {
               className="group"
             >
               <div 
-                className="relative p-4 sm:p-6 rounded-xl sm:rounded-2xl text-center transition-all duration-300 hover:scale-105"
+                className="relative p-4 sm:p-6 rounded-lg sm:rounded-xl text-center transition-all duration-300 hover:scale-105"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -139,7 +139,7 @@ export function TechStack() {
                 }}
               >
                 {/* Glow on hover */}
-                <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/10 group-hover:to-transparent transition-all duration-500" />
+                <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/10 group-hover:to-transparent transition-all duration-500" />
                 
                 <div className="relative z-10">
                   <p className="text-white font-normal mb-1 group-hover:text-[#00E273] transition-colors">
