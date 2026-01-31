@@ -3,57 +3,20 @@
 import { motion } from "framer-motion";
 import { Brain } from "lucide-react";
 
-// Claude Logo Component - Anthropic's distinctive "A" symbol
-const ClaudeLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 40 40" className={className} fill="none">
-    {/* Outer glow ring */}
-    <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
-    {/* Main circle */}
-    <circle cx="20" cy="20" r="15" stroke="currentColor" strokeWidth="2" opacity="0.8" />
-    {/* Stylized "A" mark - Claude's signature */}
-    <path 
-      d="M20 8 L12 28 M20 8 L28 28 M14 22 L26 22" 
-      stroke="currentColor" 
-      strokeWidth="2.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    />
-    {/* Inner accent dot */}
-    <circle cx="20" cy="17" r="2" fill="currentColor" opacity="0.6" />
+// Claude Logo Component - Official Anthropic brand logo
+const ClaudeLogo = ({ className = "w-16 h-16" }: { className?: string }) => (
+  <svg viewBox="0 0 512 509.64" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path fill="#D77655" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.612-115.613 115.612H115.612C52.026 509.639 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z"/>
+    <path fill="#FCF2EE" fillRule="nonzero" d="M142.27 316.619l73.655-41.326 1.238-3.589-1.238-1.996-3.589-.001-12.31-.759-42.084-1.138-36.498-1.516-35.361-1.896-8.897-1.895-8.34-10.995.859-5.484 7.482-5.03 10.717.935 23.683 1.617 35.537 2.452 25.782 1.517 38.193 3.968h6.064l.86-2.451-2.073-1.517-1.618-1.517-36.776-24.922-39.81-26.338-20.852-15.166-11.273-7.683-5.687-7.204-2.451-15.721 10.237-11.273 13.75.935 3.513.936 13.928 10.716 29.749 23.027 38.848 28.612 5.687 4.727 2.275-1.617.278-1.138-2.553-4.271-21.13-38.193-22.546-38.848-10.035-16.101-2.654-9.655c-.935-3.968-1.617-7.304-1.617-11.374l11.652-15.823 6.445-2.073 15.545 2.073 6.547 5.687 9.655 22.092 15.646 34.78 24.265 47.291 7.103 14.028 3.791 12.992 1.416 3.968 2.449-.001v-2.275l1.997-26.641 3.69-32.707 3.589-42.084 1.239-11.854 5.863-14.206 11.652-7.683 9.099 4.348 7.482 10.716-1.036 6.926-4.449 28.915-8.72 45.294-5.687 30.331h3.313l3.792-3.791 15.342-20.372 25.782-32.227 11.374-12.789 13.27-14.129 8.517-6.724 16.1-.001 11.854 17.617-5.307 18.199-16.581 21.029-13.75 17.819-19.716 26.54-12.309 21.231 1.138 1.694 2.932-.278 44.536-9.479 24.062-4.347 28.714-4.928 12.992 6.066 1.416 6.167-5.106 12.613-30.71 7.583-36.018 7.204-53.636 12.689-.657.48.758.935 24.164 2.275 10.337.556h25.301l47.114 3.514 12.309 8.139 7.381 9.959-1.238 7.583-18.957 9.655-25.579-6.066-59.702-14.205-20.474-5.106-2.83-.001v1.694l17.061 16.682 31.266 28.233 39.152 36.397 1.997 8.999-5.03 7.102-5.307-.758-34.401-25.883-13.27-11.651-30.053-25.302-1.996-.001v2.654l6.926 10.136 36.574 54.975 1.895 16.859-2.653 5.485-9.479 3.311-10.414-1.895-21.408-30.054-22.092-33.844-17.819-30.331-2.173 1.238-10.515 113.261-4.929 5.788-11.374 4.348-9.478-7.204-5.03-11.652 5.03-23.027 6.066-30.052 4.928-23.886 4.449-29.674 2.654-9.858-.177-.657-2.173.278-22.37 30.71-34.021 45.977-26.919 28.815-6.445 2.553-11.173-5.789 1.037-10.337 6.243-9.2 37.257-47.392 22.47-29.371 14.508-16.961-.101-2.451h-.859l-98.954 64.251-17.618 2.275-7.583-7.103.936-11.652 3.589-3.791 29.749-20.474-.101.102.024.101z"/>
   </svg>
 );
 
-// Kimi Logo Component - Moonshot AI's crescent moon motif
-const KimiLogo = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg viewBox="0 0 40 40" className={className} fill="none">
-    {/* Outer orbital ring */}
-    <circle cx="20" cy="20" r="17" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-    {/* Main crescent moon shape */}
-    <path 
-      d="M26 8 
-         C32 12 34 20 32 28 
-         C30 34 24 38 16 36 
-         C22 34 26 28 26 20 
-         C26 14 24 10 20 8 
-         C22 7 24 7 26 8Z" 
-      fill="currentColor" 
-      opacity="0.9"
-    />
-    {/* Inner crescent highlight */}
-    <path 
-      d="M24 12 
-         C28 15 29 20 28 26 
-         C27 30 24 33 20 33 
-         C24 31 26 26 26 20 
-         C26 16 25 13 22 11 
-         C23 11 24 11 24 12Z" 
-      fill="currentColor" 
-      opacity="0.4"
-    />
-    {/* Star accent */}
-    <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.8" />
-    <circle cx="10" cy="18" r="1.2" fill="currentColor" opacity="0.5" />
-    <circle cx="14" cy="24" r="1" fill="currentColor" opacity="0.4" />
+// Kimi Logo Component - Official Moonshot AI brand logo  
+const KimiLogo = ({ className = "w-16 h-16" }: { className?: string }) => (
+  <svg viewBox="0 0 512 512" className={className} xmlns="http://www.w3.org/2000/svg">
+    <path d="M503 114.333v280c0 60.711-49.29 110-110 110H113c-60.711 0-110-49.289-110-110v-280c0-60.71 49.289-110 110-110h280c60.71 0 110 49.29 110 110z" fill="#000"/>
+    <path d="M342.065 189.759c1.886-2.42 3.541-4.63 5.289-6.77.81-1.007.74-1.771-.046-2.824-7.58-9.965-8.298-21.028-3.935-32.254 3.275-8.448 10.52-12.406 19.373-13.25 5.52-.521 10.936.046 15.959 2.73 6.596 3.53 10.438 8.912 11.688 16.341.995 5.926.81 11.712-.868 17.452-2.974 10.161-10.277 15.427-20.287 16.758-8.31 1.11-16.734 1.25-25.113 1.817-.648.046-1.308 0-2.06 0z" fill="#027aff"/>
+    <path d="M321.512 144.254h-50.064l-39.637 90.384h-56.036v-89.99H131v232.868h44.787v-98.103h78.973c13.598 0 26.015-7.927 31.744-20.252v118.355h44.787v-98.103c0-23.342-18.239-42.97-41.523-44.671v-.116h-24.593a45.577 45.577 0 0026.884-24.534l29.453-65.838z" fill="#fff"/>
   </svg>
 );
 
@@ -335,19 +298,19 @@ export function TechStack() {
           </p>
         </motion.div>
 
-        {/* AI Foundation - Premium Tier */}
+        {/* AI Foundation - Premium Tier - Big Standalone Logos */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <p className="text-xs text-white/40 uppercase tracking-[0.2em] mb-6 text-center font-light flex items-center justify-center gap-2">
+          <p className="text-xs text-white/40 uppercase tracking-[0.2em] mb-8 text-center font-light flex items-center justify-center gap-2">
             <Brain className="w-4 h-4 text-[#00E273]" />
             AI Foundation
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16">
             {aiFoundation.map((ai, index) => (
               <motion.div
                 key={ai.name}
@@ -355,29 +318,26 @@ export function TechStack() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group"
+                whileHover={{ scale: 1.05 }}
+                className="group text-center"
               >
-                <div 
-                  className="relative p-6 sm:p-8 rounded-lg sm:rounded-xl text-center transition-all duration-300 hover:scale-105 min-w-[200px]"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(0, 226, 115, 0.15) 0%, rgba(0, 226, 115, 0.05) 100%)',
-                    backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(0, 226, 115, 0.3)',
-                    boxShadow: '0 0 40px rgba(0, 226, 115, 0.1)',
-                  }}
-                >
-                  <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#00E273]/0 to-[#00E273]/0 group-hover:from-[#00E273]/20 group-hover:to-transparent transition-all duration-500" />
-                  
-                  <div className="relative z-10">
-                    <ai.logo className="w-8 h-8 text-[#00E273] mx-auto mb-3" />
-                    <p className="text-white font-medium text-lg mb-1">
-                      {ai.name}
-                    </p>
-                    <p className="text-xs text-[#00E273] font-light">
-                      {ai.description}
-                    </p>
-                  </div>
+                {/* Big standalone logo - no box */}
+                <div className="relative">
+                  {/* Subtle glow on hover */}
+                  <div 
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+                    style={{
+                      background: index === 0 ? 'rgba(215, 118, 85, 0.3)' : 'rgba(2, 122, 255, 0.3)',
+                    }}
+                  />
+                  <ai.logo className="w-20 h-20 sm:w-24 sm:h-24 relative z-10 transition-transform duration-300 drop-shadow-lg" />
                 </div>
+                <p className="text-white font-medium text-base sm:text-lg mt-4 mb-1">
+                  {ai.name}
+                </p>
+                <p className="text-xs text-white/50 font-light">
+                  {ai.description}
+                </p>
               </motion.div>
             ))}
           </div>
