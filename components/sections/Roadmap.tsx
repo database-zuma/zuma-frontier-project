@@ -46,7 +46,7 @@ export function Roadmap() {
           className="text-center mb-16 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Strategic Roadmap</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 font-mono">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6 font-mono">
             our path to the
             <br />
             <span className="text-[#00E273]">future</span>

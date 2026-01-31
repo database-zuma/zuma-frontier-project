@@ -185,7 +185,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] tracking-tight font-mono"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[0.9] tracking-tight font-mono"
                 >
                   frontier
                 </motion.h1>
@@ -193,7 +193,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#00E273] tracking-tight font-mono"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#00E273] tracking-tight font-mono"
                 >
                   project.
                 </motion.p>

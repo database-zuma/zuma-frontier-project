@@ -26,7 +26,7 @@
   --color-zuma-green: var(--zuma-green);
   --color-zuma-green-dark: var(--zuma-green-dark);
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-mono: var(--font-geist-mono);
 }
 
 /* Base Styles */
@@ -44,23 +44,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography: Space Mono for headings - Futuristic computer look */
+/* Typography: Geist Mono for headings - Lean futuristic look */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
   letter-spacing: -0.02em;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-/* Large titles - even more striking */
+/* Large titles - light weight for elegance */
 .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-9xl {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: -0.02em;
+  font-weight: 300;
 }
 
 /* Utility class for mono headings */
 .font-heading {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
   letter-spacing: -0.02em;
 }
 

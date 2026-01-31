@@ -55,7 +55,7 @@ export function Impact() {
           className="text-center mb-12 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Impact & Metrics</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 font-mono">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6 font-mono">
             the future
             <br />
             <span className="text-[#00E273]">by numbers</span>
