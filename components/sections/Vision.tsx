@@ -41,7 +41,7 @@ const visionCards = [
 
 export function Vision() {
   return (
-    <section className="relative py-32 overflow-hidden bg-white">
+    <section className="relative py-32 overflow-hidden bg-[#faf9f7]">
       {/* Light section background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
 

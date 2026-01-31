@@ -6,16 +6,17 @@
 
 ---
 
-## Current Status: v1.3 - Pitching Ready
+## Current Status: v1.4 - Premium Typography + Organic Graphics
 
-The landing page is **live and optimized for funding pitches** with premium design and persuasive copy.
+The landing page features **Geist Mono** (Vercel's font) for lean, futuristic headings and **organic blob graphics** on all project cards.
 
 ---
 
 ## Key Achievements
 
 ### Design Excellence
-- **Premium Font:** Plus Jakarta Sans (similar to Modal.com's Söhne)
+- **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight)
+- **Organic blob graphics** on all project cards (soft, glowing, Zuma green)
 - **Mistral AI-inspired layout** with Zuma green accents
 - **Glassmorphism effects** throughout
 - **Smooth Framer Motion animations**
@@ -64,12 +65,14 @@ The landing page is **live and optimized for funding pitches** with premium desi
 | **Primary Color** | `#00E273` (Zuma Green) |
 | **Dark Background** | `#0A0A0A` |
 | **Light Background** | `#FFFFFF` |
-| **Font Family** | Plus Jakarta Sans (premium geometric) |
-| **Font Weight** | 500 (medium) base, 600 for headings |
-| **Letter Spacing** | -0.02em base, -0.04em for large text |
-| **Mono Font** | JetBrains Mono |
+| **Body Font** | Plus Jakarta Sans (premium geometric) |
+| **Heading Font** | **Geist Mono** (Vercel, light weight) |
+| **Body Weight** | 500 (medium) |
+| **Heading Weight** | 300 (light) for large titles, 400 for h3-h6 |
+| **Letter Spacing** | -0.02em base |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + borders |
 | **Section Pattern** | Dark → Light → Dark → Light |
+| **Graphics Style** | Organic blob gradients (soft, glowing, Zuma green) |
 
 ---
 
@@ -77,8 +80,9 @@ The landing page is **live and optimized for funding pitches** with premium desi
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Jan 31, 2026 | **v1.3** | Plus Jakarta Sans font (premium, Modal-like) |
-| Jan 31, 2026 | **v1.2** | AI badges (Claude/Kimi), urgency copy, industry benchmarks |
+| Jan 31, 2026 | **v1.4** | Geist Mono font (light weight), organic blob graphics for all project cards |
+| Jan 31, 2026 | v1.3 | Plus Jakarta Sans font (premium, Modal-like) |
+| Jan 31, 2026 | v1.2 | AI badges (Claude/Kimi), urgency copy, industry benchmarks |
 | Jan 31, 2026 | v1.1 | Inter font with tight letter-spacing |
 | Jan 31, 2026 | v1.0 | Initial MVP - all sections complete |
 

@@ -72,7 +72,8 @@ export function Navbar() {
             </a>
             <Button
               size="sm"
-              className="bg-[#00E273] hover:bg-[#00FF88] text-black text-sm font-medium rounded-full px-5 h-8 transition-all duration-200 hover:shadow-lg hover:shadow-[#00E273]/20"
+              variant="outline"
+              className="bg-transparent border border-white/20 text-white hover:bg-white/5 hover:border-white/40 text-sm font-medium rounded-full px-5 h-8 transition-all duration-200"
             >
               View Projects
             </Button>

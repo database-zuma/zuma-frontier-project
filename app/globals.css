@@ -6,8 +6,8 @@
   --zuma-green-dark: #00b35f;
   --zuma-green-light: #00FF88;
   
-  /* Light Theme */
-  --background: #ffffff;
+  /* Light Theme - Matte off-white, not pure white */
+  --background: #faf9f7;
   --foreground: #1a1a1a;
   
   /* Text Colors */

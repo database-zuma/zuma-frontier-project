@@ -32,7 +32,7 @@ const phases = [
 
 export function Roadmap() {
   return (
-    <section id="roadmap" className="relative py-32 overflow-hidden bg-white">
+    <section id="roadmap" className="relative py-32 overflow-hidden bg-[#faf9f7]">
       {/* Subtle background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
 
