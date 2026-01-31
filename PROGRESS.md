@@ -2,13 +2,13 @@
 
 > **Live URL:** https://frontier-landing-page.vercel.app  
 > **GitHub:** https://github.com/database-zuma/zuma-frontier-project  
-> **Last Updated:** January 31, 2026
+> **Last Updated:** February 1, 2026
 
 ---
 
-## Current Status: v1.6 - Tech Logo Ticker + Tight Typography
+## Current Status: v1.7 - Monochrome Refinement + Perspective Grid
 
-The landing page features **Geist Mono** with tight letter-spacing, **animated tech logo ticker** with hover glow effects, and **multi-color project cards** with grain texture.
+The landing page features a **cohesive green-adjacent color palette**, **vanishing point perspective grid** in hero background, **monochrome tech icons**, and **reduced border radius** for a sharper, more professional look.
 
 ---
 
@@ -16,13 +16,15 @@ The landing page features **Geist Mono** with tight letter-spacing, **animated t
 
 ### Design Excellence
 - **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight, tight letter-spacing)
-- **Tech logo ticker** - 15 tech logos in 3 scrolling rows with color-matched hover glow
-- **Multi-color project cards** - each with unique spectrum (yellow-green, aqua-cyan, purple-pink, orange-coral)
+- **Monochrome tech icons** - 15 logos in white/gray for cohesive aesthetic
+- **Green-adjacent color palette** - all project cards use harmonious green variants (#00E273, #00D4AA, #00B899, #7AE060)
+- **Vanishing point perspective grid** - animated SVG grid in hero background
 - **Full grain texture** on all project card graphics
-- **Less rounded corners** - refined from `rounded-3xl` to `rounded-xl`
+- **Sharp corners** - refined to `rounded-md` (almost square)
 - **Glassmorphism effects** throughout
 - **Smooth Framer Motion animations**
 - **Dark/Light alternating sections**
+- **Official AI logos** - Claude (Anthropic) and Kimi (Moonshot AI) brand SVGs
 
 ### Pitching Optimizations (Oracle-Guided)
 - **"Powered by" badges:** Claude Opus 4.5 & Kimi K2.5 in Tech Stack
@@ -74,9 +76,11 @@ The landing page features **Geist Mono** with tight letter-spacing, **animated t
 | **Title Letter Spacing** | -0.04em (tight) for large titles, -0.03em for headings |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + borders |
 | **Section Pattern** | Dark → Light → Dark → Light |
-| **Card Border Radius** | `rounded-xl` / `rounded-lg` (less rounded) |
-| **Graphics Style** | Organic blob gradients with full grain texture, 4 color spectrums |
-| **Card Colors** | Yellow-Green, Aqua-Cyan, Purple-Pink, Orange-Coral |
+| **Card Border Radius** | `rounded-md` (almost square, sharp) |
+| **Graphics Style** | Organic blob gradients with full grain texture, green-adjacent spectrums |
+| **Card Colors** | Pure Green `#00E273`, Aqua-Teal `#00D4AA`, Deep Teal `#00B899`, Lime `#7AE060` |
+| **Tech Icons** | Monochrome white/gray (no colors) |
+| **Hero Background** | Vanishing point perspective grid + gradient orbs |
 
 ---
 
@@ -84,7 +88,8 @@ The landing page features **Geist Mono** with tight letter-spacing, **animated t
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Jan 31, 2026 | **v1.6** | Tech logo ticker (15 logos, 3 rows, hover glow), tighter title letter-spacing (-0.04em) |
+| Feb 1, 2026 | **v1.7** | Monochrome refinement: green-adjacent color palette for project cards, vanishing point perspective grid in hero, monochrome tech icons (white/gray), reduced border radius (rounded-md), fixed navbar width, updated footer (Instagram only), official Claude/Kimi SVG logos |
+| Jan 31, 2026 | v1.6 | Tech logo ticker (15 logos, 3 rows, hover glow), tighter title letter-spacing (-0.04em) |
 | Jan 31, 2026 | v1.5 | Multi-color project cards (4 spectrums), full grain texture, reduced border radius, removed Impact section, updated navbar links |
 | Jan 31, 2026 | v1.4 | Geist Mono font (light weight), organic blob graphics for all project cards |
 | Jan 31, 2026 | v1.3 | Plus Jakarta Sans font (premium, Modal-like) |

@@ -62,105 +62,106 @@ const techRows = [
   ],
 ];
 
-// SVG Icons for each technology
+// SVG Icons for each technology - MONOCHROME style (white/gray)
 const TechIcon = ({ name }: { name: string }) => {
   const icons: Record<string, React.ReactNode> = {
     "Next.js": (
-      <svg viewBox="0 0 180 180" className="w-full h-full">
-        <mask id="nextMask" x="0" y="0" width="180" height="180">
-          <circle cx="90" cy="90" r="90" fill="white"/>
-        </mask>
-        <g mask="url(#nextMask)">
-          <circle cx="90" cy="90" r="90" fill="black"/>
-          <path d="M149.5 130.5L66.5 50.5V129.5" stroke="white" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M110.5 50.5H149.5" stroke="white" strokeWidth="16" strokeLinecap="round"/>
-        </g>
+      <svg viewBox="0 0 100 100" className="w-full h-full">
+        <circle cx="50" cy="50" r="45" fill="white" fillOpacity="0.9"/>
+        <path d="M70 72L38 30V70" stroke="#0a0a0a" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        <path d="M62 30L70 30" stroke="#0a0a0a" strokeWidth="8" strokeLinecap="round"/>
       </svg>
     ),
     "React": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <circle cx="50" cy="50" r="8" fill="#61DAFB"/>
-        <ellipse cx="50" cy="50" rx="40" ry="15" fill="none" stroke="#61DAFB" strokeWidth="3"/>
-        <ellipse cx="50" cy="50" rx="40" ry="15" fill="none" stroke="#61DAFB" strokeWidth="3" transform="rotate(60 50 50)"/>
-        <ellipse cx="50" cy="50" rx="40" ry="15" fill="none" stroke="#61DAFB" strokeWidth="3" transform="rotate(120 50 50)"/>
+        <circle cx="50" cy="50" r="6" fill="white" fillOpacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="35" ry="14" fill="none" stroke="white" strokeWidth="2" opacity="0.8"/>
+        <ellipse cx="50" cy="50" rx="35" ry="14" fill="none" stroke="white" strokeWidth="2" opacity="0.8" transform="rotate(60 50 50)"/>
+        <ellipse cx="50" cy="50" rx="35" ry="14" fill="none" stroke="white" strokeWidth="2" opacity="0.8" transform="rotate(120 50 50)"/>
       </svg>
     ),
     "TypeScript": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect width="100" height="100" rx="15" fill="#3178C6"/>
-        <path d="M65 75V85H85V90H15V85H35V75H65Z" fill="white"/>
-        <text x="50" y="65" textAnchor="middle" fill="white" fontSize="45" fontWeight="bold" fontFamily="Arial">TS</text>
+        <rect x="5" y="5" width="90" height="90" rx="12" fill="white" fillOpacity="0.9"/>
+        <text x="50" y="65" textAnchor="middle" fill="#0a0a0a" fontSize="40" fontWeight="bold" fontFamily="Arial">TS</text>
       </svg>
     ),
     "Tailwind CSS": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 25c-10 0-16 5-18 15 3-4 7-6 11-6 5 0 7 2 7 6 0 3-2 6-5 10-7 8-12 12-12 20 0 10 8 17 18 17 10 0 20-7 24-17-8 4-14 6-18 6-5 0-7-2-7-6 0-3 2-6 5-10 7-8 12-12 12-20 0-10-8-15-17-15z" fill="#38B2AC"/>
+        <path d="M50 25c-10 0-16 5-18 15 3-4 7-6 11-6 5 0 7 2 7 6 0 3-2 6-5 10-7 8-12 12-12 20 0 10 8 17 18 17 10 0 20-7 24-17-8 4-14 6-18 6-5 0-7-2-7-6 0-3 2-6 5-10 7-8 12-12 12-20 0-10-8-15-17-15z" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
     "Vercel": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <polygon points="50,10 90,90 10,90" fill="white"/>
+        <polygon points="50,15 85,85 15,85" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
     "Python": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 10c-10 0-20 5-20 15v10h20v5h-25c-10 0-15 10-15 20s5 20 15 20h10v-15c0-10 10-15 20-15h15v-20c0-10-10-15-20-15z" fill="#3776AB"/>
-        <path d="M75 30h-10v15c0 10-10 15-20 15h-15v20c0 10 10 15 20 15s20-5 20-15v-10h-10v-5h25c10 0 15-10 15-20s-5-20-15-20z" fill="#FFD43B"/>
+        <path d="M50 10c-10 0-20 5-20 15v10h20v5h-25c-10 0-15 10-15 20s5 20 15 20h10v-15c0-10 10-15 20-15h15v-20c0-10-10-15-20-15z" fill="white" fillOpacity="0.7"/>
+        <path d="M75 30h-10v15c0 10-10 15-20 15h-15v20c0 10 10 15 20 15s20-5 20-15v-10h-10v-5h25c10 0 15-10 15-20s-5-20-15-20z" fill="white" fillOpacity="0.9"/>
+        <circle cx="35" cy="22" r="4" fill="#0a0a0a"/>
+        <circle cx="65" cy="78" r="4" fill="#0a0a0a"/>
       </svg>
     ),
     "FastAPI": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect width="100" height="100" rx="20" fill="#009688"/>
-        <path d="M25 35h50v10H25zM25 55h40v10H25zM25 75h30v10H25z" fill="white"/>
+        <circle cx="50" cy="50" r="42" fill="white" fillOpacity="0.9"/>
+        <path d="M35 30L65 50L35 70V30Z" fill="#0a0a0a"/>
       </svg>
     ),
     "Supabase": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 5L15 55h30l-10 40 40-50H45l10-40z" fill="#3ECF8E"/>
+        <path d="M52 95c-2 3-7 1-7-3V55H15c-4 0-6-5-3-8l36-42c2-3 7-1 7 3v37h30c4 0 6 5 3 8L52 95z" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
     "PostgreSQL": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M70 20c-10 0-20 5-25 15-5-10-15-15-25-15-15 0-25 10-25 25 0 20 25 40 50 55 25-15 50-35 50-55 0-15-10-25-25-25z" fill="#336791"/>
-        <text x="50" y="55" textAnchor="middle" fill="white" fontSize="25" fontWeight="bold">Pg</text>
+        <ellipse cx="50" cy="35" rx="35" ry="25" fill="none" stroke="white" strokeWidth="4" opacity="0.9"/>
+        <path d="M15 35v30c0 14 16 25 35 25s35-11 35-25V35" fill="none" stroke="white" strokeWidth="4" opacity="0.9"/>
+        <ellipse cx="50" cy="65" rx="35" ry="25" fill="none" stroke="white" strokeWidth="4" opacity="0.5"/>
       </svg>
     ),
     "Node.js": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 10L15 30v40l35 20 35-20V30L50 10z" fill="#339933"/>
-        <text x="50" y="60" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold">Node</text>
+        <path d="M50 5L10 28v44l40 23 40-23V28L50 5z" fill="none" stroke="white" strokeWidth="4" opacity="0.9"/>
+        <path d="M50 5v90M10 28l40 22 40-22M10 72l40-22 40 22" stroke="white" strokeWidth="2" opacity="0.5"/>
       </svg>
     ),
     "Gemini": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 5L55 45L95 50L55 55L50 95L45 55L5 50L45 45Z" fill="#4285F4"/>
+        <path d="M50 5L55 42L92 50L55 58L50 95L45 58L8 50L45 42Z" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
     "OpenAI": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="8"/>
-        <path d="M50 20c17 0 30 13 30 30s-13 30-30 30" fill="none" stroke="white" strokeWidth="8" strokeLinecap="round"/>
+        <path d="M50 10a40 40 0 0 1 0 80" fill="none" stroke="white" strokeWidth="5" opacity="0.9" strokeLinecap="round"/>
+        <path d="M50 10a40 40 0 0 0 0 80" fill="none" stroke="white" strokeWidth="5" opacity="0.5" strokeLinecap="round"/>
+        <circle cx="50" cy="50" r="8" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
     "GCP": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 20L20 50l30 30 30-30-30-30z" fill="#4285F4"/>
-        <circle cx="50" cy="50" r="15" fill="#EA4335"/>
+        <path d="M50 15L20 35v30l30 20 30-20V35L50 15z" fill="none" stroke="white" strokeWidth="4" opacity="0.9"/>
+        <circle cx="50" cy="50" r="12" fill="white" fillOpacity="0.7"/>
+        <path d="M50 15v70M20 35l60 30M80 35L20 65" stroke="white" strokeWidth="2" opacity="0.4"/>
       </svg>
     ),
     "Docker": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <rect x="20" y="40" width="15" height="15" fill="#2496ED"/>
-        <rect x="40" y="40" width="15" height="15" fill="#2496ED"/>
-        <rect x="60" y="40" width="15" height="15" fill="#2496ED"/>
-        <rect x="30" y="25" width="15" height="15" fill="#2496ED"/>
-        <rect x="50" y="25" width="15" height="15" fill="#2496ED"/>
-        <path d="M20 60h60c0 15-10 25-25 25s-25-10-25-25z" fill="#2496ED"/>
+        <rect x="12" y="42" width="12" height="12" fill="white" fillOpacity="0.9" rx="2"/>
+        <rect x="28" y="42" width="12" height="12" fill="white" fillOpacity="0.9" rx="2"/>
+        <rect x="44" y="42" width="12" height="12" fill="white" fillOpacity="0.9" rx="2"/>
+        <rect x="60" y="42" width="12" height="12" fill="white" fillOpacity="0.9" rx="2"/>
+        <rect x="28" y="28" width="12" height="12" fill="white" fillOpacity="0.7" rx="2"/>
+        <rect x="44" y="28" width="12" height="12" fill="white" fillOpacity="0.7" rx="2"/>
+        <rect x="44" y="14" width="12" height="12" fill="white" fillOpacity="0.5" rx="2"/>
+        <path d="M5 58h90c-5 25-35 32-45 32S10 78 5 58z" fill="white" fillOpacity="0.3"/>
       </svg>
     ),
     "GitHub": (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <path d="M50 5C25 5 5 25 5 50c0 20 12 36 30 42 2 0 3-1 3-2v-8c-12 2-15-6-15-6-2-5-5-6-5-6-4-3 0-3 0-3 5 0 7 5 7 5 4 7 11 5 14 4 0-3 2-5 3-6-10-1-20-5-20-21 0-5 2-9 5-12-1-1-2-5 0-11 0 0 4-1 13 5 4-1 8-2 12-2s8 1 12 2c9-6 13-5 13-5 2 6 1 10 0 11 3 3 5 7 5 12 0 16-10 20-20 21 2 2 3 4 3 7v15c0 1 1 2 3 2 18-6 30-22 30-42 0-25-20-45-45-45z" fill="white"/>
+        <path d="M50 5C25 5 5 25 5 50c0 20 12 36 30 42 2 0 3-1 3-2v-8c-12 2-15-6-15-6-2-5-5-6-5-6-4-3 0-3 0-3 5 0 7 5 7 5 4 7 11 5 14 4 0-3 2-5 3-6-10-1-20-5-20-21 0-5 2-9 5-12-1-1-2-5 0-11 0 0 4-1 13 5 4-1 8-2 12-2s8 1 12 2c9-6 13-5 13-5 2 6 1 10 0 11 3 3 5 7 5 12 0 16-10 20-20 21 2 2 3 4 3 7v15c0 1 1 2 3 2 18-6 30-22 30-42 0-25-20-45-45-45z" fill="white" fillOpacity="0.9"/>
       </svg>
     ),
   };
@@ -168,54 +169,45 @@ const TechIcon = ({ name }: { name: string }) => {
   return icons[name] || <div className="w-full h-full bg-white/20 rounded-lg" />;
 };
 
-// Tech Logo Card Component
-const TechLogo = ({ name, color }: { name: string; color: string }) => {
+// Tech Logo Card Component - Monochrome style with minimal rounding
+const TechLogo = ({ name }: { name: string; color?: string }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       className="group relative flex-shrink-0"
     >
       <div 
-        className="relative w-20 h-20 sm:w-24 sm:h-24 p-4 rounded-xl flex items-center justify-center transition-all duration-300"
+        className="relative w-20 h-20 sm:w-24 sm:h-24 p-4 rounded-md flex items-center justify-center transition-all duration-300"
         style={{
-          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
-        {/* Glow effect on hover */}
+        {/* Subtle hover glow - white/gray only */}
         <div 
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            boxShadow: `0 0 30px ${color}40, 0 0 60px ${color}20`,
+            background: 'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)',
           }}
         />
         
-        {/* Inner glow */}
+        {/* Border highlight on hover */}
         <div 
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            background: `radial-gradient(circle at center, ${color}20 0%, transparent 70%)`,
-          }}
-        />
-        
-        {/* Border glow on hover */}
-        <div 
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            border: `1px solid ${color}60`,
+            border: '1px solid rgba(255, 255, 255, 0.2)',
           }}
         />
         
         {/* Icon */}
-        <div className="relative z-10 w-10 h-10 sm:w-12 sm:h-12 opacity-80 group-hover:opacity-100 transition-opacity">
+        <div className="relative z-10 w-10 h-10 sm:w-12 sm:h-12 opacity-60 group-hover:opacity-100 transition-opacity">
           <TechIcon name={name} />
         </div>
       </div>
       
       {/* Tooltip */}
       <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-        <span className="text-xs text-white/60 font-light">{name}</span>
+        <span className="text-xs text-white/50 font-light">{name}</span>
       </div>
     </motion.div>
   );
@@ -325,7 +317,7 @@ export function TechStack() {
                 <div className="relative">
                   {/* Subtle glow on hover */}
                   <div 
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+                    className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
                     style={{
                       background: index === 0 ? 'rgba(215, 118, 85, 0.3)' : 'rgba(2, 122, 255, 0.3)',
                     }}

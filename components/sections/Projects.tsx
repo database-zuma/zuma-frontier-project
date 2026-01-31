@@ -21,7 +21,7 @@ const projects = [
     tagline: "Next-Gen Logistics",
     description: "Desktop operations platform for warehouse teams with smart automation, predictive alerts, and seamless coordination.",
     status: "Planning",
-    statusColor: "bg-blue-500",
+    statusColor: "bg-[#00D4AA]",
     variant: 2,
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     tagline: "AI Workforce",
     description: "Meet the team of the future: ARIA, DATUM, and CODER. AI agents working 24/7 to amplify human potential across every operation.",
     status: "Brainstorm",
-    statusColor: "bg-purple-500",
+    statusColor: "bg-[#00B899]",
     variant: 3,
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     tagline: "Generative Creativity",
     description: "AI-powered creative workflows that accelerate innovation while maintaining brand consistency through intelligent generation.",
     status: "Developing",
-    statusColor: "bg-orange-500",
+    statusColor: "bg-[#7AE060]",
     variant: 4,
   },
 ];

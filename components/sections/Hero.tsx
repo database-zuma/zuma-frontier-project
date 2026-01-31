@@ -4,147 +4,152 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// Abstract 3D Geometric Shape - Floating Polyhedron
-function FloatingPolyhedron({ 
-  className = "",
-  style = {},
-  delay = 0,
-  duration = 20,
-  variant = "cube",
-}: { 
-  className?: string;
-  style?: React.CSSProperties;
-  delay?: number;
-  duration?: number;
-  variant?: "cube" | "icosahedron" | "torus" | "crystal";
-}) {
-  const shapes = {
-    // Isometric cube wireframe
-    cube: (
-      <g stroke="rgba(255,255,255,0.5)" strokeWidth="0.8" fill="none">
-        {/* Front face */}
-        <path d="M50 30 L80 45 L80 85 L50 70 Z" strokeWidth="1" />
-        {/* Top face */}
-        <path d="M50 30 L80 45 L110 30 L80 15 Z" strokeWidth="1" />
-        {/* Right face */}
-        <path d="M80 45 L110 30 L110 70 L80 85 Z" strokeWidth="1" />
-        {/* Inner edges with gradient opacity */}
-        <path d="M50 30 L50 70" opacity="0.6" />
-        <path d="M80 15 L80 85" opacity="0.3" strokeDasharray="2 2" />
-        <path d="M110 30 L110 70" opacity="0.6" />
-        {/* Vertices glow */}
-        <circle cx="50" cy="30" r="2" fill="rgba(0,226,115,0.6)" />
-        <circle cx="80" cy="15" r="2" fill="rgba(0,226,115,0.4)" />
-        <circle cx="110" cy="30" r="2" fill="rgba(0,226,115,0.6)" />
-        <circle cx="80" cy="85" r="2" fill="rgba(0,226,115,0.5)" />
-      </g>
-    ),
-    // Low-poly sphere / icosahedron wireframe
-    icosahedron: (
-      <g stroke="rgba(255,255,255,0.4)" strokeWidth="0.6" fill="none">
-        {/* Outer pentagon ring */}
-        <path d="M80 10 L120 35 L105 80 L55 80 L40 35 Z" strokeWidth="1" opacity="0.7" />
-        {/* Inner star connections */}
-        <path d="M80 10 L55 80" opacity="0.4" />
-        <path d="M80 10 L105 80" opacity="0.4" />
-        <path d="M120 35 L55 80" opacity="0.4" />
-        <path d="M40 35 L105 80" opacity="0.4" />
-        <path d="M40 35 L120 35" opacity="0.5" />
-        {/* Center connection */}
-        <path d="M80 10 L80 50 L55 80" opacity="0.3" />
-        <path d="M80 50 L105 80" opacity="0.3" />
-        <path d="M80 50 L40 35" opacity="0.3" />
-        <path d="M80 50 L120 35" opacity="0.3" />
-        {/* Vertices */}
-        <circle cx="80" cy="10" r="2.5" fill="rgba(0,226,115,0.7)" />
-        <circle cx="120" cy="35" r="2" fill="rgba(0,226,115,0.5)" />
-        <circle cx="40" cy="35" r="2" fill="rgba(0,226,115,0.5)" />
-        <circle cx="80" cy="50" r="3" fill="rgba(0,226,115,0.8)" />
-      </g>
-    ),
-    // Torus / ring wireframe
-    torus: (
-      <g stroke="rgba(255,255,255,0.4)" strokeWidth="0.6" fill="none">
-        {/* Outer ellipse */}
-        <ellipse cx="80" cy="50" rx="50" ry="20" strokeWidth="1" opacity="0.6" />
-        {/* Inner ellipse */}
-        <ellipse cx="80" cy="50" rx="30" ry="12" strokeWidth="0.8" opacity="0.5" />
-        {/* Vertical rings */}
-        <ellipse cx="50" cy="50" rx="8" ry="20" opacity="0.4" />
-        <ellipse cx="80" cy="50" rx="8" ry="25" opacity="0.5" />
-        <ellipse cx="110" cy="50" rx="8" ry="20" opacity="0.4" />
-        {/* Cross sections */}
-        <path d="M30 50 Q50 30 80 25 Q110 30 130 50" opacity="0.3" />
-        <path d="M30 50 Q50 70 80 75 Q110 70 130 50" opacity="0.3" />
-        {/* Glow points */}
-        <circle cx="30" cy="50" r="2" fill="rgba(0,226,115,0.5)" />
-        <circle cx="130" cy="50" r="2" fill="rgba(0,226,115,0.5)" />
-        <circle cx="80" cy="25" r="2" fill="rgba(0,226,115,0.6)" />
-      </g>
-    ),
-    // Crystal / gem wireframe  
-    crystal: (
-      <g stroke="rgba(255,255,255,0.5)" strokeWidth="0.7" fill="none">
-        {/* Top pyramid */}
-        <path d="M80 5 L50 40 L80 55 L110 40 Z" strokeWidth="1" opacity="0.7" />
-        {/* Middle band */}
-        <path d="M50 40 L35 55 L50 70 L80 55 L110 70 L125 55 L110 40" opacity="0.6" />
-        <path d="M80 55 L50 70" opacity="0.5" />
-        <path d="M80 55 L110 70" opacity="0.5" />
-        {/* Bottom pyramid */}
-        <path d="M50 70 L80 95 L110 70" strokeWidth="1" opacity="0.7" />
-        <path d="M35 55 L80 95 L125 55" opacity="0.4" />
-        {/* Internal structure */}
-        <path d="M80 5 L80 95" opacity="0.2" strokeDasharray="3 3" />
-        <path d="M35 55 L125 55" opacity="0.2" strokeDasharray="3 3" />
-        {/* Facet highlights */}
-        <path d="M80 5 L80 55" opacity="0.4" />
-        {/* Glow vertices */}
-        <circle cx="80" cy="5" r="3" fill="rgba(0,226,115,0.8)" />
-        <circle cx="80" cy="95" r="2.5" fill="rgba(0,226,115,0.6)" />
-        <circle cx="35" cy="55" r="2" fill="rgba(0,226,115,0.4)" />
-        <circle cx="125" cy="55" r="2" fill="rgba(0,226,115,0.4)" />
-      </g>
-    ),
-  };
-
+// Vanishing Point Perspective Grid - Full coverage background
+function VanishingPointGrid() {
   return (
-    <motion.div
-      className={`absolute ${className}`}
-      style={style}
-      animate={{
-        y: [-10, 10, -10],
-        rotateY: [0, 180, 360],
-        opacity: [0.3, 0.6, 0.3],
-      }}
-      transition={{
-        duration: duration,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: delay,
-      }}
-    >
+    <div className="absolute inset-0 overflow-hidden">
       <svg 
-        viewBox="0 0 160 100" 
-        className="w-full h-full"
+        viewBox="0 0 1000 600" 
+        className="absolute inset-0 w-full h-full"
+        preserveAspectRatio="xMidYMid slice"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Subtle glow behind shape */}
         <defs>
-          <filter id={`glow-${variant}`} x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
+          {/* Gradient for lines fading toward vanishing point */}
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(255,255,255,0.15)" />
+            <stop offset="50%" stopColor="rgba(255,255,255,0.08)" />
+            <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
+          </linearGradient>
+          <linearGradient id="lineGradientGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(0,226,115,0.2)" />
+            <stop offset="50%" stopColor="rgba(0,226,115,0.08)" />
+            <stop offset="100%" stopColor="rgba(0,226,115,0.02)" />
+          </linearGradient>
+          {/* Radial fade from vanishing point */}
+          <radialGradient id="vanishGlow" cx="75%" cy="35%" r="60%">
+            <stop offset="0%" stopColor="rgba(0,226,115,0.15)" />
+            <stop offset="50%" stopColor="rgba(0,226,115,0.05)" />
+            <stop offset="100%" stopColor="transparent" />
+          </radialGradient>
         </defs>
-        <g filter={`url(#glow-${variant})`}>
-          {shapes[variant]}
-        </g>
+
+        {/* Subtle glow at vanishing point */}
+        <ellipse cx="750" cy="210" rx="300" ry="200" fill="url(#vanishGlow)" />
+
+        {/* Horizontal lines converging to vanishing point (right side) */}
+        {[...Array(20)].map((_, i) => {
+          const yStart = 30 + i * 30;
+          const yEnd = 210 + (yStart - 300) * 0.15;
+          const opacity = 0.03 + (i % 3) * 0.02;
+          return (
+            <motion.line
+              key={`h-${i}`}
+              x1="0"
+              y1={yStart}
+              x2="750"
+              y2={yEnd}
+              stroke={i % 5 === 0 ? "rgba(0,226,115,0.1)" : `rgba(255,255,255,${opacity})`}
+              strokeWidth={i % 5 === 0 ? "1" : "0.5"}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 2, delay: i * 0.05, ease: "easeOut" }}
+            />
+          );
+        })}
+
+        {/* Vertical lines with perspective */}
+        {[...Array(25)].map((_, i) => {
+          const xPos = i * 40;
+          const topY = 0;
+          const bottomY = 600;
+          // Lines converge toward vanishing point
+          const perspectiveFactor = 1 - (xPos / 1000) * 0.5;
+          const xEnd = xPos + (750 - xPos) * (1 - perspectiveFactor);
+          const opacity = 0.02 + (i % 4) * 0.01;
+          return (
+            <motion.line
+              key={`v-${i}`}
+              x1={xPos}
+              y1={topY}
+              x2={xEnd}
+              y2={bottomY}
+              stroke={i % 6 === 0 ? "rgba(0,226,115,0.08)" : `rgba(255,255,255,${opacity})`}
+              strokeWidth="0.5"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 + i * 0.03, ease: "easeOut" }}
+            />
+          );
+        })}
+
+        {/* Diagonal perspective lines from vanishing point */}
+        {[...Array(12)].map((_, i) => {
+          const angle = -60 + i * 10;
+          const radians = (angle * Math.PI) / 180;
+          const length = 800;
+          const x2 = 750 - Math.cos(radians) * length;
+          const y2 = 210 - Math.sin(radians) * length;
+          return (
+            <motion.line
+              key={`d-${i}`}
+              x1="750"
+              y1="210"
+              x2={x2}
+              y2={y2}
+              stroke={i % 3 === 0 ? "rgba(0,226,115,0.06)" : "rgba(255,255,255,0.03)"}
+              strokeWidth="0.5"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 2, delay: 1 + i * 0.1, ease: "easeOut" }}
+            />
+          );
+        })}
+
+        {/* Grid intersection points - subtle dots */}
+        {[...Array(8)].map((_, row) => 
+          [...Array(6)].map((_, col) => {
+            const x = 100 + col * 120 + row * 20;
+            const y = 80 + row * 60;
+            const size = 1.5 - row * 0.15;
+            return (
+              <motion.circle
+                key={`dot-${row}-${col}`}
+                cx={x}
+                cy={y}
+                r={size}
+                fill="rgba(0,226,115,0.3)"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 0.4 - row * 0.04 }}
+                transition={{ duration: 0.5, delay: 1.5 + (row * 6 + col) * 0.02 }}
+              />
+            );
+          })
+        )}
+
+        {/* Animated scan line effect */}
+        <motion.line
+          x1="0"
+          y1="0"
+          x2="750"
+          y2="210"
+          stroke="rgba(0,226,115,0.3)"
+          strokeWidth="1"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ 
+            pathLength: [0, 1, 1],
+            opacity: [0, 0.5, 0],
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            repeatDelay: 3,
+            ease: "easeInOut",
+          }}
+        />
       </svg>
-    </motion.div>
+    </div>
   );
 }
 
@@ -155,44 +160,10 @@ function AnimatedBackground() {
       {/* Base dark gradient */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
       
-      {/* Floating 3D Geometric Wireframes */}
-      <FloatingPolyhedron 
-        className="w-48 h-32 opacity-50"
-        style={{ top: '8%', right: '8%' }}
-        delay={0}
-        duration={15}
-        variant="crystal"
-      />
-      <FloatingPolyhedron 
-        className="w-40 h-28 opacity-40"
-        style={{ top: '55%', right: '12%' }}
-        delay={3}
-        duration={20}
-        variant="cube"
-      />
-      <FloatingPolyhedron 
-        className="w-52 h-36 opacity-35"
-        style={{ top: '28%', right: '22%' }}
-        delay={1.5}
-        duration={18}
-        variant="icosahedron"
-      />
-      <FloatingPolyhedron 
-        className="w-36 h-24 opacity-30"
-        style={{ bottom: '25%', right: '5%' }}
-        delay={2}
-        duration={22}
-        variant="torus"
-      />
-      <FloatingPolyhedron 
-        className="w-32 h-22 opacity-25"
-        style={{ top: '75%', right: '30%' }}
-        delay={4}
-        duration={25}
-        variant="cube"
-      />
+      {/* Vanishing Point Perspective Grid - Full coverage */}
+      <VanishingPointGrid />
       
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs - all green family for monochrome */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -223,7 +194,7 @@ function AnimatedBackground() {
         }}
         className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, rgba(168, 85, 247, 0.2) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.4) 0%, rgba(0, 184, 153, 0.15) 40%, transparent 70%)',
           filter: 'blur(100px)',
         }}
       />
@@ -247,29 +218,17 @@ function AnimatedBackground() {
         }}
       />
 
-      {/* Mesh gradient overlay */}
+      {/* Mesh gradient overlay - green family only */}
       <div 
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: `
             radial-gradient(at 40% 20%, rgba(0, 226, 115, 0.15) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, rgba(0, 212, 170, 0.1) 0px, transparent 50%),
             radial-gradient(at 0% 50%, rgba(0, 226, 115, 0.1) 0px, transparent 50%),
-            radial-gradient(at 80% 50%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%)
+            radial-gradient(at 80% 50%, rgba(0, 184, 153, 0.1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(122, 224, 96, 0.1) 0px, transparent 50%)
           `,
-        }}
-      />
-
-      {/* Grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)
-          `,
-          backgroundSize: '80px 80px',
         }}
       />
 
@@ -430,7 +389,7 @@ export function Hero() {
               ].map((stat, i) => (
                 <div 
                   key={i}
-                  className="px-6 py-4 rounded-lg"
+                  className="px-6 py-4 rounded-md"
                   style={{
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
                     backdropFilter: 'blur(10px)',
@@ -454,7 +413,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 right-0 w-56 rounded-xl p-5"
+                className="absolute top-0 right-0 w-56 rounded-md p-5"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -462,7 +421,7 @@ export function Hero() {
                 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00E273] to-[#00b35f] flex items-center justify-center text-white text-sm font-normal">
+                  <div className="w-10 h-10 rounded-md bg-gradient-to-br from-[#00E273] to-[#00b35f] flex items-center justify-center text-white text-sm font-normal">
                     A
                   </div>
                   <div>
@@ -485,7 +444,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [8, -8, 8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-20 left-0 w-52 rounded-xl p-5"
+                className="absolute bottom-20 left-0 w-52 rounded-md p-5"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -510,7 +469,7 @@ export function Hero() {
                   rotate: [-1, 1, -1],
                 }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 rounded-xl p-6"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 rounded-md p-6"
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)',
                   backdropFilter: 'blur(20px)',
