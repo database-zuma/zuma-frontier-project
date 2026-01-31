@@ -44,24 +44,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography: Geist Mono for headings - Lean futuristic look */
+/* Typography: Geist Mono for headings - Tight letter-spacing for titles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   font-weight: 400;
 }
 
-/* Large titles - light weight for elegance */
+/* Large titles - tighter spacing for display text */
 .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-9xl {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
 /* Utility class for mono headings */
 .font-heading {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 /* Slightly looser for small text */
