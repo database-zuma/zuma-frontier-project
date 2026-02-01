@@ -76,9 +76,9 @@ export function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-sm font-light">© 2026 Zuma Frontier Project. All rights reserved.</p>
           <div className="flex gap-6">
-            {["Privacy", "Terms", "Contact"].map((item) => (
-              <a key={item} href="#" className="text-white/30 hover:text-white/60 text-sm font-light transition-colors">{item}</a>
-            ))}
+            <a href="/privacy" className="text-white/30 hover:text-white/60 text-sm font-light transition-colors">Privacy</a>
+            <a href="/terms" className="text-white/30 hover:text-white/60 text-sm font-light transition-colors">Terms</a>
+            <a href="#footer" className="text-white/30 hover:text-white/60 text-sm font-light transition-colors">Contact</a>
           </div>
         </div>
       </div>

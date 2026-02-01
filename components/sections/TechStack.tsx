@@ -311,7 +311,9 @@ export function TechStack() {
                       background: index === 0 ? 'rgba(215, 118, 85, 0.3)' : 'rgba(2, 122, 255, 0.3)',
                     }}
                   />
-                  <ai.logo className="w-20 h-20 sm:w-24 sm:h-24 relative z-10 transition-transform duration-300 drop-shadow-lg" />
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 relative z-10 flex items-center justify-center">
+                    <ai.logo className="w-full h-full transition-transform duration-300 drop-shadow-lg" />
+                  </div>
                 </div>
                 <p className="text-white font-medium text-base sm:text-lg mt-4 mb-1">
                   {ai.name}
