@@ -6,9 +6,9 @@
 
 ---
 
-## Current Status: v1.25 - Pitch Deck CTA & Polish Complete
+## Current Status: v1.26 - Animated Line Chart & Polish Complete
 
-The landing page now includes **big centered pitch deck CTA** before FAQ section, **fixed image zoom jaggy edges**, **reordered Vision cards**, **compressed images** (99.5% reduction), **Privacy & Terms pages**, and all previous features. Production-ready with polished UX.
+The landing page now includes **animated line chart in Hero** (looping upward with dots), **seamless pitch deck CTA** (no glassmorphism), **improved image zoom** (no edge artifacts), and all previous features. Production-ready with enhanced visual effects.
 
 ---
 
@@ -100,6 +100,7 @@ The landing page now includes **big centered pitch deck CTA** before FAQ section
 
 | Date | Version | Changes |
 |------|---------|---------|
+| Feb 1, 2026 | **v1.26** | Animated line chart added to Hero (looping upward trend with moving dots), Pitch Deck CTA made seamless (no glassmorphism box), Image zoom glitch fixed (GPU-accelerated with inner container for clean edges) |
 | Feb 1, 2026 | **v1.25** | Pitch deck CTA moved before FAQ - bigger, centered design with green gradient background. Removed from footer. |
 | Feb 1, 2026 | **v1.24** | Fixed image zoom jaggy edges - added scale buffer (1.05 base → 1.15 hover) to prevent boundary artifacts on What We Do cards |
 | Feb 1, 2026 | **v1.23** | Vision cards reordered: Single Source of Truth → AI-First Operations → Continuous Improvements → Agentic Workflows |

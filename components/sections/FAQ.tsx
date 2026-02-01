@@ -92,46 +92,33 @@ export function FAQ() {
           </p>
         </motion.div>
 
-        {/* Pitch Deck CTA */}
+        {/* Pitch Deck CTA - Seamless with background */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
+          className="mb-16 text-center py-8"
         >
-          <div 
-            className="relative p-8 sm:p-12 rounded-md overflow-hidden text-center"
-            style={{
-              background: 'linear-gradient(135deg, rgba(0, 226, 115, 0.1) 0%, rgba(0, 226, 115, 0.02) 100%)',
-              border: '1px solid rgba(0, 226, 115, 0.2)',
-            }}
-          >
-            {/* Subtle glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00E273]/5 to-transparent" />
-            
-            <div className="relative z-10">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#00E273]/10 flex items-center justify-center">
-                <FileText className="w-8 h-8 text-[#00E273]" />
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-normal text-white mb-3">
-                Want the full story?
-              </h3>
-              <p className="text-white/50 font-light mb-8 max-w-md mx-auto">
-                Download our comprehensive pitch deck for detailed project information, timelines, and strategic vision.
-              </p>
-              
-              <a 
-                href="/pitch-deck.pdf" 
-                download
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#00E273] hover:bg-[#00FF88] text-black font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00E273]/20 group"
-              >
-                <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
-                Download Pitch Deck
-              </a>
-            </div>
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#00E273]/10 flex items-center justify-center">
+            <FileText className="w-8 h-8 text-[#00E273]" />
           </div>
+          
+          <h3 className="text-xl sm:text-2xl font-normal text-white mb-3">
+            Want the full story?
+          </h3>
+          <p className="text-white/50 font-light mb-8 max-w-md mx-auto">
+            Download our comprehensive pitch deck for detailed project information, timelines, and strategic vision.
+          </p>
+          
+          <a 
+            href="/pitch-deck.pdf" 
+            download
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#00E273] hover:bg-[#00FF88] text-black font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00E273]/20 group"
+          >
+            <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
+            Download Pitch Deck
+          </a>
         </motion.div>
 
         {/* FAQ Items */}

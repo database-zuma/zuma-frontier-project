@@ -90,15 +90,21 @@ export function Projects() {
                   >
                     {/* Image Area - Top 60% */}
                     <div className="relative h-[60%] overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-115"
-                        sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
-                        style={{ transform: 'scale(1.05)' }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505]/90" />
+                      {/* Inner container with inset to prevent edge artifacts */}
+                      <div className="absolute -inset-1 overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110"
+                          sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
+                          style={{ 
+                            backfaceVisibility: 'hidden',
+                            transform: 'translateZ(0) scale(1.02)',
+                          }}
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505]/90 pointer-events-none" />
                     </div>
 
                     {/* Content Area - Bottom 40% */}

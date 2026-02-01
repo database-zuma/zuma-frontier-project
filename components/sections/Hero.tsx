@@ -83,6 +83,197 @@ function HeroBackground() {
   );
 }
 
+// Animated Line Chart - Looping upward with dots
+function AnimatedLineChart() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg 
+        viewBox="0 0 1000 600" 
+        className="absolute inset-0 w-full h-full"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          {/* Gradient for the line */}
+          <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(0,226,115,0)" />
+            <stop offset="30%" stopColor="rgba(0,226,115,0.4)" />
+            <stop offset="70%" stopColor="rgba(0,226,115,0.6)" />
+            <stop offset="100%" stopColor="rgba(0,226,115,0.8)" />
+          </linearGradient>
+          
+          {/* Glow filter for the line */}
+          <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          
+          {/* Glow filter for dots */}
+          <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        {/* Line Chart 1 - Main upward trend */}
+        <g className="animate-chart-line-1">
+          <path
+            d="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
+            stroke="url(#lineGradient)"
+            strokeWidth="2"
+            fill="none"
+            filter="url(#lineGlow)"
+            strokeLinecap="round"
+            className="animate-line-draw"
+          />
+        </g>
+
+        {/* Line Chart 2 - Secondary trend (offset) */}
+        <g className="animate-chart-line-2">
+          <path
+            d="M 100 580 Q 200 520 300 480 T 500 380 T 700 280 T 900 180"
+            stroke="rgba(0,212,170,0.3)"
+            strokeWidth="1.5"
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray="8 4"
+            className="animate-line-draw-delayed"
+          />
+        </g>
+
+        {/* Animated dots moving along the line */}
+        <circle className="animate-dot-1" r="6" fill="#00E273" filter="url(#dotGlow)">
+          <animateMotion
+            dur="4s"
+            repeatCount="indefinite"
+            path="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
+          />
+        </circle>
+        
+        <circle className="animate-dot-2" r="4" fill="#00D4AA" filter="url(#dotGlow)" opacity="0.8">
+          <animateMotion
+            dur="5s"
+            repeatCount="indefinite"
+            begin="1s"
+            path="M 100 580 Q 200 520 300 480 T 500 380 T 700 280 T 900 180"
+          />
+        </circle>
+        
+        <circle className="animate-dot-3" r="5" fill="#00E273" filter="url(#dotGlow)" opacity="0.6">
+          <animateMotion
+            dur="4.5s"
+            repeatCount="indefinite"
+            begin="2s"
+            path="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
+          />
+        </circle>
+
+        {/* Data point markers */}
+        {[
+          { x: 250, y: 420 },
+          { x: 450, y: 320 },
+          { x: 650, y: 200 },
+          { x: 850, y: 100 },
+        ].map((point, i) => (
+          <g key={i}>
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="3"
+              fill="#00E273"
+              opacity="0.4"
+              className={`animate-point-pulse-${i + 1}`}
+            />
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="6"
+              fill="none"
+              stroke="#00E273"
+              strokeWidth="1"
+              opacity="0.2"
+              className={`animate-point-ring-${i + 1}`}
+            />
+          </g>
+        ))}
+      </svg>
+
+      <style jsx>{`
+        @keyframes line-draw {
+          0% {
+            stroke-dashoffset: 2000;
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+          }
+        }
+        
+        .animate-line-draw {
+          stroke-dasharray: 2000;
+          animation: line-draw 3s ease-out forwards;
+        }
+        
+        .animate-line-draw-delayed {
+          stroke-dasharray: 2000;
+          animation: line-draw 4s ease-out 0.5s forwards;
+        }
+        
+        @keyframes point-pulse {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.5);
+          }
+        }
+        
+        @keyframes point-ring {
+          0% {
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(2.5);
+          }
+        }
+        
+        .animate-point-pulse-1, .animate-point-pulse-2, .animate-point-pulse-3, .animate-point-pulse-4 {
+          transform-origin: center;
+          animation: point-pulse 2s ease-in-out infinite;
+        }
+        
+        .animate-point-pulse-2 { animation-delay: 0.3s; }
+        .animate-point-pulse-3 { animation-delay: 0.6s; }
+        .animate-point-pulse-4 { animation-delay: 0.9s; }
+        
+        .animate-point-ring-1, .animate-point-ring-2, .animate-point-ring-3, .animate-point-ring-4 {
+          transform-origin: center;
+          animation: point-ring 2s ease-out infinite;
+        }
+        
+        .animate-point-ring-2 { animation-delay: 0.3s; }
+        .animate-point-ring-3 { animation-delay: 0.6s; }
+        .animate-point-ring-4 { animation-delay: 0.9s; }
+      `}</style>
+    </div>
+  );
+}
+
 // Vanishing Point Perspective Grid - Optimized with CSS animations only
 function VanishingPointGrid() {
   return (
@@ -254,6 +445,8 @@ export function Hero() {
       <HeroBackground />
       {/* Wireframe Grid */}
       <VanishingPointGrid />
+      {/* Animated Line Chart - In front of grid */}
+      <AnimatedLineChart />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Content */}
