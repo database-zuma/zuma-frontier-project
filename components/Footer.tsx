@@ -24,7 +24,7 @@ export function Footer() {
               <span className="font-normal text-white">Zuma Frontier</span>
             </div>
             <p className="text-white/40 font-light max-w-sm">
-              Pioneering AI excellence at Zuma Indonesia. Building the future of operations through intelligent automation.
+              Pioneering AI excellence at Zuma Indonesia. Building the future of operations through intelligent automation — by the Continuous Improvement Team.
             </p>
           </div>
 

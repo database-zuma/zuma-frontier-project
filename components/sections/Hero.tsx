@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// Vanishing Point Perspective Grid - Full coverage background
+// Vanishing Point Perspective Grid - Optimized with CSS animations only
 function VanishingPointGrid() {
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -16,137 +16,88 @@ function VanishingPointGrid() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {/* Gradient for lines fading toward vanishing point */}
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.15)" />
-            <stop offset="50%" stopColor="rgba(255,255,255,0.08)" />
-            <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
-          </linearGradient>
-          <linearGradient id="lineGradientGreen" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(0,226,115,0.2)" />
-            <stop offset="50%" stopColor="rgba(0,226,115,0.08)" />
-            <stop offset="100%" stopColor="rgba(0,226,115,0.02)" />
-          </linearGradient>
-          {/* Radial fade from vanishing point */}
+          {/* Radial fade from vanishing point - darker */}
           <radialGradient id="vanishGlow" cx="75%" cy="35%" r="60%">
-            <stop offset="0%" stopColor="rgba(0,226,115,0.15)" />
-            <stop offset="50%" stopColor="rgba(0,226,115,0.05)" />
+            <stop offset="0%" stopColor="rgba(0,226,115,0.06)" />
+            <stop offset="50%" stopColor="rgba(0,226,115,0.02)" />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
         </defs>
 
-        {/* Subtle glow at vanishing point */}
+        {/* Subtle glow at vanishing point - static */}
         <ellipse cx="750" cy="210" rx="300" ry="200" fill="url(#vanishGlow)" />
 
-        {/* Horizontal lines converging to vanishing point (right side) - SUBTLE */}
-        {[...Array(8)].map((_, i) => {
-          const yStart = 60 + i * 70;
-          const yEnd = 210 + (yStart - 300) * 0.15;
-          const opacity = 0.02 + (i % 2) * 0.015;
+        {/* Horizontal lines - static, darker */}
+        {[...Array(5)].map((_, i) => {
+          const yStart = 100 + i * 100;
+          const yEnd = 210 + (yStart - 300) * 0.1;
           return (
-            <motion.line
+            <line
               key={`h-${i}`}
               x1="0"
               y1={yStart}
               x2="750"
               y2={yEnd}
-              stroke={i % 4 === 0 ? "rgba(0,226,115,0.06)" : `rgba(255,255,255,${opacity})`}
-              strokeWidth={i % 4 === 0 ? "0.8" : "0.3"}
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 2, delay: i * 0.1, ease: "easeOut" }}
+              stroke={i % 3 === 0 ? "rgba(0,226,115,0.03)" : "rgba(255,255,255,0.015)"}
+              strokeWidth={i % 3 === 0 ? "0.5" : "0.2"}
             />
           );
         })}
 
-        {/* Vertical lines with perspective - SPARSE */}
-        {[...Array(6)].map((_, i) => {
-          const xPos = 100 + i * 150;
-          const topY = 0;
-          const bottomY = 600;
-          // Lines converge toward vanishing point
+        {/* Vertical lines - static, fewer and darker */}
+        {[...Array(3)].map((_, i) => {
+          const xPos = 200 + i * 250;
           const perspectiveFactor = 1 - (xPos / 1000) * 0.5;
           const xEnd = xPos + (750 - xPos) * (1 - perspectiveFactor);
-          const opacity = 0.015;
           return (
-            <motion.line
+            <line
               key={`v-${i}`}
               x1={xPos}
-              y1={topY}
+              y1="0"
               x2={xEnd}
-              y2={bottomY}
-              stroke={i % 3 === 0 ? "rgba(0,226,115,0.05)" : `rgba(255,255,255,${opacity})`}
-              strokeWidth="0.4"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5 + i * 0.1, ease: "easeOut" }}
+              y2="600"
+              stroke="rgba(255,255,255,0.01)"
+              strokeWidth="0.3"
             />
           );
         })}
 
-        {/* Diagonal perspective lines from vanishing point - MINIMAL */}
-        {[...Array(4)].map((_, i) => {
-          const angle = -45 + i * 30;
+        {/* Minimal diagonal lines */}
+        {[...Array(3)].map((_, i) => {
+          const angle = -30 + i * 30;
           const radians = (angle * Math.PI) / 180;
-          const length = 600;
+          const length = 500;
           const x2 = 750 - Math.cos(radians) * length;
           const y2 = 210 - Math.sin(radians) * length;
           return (
-            <motion.line
+            <line
               key={`d-${i}`}
               x1="750"
               y1="210"
               x2={x2}
               y2={y2}
-              stroke={i % 2 === 0 ? "rgba(0,226,115,0.04)" : "rgba(255,255,255,0.02)"}
-              strokeWidth="0.4"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 2, delay: 1 + i * 0.2, ease: "easeOut" }}
+              stroke="rgba(0,226,115,0.03)"
+              strokeWidth="0.35"
             />
           );
         })}
 
-        {/* Few accent dots near vanishing point */}
-        {[...Array(5)].map((_, i) => {
-          const angle = (i * 72) * Math.PI / 180;
-          const distance = 80 + i * 25;
+        {/* Static accent dots */}
+        {[...Array(3)].map((_, i) => {
+          const angle = (i * 120) * Math.PI / 180;
+          const distance = 100 + i * 30;
           const x = 750 - Math.cos(angle) * distance;
           const y = 210 - Math.sin(angle) * distance * 0.5;
           return (
-            <motion.circle
+            <circle
               key={`dot-${i}`}
               cx={x}
               cy={y}
-              r={1.2}
-              fill="rgba(0,226,115,0.2)"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 0.3 }}
-              transition={{ duration: 0.5, delay: 1.5 + i * 0.1 }}
+              r={1}
+              fill="rgba(0,226,115,0.15)"
             />
           );
         })}
-
-        {/* Animated scan line effect */}
-        <motion.line
-          x1="0"
-          y1="0"
-          x2="750"
-          y2="210"
-          stroke="rgba(0,226,115,0.3)"
-          strokeWidth="1"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ 
-            pathLength: [0, 1, 1],
-            opacity: [0, 0.5, 0],
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            repeatDelay: 3,
-            ease: "easeInOut",
-          }}
-        />
       </svg>
     </div>
   );
@@ -219,13 +170,13 @@ function DepartmentsTicker() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Wireframe Grid Only - Background gradients come from PageBackground */}
       <VanishingPointGrid />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Content */}
-        <div className="pt-24 sm:pt-32 pb-8 sm:pb-16">
+        <div className="pt-20 sm:pt-24 pb-6 sm:pb-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             {/* Left Content */}
             <motion.div
