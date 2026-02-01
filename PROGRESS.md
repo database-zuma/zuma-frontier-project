@@ -45,7 +45,7 @@ The landing page features a **unified continuous green gradient background** spa
 | **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards, vanishing grid |
 | **Departments Ticker** | ✅ Done | 14 Zuma departments scrolling (HR, Finance, Operations, etc.) |
 | **Vision** | ✅ Done | "The Dawn of a New Era", 4 glass cards |
-| **Projects** | ✅ Done | 4 project cards with multi-color spectrums + grain texture, horizontal scroll |
+| **What We Do** | ✅ Done | 4 initiative cards (AI Apps, Assistants, Workflows, Data Strategy), no "Learn more", horizontal scroll |
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
 | **Tech Stack** | ✅ Done | AI Foundation tier + 15 tech logos in scrolling ticker with hover glow |
@@ -89,7 +89,10 @@ The landing page features a **unified continuous green gradient background** spa
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Feb 1, 2026 | **v1.12** | Unified continuous green gradient background across all sections (no more "jaggy" transitions), Zuma departments ticker (14 departments), removed individual section backgrounds, Hero has vanishing grid only (gradients from PageBackground), optimized for performance |
+| Feb 1, 2026 | **v1.16** | Projects section transformed into "What We Do" with 4 initiative cards (AI Powered Apps, AI Assistants, Auto Workflows, Data Strategy), removed "Learn more" links, subtle green gradient accents added to page background, Vision cards icon-free |
+| Feb 1, 2026 | v1.15 | Removed icons from Vision section cards - text only in glassmorphism |
+| Feb 1, 2026 | v1.14 | Darker vibe overall, reduced section spacing (py-20 vs py-32), optimized animations |
+| Feb 1, 2026 | v1.12 | Unified continuous green gradient background across all sections (no more "jaggy" transitions), Zuma departments ticker (14 departments), removed individual section backgrounds, Hero has vanishing grid only (gradients from PageBackground), optimized for performance |
 | Feb 1, 2026 | v1.11 | Added unified green gradient backgrounds to all sections (Projects, TechStack, Footer), removed Vision/Roadmap CTA, removed Hero Login button |
 | Feb 1, 2026 | v1.10 | Removed Vision "Explore our projects" CTA, removed Hero Login button (kept navbar Login) |
 | Feb 1, 2026 | v1.9 | Navbar Login button, green gradient backgrounds added to Vision and Roadmap sections |
