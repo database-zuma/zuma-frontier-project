@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Instagram, Download } from "lucide-react";
+import { ArrowRight, Github, Instagram } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
@@ -43,7 +43,7 @@ export function Footer() {
           {/* Links */}
           <div>
             <h4 className="text-white font-normal mb-4">Connect</h4>
-            <div className="flex gap-4 mb-4">
+            <div className="flex gap-4">
               <a 
                 href="https://github.com/database-zuma/zuma-frontier-project"
                 target="_blank"
@@ -61,14 +61,6 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-            <a 
-              href="/pitch-deck.pdf" 
-              download
-              className="inline-flex items-center gap-2 text-sm text-[#00E273] hover:text-[#00FF88] font-light transition-colors"
-            >
-              <Download className="w-4 h-4" />
-              Download Pitch Deck
-            </a>
           </div>
         </div>
 
