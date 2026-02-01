@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const visionCards = [
   {
-    title: "Integrated Data Management",
-    description: "Connecting every system and source into one unified, intelligent data ecosystem.",
+    title: "Agentic Workflows",
+    description: "AI agents that handle complex tasks autonomously, from start to finish without human intervention.",
   },
   {
     title: "Single Source of Truth",
