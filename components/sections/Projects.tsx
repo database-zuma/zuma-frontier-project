@@ -94,8 +94,9 @@ export function Projects() {
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover scale-105 transition-transform duration-700 ease-out group-hover:scale-115"
                         sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
+                        style={{ transform: 'scale(1.05)' }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505]/90" />
                     </div>
