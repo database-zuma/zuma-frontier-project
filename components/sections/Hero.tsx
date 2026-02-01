@@ -364,13 +364,6 @@ export function Hero() {
                   Get in touch
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 px-8 py-6 text-sm rounded-full transition-all duration-300 font-normal"
-                >
-                  Login
-                </Button>
               </motion.div>
             </motion.div>
 

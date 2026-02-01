@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 // Animated green gradient background component
 function GreenGradientBackground() {
@@ -190,22 +190,7 @@ export function Vision() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <a 
-            href="#projects" 
-            className="inline-flex items-center gap-2 text-[#00E273] hover:text-[#00b35f] transition-colors font-light"
-          >
-            Explore our projects
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </motion.div>
+
       </div>
     </section>
   );
