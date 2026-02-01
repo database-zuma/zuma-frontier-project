@@ -5,10 +5,12 @@ import { Roadmap } from "@/components/sections/Roadmap";
 import { TechStack } from "@/components/sections/TechStack";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { PageBackground } from "@/components/PageBackground";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <PageBackground />
       <Navbar />
       <Hero />
       <Vision />

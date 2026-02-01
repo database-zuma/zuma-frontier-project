@@ -152,111 +152,27 @@ function VanishingPointGrid() {
   );
 }
 
-// Animated background component
-function AnimatedBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {/* Base dark gradient */}
-      <div className="absolute inset-0 bg-[#0a0a0a]" />
-      
-      {/* Vanishing Point Perspective Grid - Full coverage */}
-      <VanishingPointGrid />
-      
-      {/* Animated gradient orbs - all green family for monochrome */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 226, 115, 0.4) 0%, rgba(0, 226, 115, 0.1) 40%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, 100, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.4) 0%, rgba(0, 184, 153, 0.15) 40%, transparent 70%)',
-          filter: 'blur(100px)',
-        }}
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.35, 0.2],
-          y: [0, -50, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 226, 115, 0.3) 0%, transparent 60%)',
-          filter: 'blur(80px)',
-        }}
-      />
-
-      {/* Mesh gradient overlay - green family only */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `
-            radial-gradient(at 40% 20%, rgba(0, 226, 115, 0.15) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, rgba(0, 212, 170, 0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 50%, rgba(0, 226, 115, 0.1) 0px, transparent 50%),
-            radial-gradient(at 80% 50%, rgba(0, 184, 153, 0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, rgba(122, 224, 96, 0.1) 0px, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Noise texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-    </div>
-  );
-}
-
-// Industry benchmark ticker - scrolling facts
-function BenchmarkTicker() {
-  const benchmarks = [
-    "Walmart: 30% cost reduction with AI",
-    "Target: 40% faster inventory turns",
-    "Tokopedia: 50% ops efficiency gains",
-    "Amazon: AI-driven logistics leadership",
-    "Alibaba: Real-time demand prediction",
-    "75% of retail ops AI-augmented by 2027",
-    "Early adopters see 3x ROI in year one",
-    "Manual processes cost 40% more annually",
+// Zuma Departments ticker - scrolling departments
+function DepartmentsTicker() {
+  const departments = [
+    "Human Resources & General Affairs Department",
+    "Financial, Accounting, Tax, Asset, & Legal Department",
+    "Operations Department",
+    "Product Development Department",
+    "Wholesale & B2B Department",
+    "Online Department",
+    "Creative & Marketing Department",
+    "Bali Branch",
+    "Lombok Branch",
+    "Jatim Branch",
+    "Jakarta Branch",
+    "Sumatera Branch",
+    "Batam Branch",
+    "Sulawesi Branch",
   ];
 
   // Double the array for seamless loop
-  const allBenchmarks = [...benchmarks, ...benchmarks];
+  const allDepartments = [...departments, ...departments];
 
   return (
     <div className="w-full overflow-hidden py-8 border-t border-white/10">
@@ -266,7 +182,7 @@ function BenchmarkTicker() {
         transition={{ delay: 1.2 }}
         className="text-center mb-6"
       >
-        <p className="text-xs text-white/40 uppercase tracking-[0.2em] font-light">Industry benchmarks</p>
+        <p className="text-xs text-white/40 uppercase tracking-[0.2em] font-light">Zuma Indonesia Departments</p>
       </motion.div>
       
       <div className="relative">
@@ -277,22 +193,22 @@ function BenchmarkTicker() {
         {/* Scrolling container - moves LEFT */}
         <motion.div 
           className="flex items-center gap-16"
-          animate={{ x: [0, -80 * benchmarks.length] }}
+          animate={{ x: [0, -80 * departments.length] }}
           transition={{
             x: {
-              duration: 40,
+              duration: 50,
               repeat: Infinity,
               ease: "linear",
             }
           }}
         >
-          {allBenchmarks.map((benchmark, i) => (
+          {allDepartments.map((department, i) => (
             <div 
               key={i} 
               className="flex items-center gap-3 text-white/40 hover:text-[#00E273] transition-colors duration-300 shrink-0"
             >
               <div className="w-2 h-2 rounded-full bg-[#00E273]/50"></div>
-              <span className="text-sm font-light tracking-wide whitespace-nowrap">{benchmark}</span>
+              <span className="text-sm font-light tracking-wide whitespace-nowrap">{department}</span>
             </div>
           ))}
         </motion.div>
@@ -303,9 +219,9 @@ function BenchmarkTicker() {
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#0a0a0a] overflow-hidden">
-      {/* Animated Background */}
-      <AnimatedBackground />
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Wireframe Grid Only - Background gradients come from PageBackground */}
+      <VanishingPointGrid />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Content */}
@@ -509,8 +425,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Industry Benchmark Ticker */}
-        <BenchmarkTicker />
+        {/* Zuma Departments Ticker */}
+        <DepartmentsTicker />
       </div>
 
       {/* CSS for marquee animation */}

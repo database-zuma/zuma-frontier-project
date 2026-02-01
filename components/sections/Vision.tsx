@@ -1,92 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
-
-// Animated green gradient background component
-function GreenGradientBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {/* Base dark */}
-      <div className="absolute inset-0 bg-[#0a0a0a]" />
-      
-      {/* Animated gradient orbs - green family */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 226, 115, 0.3) 0%, transparent 70%)',
-          filter: 'blur(100px)',
-        }}
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.1, 0.2, 0.1],
-          x: [0, 50, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.25) 0%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.08, 0.15, 0.08],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-        className="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 184, 153, 0.3) 0%, transparent 70%)',
-          filter: 'blur(60px)',
-        }}
-      />
-
-      {/* Mesh gradient overlay */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            radial-gradient(at 20% 30%, rgba(0, 226, 115, 0.1) 0px, transparent 50%),
-            radial-gradient(at 80% 70%, rgba(0, 212, 170, 0.08) 0px, transparent 50%),
-            radial-gradient(at 50% 50%, rgba(122, 224, 96, 0.05) 0px, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Noise texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-    </div>
-  );
-}
 
 const visionCards = [
   {
@@ -125,10 +40,7 @@ const visionCards = [
 
 export function Vision() {
   return (
-    <section id="vision" className="relative py-32 overflow-hidden bg-[#0a0a0a]">
-      {/* Animated green gradient background */}
-      <GreenGradientBackground />
-
+    <section id="vision" className="relative py-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

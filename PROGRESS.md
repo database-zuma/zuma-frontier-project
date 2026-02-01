@@ -6,24 +6,25 @@
 
 ---
 
-## Current Status: v1.7 - Monochrome Refinement + Perspective Grid
+## Current Status: v1.12 - Unified Background + Zuma Departments
 
-The landing page features a **cohesive green-adjacent color palette**, **vanishing point perspective grid** in hero background, **monochrome tech icons**, and **reduced border radius** for a sharper, more professional look.
+The landing page features a **unified continuous green gradient background** spanning all sections (no more "jaggy" transitions), **Zuma departments ticker** replacing industry benchmarks, optimized animations for better performance, and a cohesive dark theme throughout.
 
 ---
 
 ## Key Achievements
 
 ### Design Excellence
+- **Unified continuous background** - One green gradient spans entire page (no section breaks)
 - **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight, tight letter-spacing)
 - **Monochrome tech icons** - 15 logos in white/gray for cohesive aesthetic
 - **Green-adjacent color palette** - all project cards use harmonious green variants (#00E273, #00D4AA, #00B899, #7AE060)
-- **Vanishing point perspective grid** - animated SVG grid in hero background
+- **Vanishing point perspective grid** - animated SVG grid in hero background only
+- **Zuma departments ticker** - 14 departments scrolling in hero
 - **Full grain texture** on all project card graphics
 - **Sharp corners** - refined to `rounded-md` (almost square)
 - **Glassmorphism effects** throughout
-- **Smooth Framer Motion animations**
-- **Dark/Light alternating sections**
+- **Smooth Framer Motion animations** (optimized for performance)
 - **Official AI logos** - Claude (Anthropic) and Kimi (Moonshot AI) brand SVGs
 
 ### Pitching Optimizations (Oracle-Guided)
@@ -40,9 +41,9 @@ The landing page features a **cohesive green-adjacent color palette**, **vanishi
 
 | Section | Status | Key Features |
 |---------|--------|--------------|
-| **Navbar** | ✅ Done | Fixed top, glassmorphism, responsive - Links: Projects, Vision, Technology, Roadmap, Contact |
-| **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards |
-| **Industry Ticker** | ✅ Done | Scrolling benchmarks (Walmart, Target, etc.) |
+| **Navbar** | ✅ Done | Fixed top, glassmorphism, responsive - Links: Projects, Vision, Technology, Roadmap, Contact, Login |
+| **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards, vanishing grid |
+| **Departments Ticker** | ✅ Done | 14 Zuma departments scrolling (HR, Finance, Operations, etc.) |
 | **Vision** | ✅ Done | "The Dawn of a New Era", 4 glass cards |
 | **Projects** | ✅ Done | 4 project cards with multi-color spectrums + grain texture, horizontal scroll |
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
@@ -68,19 +69,19 @@ The landing page features a **cohesive green-adjacent color palette**, **vanishi
 |---------|-------|
 | **Primary Color** | `#00E273` (Zuma Green) |
 | **Dark Background** | `#0A0A0A` |
-| **Light Background** | `#faf9f7` (matte off-white) |
+| **Background** | Unified dark with animated green gradient orbs (continuous across all sections) |
 | **Body Font** | Plus Jakarta Sans (premium geometric) |
 | **Heading Font** | **Geist Mono** (Vercel, light weight) |
 | **Body Weight** | 500 (medium) |
 | **Heading Weight** | 300 (light) for large titles, 400 for h3-h6 |
 | **Title Letter Spacing** | -0.04em (tight) for large titles, -0.03em for headings |
 | **Glassmorphism** | `backdrop-filter: blur(20px)` + borders |
-| **Section Pattern** | Dark → Light → Dark → Light |
+| **Section Pattern** | All dark with unified green gradient background |
 | **Card Border Radius** | `rounded-md` (almost square, sharp) |
 | **Graphics Style** | Organic blob gradients with full grain texture, green-adjacent spectrums |
 | **Card Colors** | Pure Green `#00E273`, Aqua-Teal `#00D4AA`, Deep Teal `#00B899`, Lime `#7AE060` |
 | **Tech Icons** | Monochrome white/gray (no colors) |
-| **Hero Background** | Vanishing point perspective grid + gradient orbs |
+| **Hero Background** | Vanishing point perspective grid (wireframe only) + unified page gradient |
 
 ---
 
@@ -88,7 +89,12 @@ The landing page features a **cohesive green-adjacent color palette**, **vanishi
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Feb 1, 2026 | **v1.7** | Monochrome refinement: green-adjacent color palette for project cards, vanishing point perspective grid in hero, monochrome tech icons (white/gray), reduced border radius (rounded-md), fixed navbar width, updated footer (Instagram only), official Claude/Kimi SVG logos |
+| Feb 1, 2026 | **v1.12** | Unified continuous green gradient background across all sections (no more "jaggy" transitions), Zuma departments ticker (14 departments), removed individual section backgrounds, Hero has vanishing grid only (gradients from PageBackground), optimized for performance |
+| Feb 1, 2026 | v1.11 | Added unified green gradient backgrounds to all sections (Projects, TechStack, Footer), removed Vision/Roadmap CTA, removed Hero Login button |
+| Feb 1, 2026 | v1.10 | Removed Vision "Explore our projects" CTA, removed Hero Login button (kept navbar Login) |
+| Feb 1, 2026 | v1.9 | Navbar Login button, green gradient backgrounds added to Vision and Roadmap sections |
+| Feb 1, 2026 | v1.8 | Unified dark theme (Vision/Roadmap black), subtle vanishing grid, Login button in Hero |
+| Feb 1, 2026 | v1.7 | Monochrome refinement: green-adjacent color palette for project cards, vanishing point perspective grid in hero, monochrome tech icons (white/gray), reduced border radius (rounded-md), fixed navbar width, updated footer (Instagram only), official Claude/Kimi SVG logos |
 | Jan 31, 2026 | v1.6 | Tech logo ticker (15 logos, 3 rows, hover glow), tighter title letter-spacing (-0.04em) |
 | Jan 31, 2026 | v1.5 | Multi-color project cards (4 spectrums), full grain texture, reduced border radius, removed Impact section, updated navbar links |
 | Jan 31, 2026 | v1.4 | Geist Mono font (light weight), organic blob graphics for all project cards |
