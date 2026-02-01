@@ -89,7 +89,8 @@ The landing page features a **unified continuous green gradient background** spa
 
 | Date | Version | Changes |
 |------|---------|---------|
-| Feb 1, 2026 | **v1.16** | Projects section transformed into "What We Do" with 4 initiative cards (AI Powered Apps, AI Assistants, Auto Workflows, Data Strategy), removed "Learn more" links, subtle green gradient accents added to page background, Vision cards icon-free |
+| Feb 1, 2026 | **v1.17** | Added real images to "What We Do" section - 4 custom images for each initiative (AI-Powered Apps, AI Assistant, Auto Workflow, Data Strategy) |
+| Feb 1, 2026 | v1.16 | Projects section transformed into "What We Do" with 4 initiative cards, removed "Learn more" links, subtle green gradient accents, Vision cards icon-free |
 | Feb 1, 2026 | v1.15 | Removed icons from Vision section cards - text only in glassmorphism |
 | Feb 1, 2026 | v1.14 | Darker vibe overall, reduced section spacing (py-20 vs py-32), optimized animations |
 | Feb 1, 2026 | v1.12 | Unified continuous green gradient background across all sections (no more "jaggy" transitions), Zuma departments ticker (14 departments), removed individual section backgrounds, Hero has vanishing grid only (gradients from PageBackground), optimized for performance |
