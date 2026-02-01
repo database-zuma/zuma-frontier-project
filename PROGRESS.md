@@ -6,9 +6,9 @@
 
 ---
 
-## Current Status: v1.20 - Updated Navigation & Vision Cards
+## Current Status: v1.21 - Medium Priority Features Complete
 
-The landing page features **reordered navigation** (Vision → What We Do → Roadmap → Technology), **updated Vision cards** with Agentic Workflows focus, **unified continuous green gradient background**, and a cohesive dark theme throughout.
+The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twitter Cards, structured data), **Vercel Analytics & Speed Insights**, **downloadable pitch deck link**, and updated copy ("frontier projects", "Are you Zumans?" button). All medium priority features implemented while maintaining the existing visual design.
 
 ---
 
@@ -32,6 +32,15 @@ The landing page features **reordered navigation** (Vision → What We Do → Ro
 - **Urgency copy:** "By 2027, 75% of retail ops will be AI-augmented..."
 - **Industry benchmarks:** Replaced placeholder partners with real stats
 - **Enterprise credibility:** "Built on Enterprise-Grade AI" messaging
+- **FAQ Section:** Preempts common questions and objections
+- **Pitch Deck Download:** Direct PDF download link in footer
+
+### Technical Infrastructure
+- **SEO Optimized:** Open Graph, Twitter Cards, structured data, meta tags
+- **Analytics:** Vercel Analytics & Speed Insights integrated
+- **Performance:** Optimized animations with CSS transforms
+- **Accessibility:** Semantic HTML, proper heading hierarchy
+- **Mobile-First:** Responsive design with hamburger navigation
 
 ---
 
@@ -49,7 +58,8 @@ The landing page features **reordered navigation** (Vision → What We Do → Ro
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
 | **Tech Stack** | ✅ Done | AI Foundation tier + 15 tech logos in scrolling ticker with hover glow |
-| **Footer** | ✅ Done | Zuma logo, navigation, social links, copyright |
+| **FAQ** | ✅ Done | 6 common questions with accordion-style expandable answers |
+| **Footer** | ✅ Done | Zuma logo, navigation, social links, pitch deck download, copyright |
 
 ### Technical Stack
 
@@ -89,6 +99,7 @@ The landing page features **reordered navigation** (Vision → What We Do → Ro
 
 | Date | Version | Changes |
 |------|---------|---------|
+| Feb 1, 2026 | **v1.21** | Medium priority features: FAQ section added, SEO optimization (Open Graph, Twitter Cards, structured data), Vercel Analytics & Speed Insights integration, pitch deck download link in footer, "project" changed to "projects", "Get in touch" button changed to "Are you Zumans?" |
 | Feb 1, 2026 | **v1.20** | Updated navbar order: Vision → What We Do → Roadmap → Technology, "Projects" renamed to "What We Do" in navigation |
 | Feb 1, 2026 | v1.19 | Vision card updated - "Agentic Workflows" replaces "Integrated Data Management" |
 | Feb 1, 2026 | v1.18 | Updated Vision section - new card titles and copy (Integrated Data Management, Single Source of Truth, AI-First Operations, Continuous Improvement) |
