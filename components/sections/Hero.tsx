@@ -282,7 +282,7 @@ export function Hero() {
                   transition={{ delay: 0.3, duration: 0.6 }}
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#00E273] tracking-tight font-mono"
                 >
-                  project.
+                  projects.
                 </motion.p>
               </div>
 
@@ -309,7 +309,7 @@ export function Hero() {
                   size="lg"
                   className="bg-[#00E273] hover:bg-[#00FF88] text-black font-normal px-8 py-6 text-sm rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00E273]/20 group"
                 >
-                  Get in touch
+                  Are you Zumans?
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </motion.div>

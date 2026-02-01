@@ -3,6 +3,7 @@ import { Vision } from "@/components/sections/Vision";
 import { Projects } from "@/components/sections/Projects";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { TechStack } from "@/components/sections/TechStack";
+import { FAQ } from "@/components/sections/FAQ";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageBackground } from "@/components/PageBackground";
@@ -17,6 +18,7 @@ export default function Home() {
       <Projects />
       <Roadmap />
       <TechStack />
+      <FAQ />
       <Footer />
     </main>
   );
