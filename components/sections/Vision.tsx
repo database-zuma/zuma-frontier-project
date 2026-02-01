@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 
 const visionCards = [
   {
+    title: "Integrated Data Management",
+    description: "Connecting every system and source into one unified, intelligent data ecosystem.",
+  },
+  {
+    title: "Single Source of Truth",
+    description: "One centralized platform where all teams access accurate, real-time information.",
+  },
+  {
     title: "AI-First Operations",
-    description: "Transforming every process with intelligent automation and predictive insights.",
+    description: "Intelligence embedded in every workflow, decision, and process from day one.",
   },
   {
     title: "Continuous Improvement",
-    description: "Building systems that learn, adapt, and optimize themselves over time.",
-  },
-  {
-    title: "Future Ready",
-    description: "Pioneering technologies that position Zuma Indonesia at the frontier of innovation.",
-  },
-  {
-    title: "Enterprise Scale",
-    description: "Robust, secure, and scalable solutions designed for production workloads.",
+    description: "Self-optimizing systems that learn from every interaction and evolve constantly.",
   },
 ];
 
