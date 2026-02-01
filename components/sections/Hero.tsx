@@ -4,6 +4,85 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+// Hero Background - Bright green gradient orbs for header only
+function HeroBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Bright gradient orb - top left */}
+      <div
+        className="absolute -top-40 -left-40 w-[900px] h-[900px] rounded-full animate-pulse-hero"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 226, 115, 0.5) 0%, rgba(0, 226, 115, 0.15) 40%, transparent 70%)',
+          filter: 'blur(60px)',
+          willChange: 'transform, opacity',
+        }}
+      />
+      
+      {/* Bright gradient orb - right side */}
+      <div
+        className="absolute top-1/4 -right-20 w-[700px] h-[700px] rounded-full animate-pulse-hero-delayed"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.45) 0%, rgba(0, 184, 153, 0.15) 40%, transparent 70%)',
+          filter: 'blur(80px)',
+          willChange: 'transform, opacity',
+        }}
+      />
+      
+      {/* Bright gradient orb - bottom right */}
+      <div
+        className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full animate-pulse-hero"
+        style={{
+          background: 'radial-gradient(circle, rgba(122, 224, 96, 0.35) 0%, rgba(0, 226, 115, 0.1) 40%, transparent 70%)',
+          filter: 'blur(70px)',
+          willChange: 'transform, opacity',
+          animationDelay: '-3s',
+        }}
+      />
+
+      {/* Bright mesh gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `
+            radial-gradient(at 30% 20%, rgba(0, 226, 115, 0.2) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, rgba(0, 212, 170, 0.15) 0px, transparent 50%),
+            radial-gradient(at 60% 60%, rgba(122, 224, 96, 0.12) 0px, transparent 50%)
+          `,
+        }}
+      />
+
+      <style jsx>{`
+        @keyframes pulse-hero {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.85;
+          }
+        }
+        @keyframes pulse-hero-delayed {
+          0%, 100% {
+            transform: scale(1.1);
+            opacity: 0.5;
+          }
+          50% {
+            transform: scale(1);
+            opacity: 0.75;
+          }
+        }
+        .animate-pulse-hero {
+          animation: pulse-hero 8s ease-in-out infinite;
+        }
+        .animate-pulse-hero-delayed {
+          animation: pulse-hero-delayed 12s ease-in-out infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 // Vanishing Point Perspective Grid - Optimized with CSS animations only
 function VanishingPointGrid() {
   return (
@@ -25,12 +104,12 @@ function VanishingPointGrid() {
         </defs>
 
         {/* Subtle glow at vanishing point - static */}
-        <ellipse cx="750" cy="210" rx="300" ry="200" fill="url(#vanishGlow)" />
+        <ellipse cx="750" cy="210" rx="350" ry="250" fill="url(#vanishGlow)" />
 
-        {/* Horizontal lines - static, darker */}
-        {[...Array(5)].map((_, i) => {
-          const yStart = 100 + i * 100;
-          const yEnd = 210 + (yStart - 300) * 0.1;
+        {/* Horizontal lines - brighter for header */}
+        {[...Array(8)].map((_, i) => {
+          const yStart = 60 + i * 70;
+          const yEnd = 210 + (yStart - 300) * 0.15;
           return (
             <line
               key={`h-${i}`}
@@ -38,15 +117,15 @@ function VanishingPointGrid() {
               y1={yStart}
               x2="750"
               y2={yEnd}
-              stroke={i % 3 === 0 ? "rgba(0,226,115,0.03)" : "rgba(255,255,255,0.015)"}
-              strokeWidth={i % 3 === 0 ? "0.5" : "0.2"}
+              stroke={i % 4 === 0 ? "rgba(0,226,115,0.08)" : "rgba(255,255,255,0.035)"}
+              strokeWidth={i % 4 === 0 ? "0.8" : "0.35"}
             />
           );
         })}
 
-        {/* Vertical lines - static, fewer and darker */}
-        {[...Array(3)].map((_, i) => {
-          const xPos = 200 + i * 250;
+        {/* Vertical lines - more visible */}
+        {[...Array(5)].map((_, i) => {
+          const xPos = 100 + i * 160;
           const perspectiveFactor = 1 - (xPos / 1000) * 0.5;
           const xEnd = xPos + (750 - xPos) * (1 - perspectiveFactor);
           return (
@@ -56,8 +135,8 @@ function VanishingPointGrid() {
               y1="0"
               x2={xEnd}
               y2="600"
-              stroke="rgba(255,255,255,0.01)"
-              strokeWidth="0.3"
+              stroke={i % 2 === 0 ? "rgba(0,226,115,0.04)" : "rgba(255,255,255,0.025)"}
+              strokeWidth="0.4"
             />
           );
         })}
@@ -171,7 +250,9 @@ function DepartmentsTicker() {
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Wireframe Grid Only - Background gradients come from PageBackground */}
+      {/* Hero Background - Bright green orbs for header */}
+      <HeroBackground />
+      {/* Wireframe Grid */}
       <VanishingPointGrid />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

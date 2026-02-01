@@ -1,38 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 const visionCards = [
   {
-    icon: Sparkles,
     title: "AI-First Operations",
     description: "Transforming every process with intelligent automation and predictive insights.",
   },
   {
-    icon: () => (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
     title: "Continuous Improvement",
     description: "Building systems that learn, adapt, and optimize themselves over time.",
   },
   {
-    icon: () => (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-      </svg>
-    ),
     title: "Future Ready",
     description: "Pioneering technologies that position Zuma Indonesia at the frontier of innovation.",
   },
   {
-    icon: () => (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
     title: "Enterprise Scale",
     description: "Robust, secure, and scalable solutions designed for production workloads.",
   },
@@ -88,11 +71,7 @@ export function Vision() {
                   
                   {/* Content */}
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00E273] to-[#00b35f] flex items-center justify-center text-white mb-4 shadow-lg shadow-[#00E273]/20">
-                      <card.icon className="w-6 h-6" />
-                    </div>
-                    
-                    <h3 className="text-lg font-normal text-white mb-2">{card.title}</h3>
+                    <h3 className="text-lg font-normal text-white mb-3">{card.title}</h3>
                     
                     <p className="text-sm text-white/50 font-light leading-relaxed">{card.description}</p>
                   </div>
