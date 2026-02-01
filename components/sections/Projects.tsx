@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AbstractGraphic } from "@/components/AbstractGraphics";
+import Image from "next/image";
 
 const initiatives = [
   {
@@ -9,28 +9,28 @@ const initiatives = [
     title: "AI Powered Apps",
     tagline: "Smart tools for every team",
     description: "Custom applications that think, learn, and adapt to your workflow.",
-    variant: 1,
+    image: "/images/what-we-do/AI-Powered Apps.jpg",
   },
   {
     id: 2,
     title: "AI Assistants",
     tagline: "Your 24/7 digital workforce",
     description: "Intelligent agents that handle tasks, answer questions, and boost productivity.",
-    variant: 2,
+    image: "/images/what-we-do/AI Assistant.jpg",
   },
   {
     id: 3,
     title: "Auto Workflows",
     tagline: "Repetitive work, automated",
     description: "Self-running processes that eliminate manual steps and human error.",
-    variant: 3,
+    image: "/images/what-we-do/Auto Workflow.jpg",
   },
   {
     id: 4,
     title: "Data Strategy",
     tagline: "Decisions backed by intelligence",
     description: "Turn raw data into actionable insights that drive smarter moves.",
-    variant: 4,
+    image: "/images/what-we-do/Data Strategy.jpg",
   },
 ];
 
@@ -88,11 +88,16 @@ export function Projects() {
                       border: '1px solid rgba(255, 255, 255, 0.08)',
                     }}
                   >
-                    {/* Abstract Graphic Area - Top 60% */}
+                    {/* Image Area - Top 60% */}
                     <div className="relative h-[60%] overflow-hidden">
-                      <AbstractGraphic variant={item.variant} />
-                      
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505]/80" />
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 380px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505]/90" />
                     </div>
 
                     {/* Content Area - Bottom 40% */}
