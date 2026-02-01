@@ -1,14 +1,14 @@
 1:"$Sreact.fragment"
-2:I[69821,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"PageBackground"]
-3:I[86182,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Navbar"]
-4:I[59246,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Hero"]
-5:I[61251,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Vision"]
-6:I[84515,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Projects"]
-7:I[47366,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Roadmap"]
-8:I[25040,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"TechStack"]
-9:I[43475,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"FAQ"]
-a:I[70520,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/a091ca64fcd065ea.js"],"Footer"]
+2:I[69821,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"PageBackground"]
+3:I[86182,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Navbar"]
+4:I[59246,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Hero"]
+5:I[61251,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Vision"]
+6:I[84515,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Projects"]
+7:I[47366,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Roadmap"]
+8:I[25040,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"TechStack"]
+9:I[43475,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"FAQ"]
+a:I[70520,["/_next/static/chunks/0c82067b5585e875.js","/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/356a18139d19656e.js"],"Footer"]
 b:I[48890,["/_next/static/chunks/ccc37f645014dcf1.js","/_next/static/chunks/e987cd95a199f73a.js"],"OutletBoundary"]
 c:"$Sreact.suspense"
-0:{"buildId":"2eutLdJGb6Lp1vcEmqI5k","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen relative","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/ccc37f645014dcf1.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/a091ca64fcd065ea.js","async":true}]],["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"SVN7W0xJwUrV6B-WMEF0I","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen relative","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/ccc37f645014dcf1.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/356a18139d19656e.js","async":true}]],["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"loading":null,"isPartial":false}
 d:null

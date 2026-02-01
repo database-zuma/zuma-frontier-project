@@ -83,17 +83,16 @@ function HeroBackground() {
   );
 }
 
-// Animated Line Chart - Stock/Financial Growth Style
+// Animated Line Chart - Stock/Financial Growth Style (Optimized for Performance)
 function AnimatedLineChart() {
   // Stock chart path - upward trend with realistic volatility
-  // Format: starts low, has dips and rises, ends high
   const stockChartPath = "M 0 480 L 40 470 L 80 490 L 120 460 L 160 440 L 200 455 L 240 420 L 280 430 L 320 390 L 360 410 L 400 370 L 440 350 L 480 380 L 520 340 L 560 320 L 600 350 L 640 300 L 680 280 L 720 310 L 760 260 L 800 240 L 840 270 L 880 220 L 920 200 L 960 180 L 1000 150";
-  
-  // Secondary line - similar pattern but offset
-  const stockChartPath2 = "M 0 520 L 50 510 L 100 530 L 150 500 L 200 480 L 250 500 L 300 460 L 350 475 L 400 440 L 450 460 L 500 420 L 550 400 L 600 430 L 650 390 L 700 370 L 750 395 L 800 350 L 850 330 L 900 355 L 950 310 L 1000 280";
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
+    <div 
+      className="absolute inset-0 overflow-hidden pointer-events-none opacity-40"
+      style={{ willChange: 'auto', transform: 'translateZ(0)' }}
+    >
       <svg 
         viewBox="0 0 1000 600" 
         className="absolute inset-0 w-full h-full"
@@ -104,166 +103,76 @@ function AnimatedLineChart() {
         <defs>
           {/* Gradient for the main line */}
           <linearGradient id="stockGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(0,226,115,0.1)" />
-            <stop offset="50%" stopColor="rgba(0,226,115,0.3)" />
-            <stop offset="100%" stopColor="rgba(0,226,115,0.5)" />
+            <stop offset="0%" stopColor="rgba(0,226,115,0.15)" />
+            <stop offset="100%" stopColor="rgba(0,226,115,0.4)" />
           </linearGradient>
           
           {/* Area fill gradient */}
           <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="rgba(0,226,115,0.08)" />
+            <stop offset="0%" stopColor="rgba(0,226,115,0.06)" />
             <stop offset="100%" stopColor="rgba(0,226,115,0)" />
           </linearGradient>
-          
-          {/* Subtle glow filter */}
-          <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="2" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          
-          {/* Dot glow */}
-          <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
         </defs>
 
         {/* Area fill under main chart */}
         <path
           d={`${stockChartPath} L 1000 600 L 0 600 Z`}
           fill="url(#areaGradient)"
-          className="animate-area-fill"
+          className="chart-area"
         />
 
-        {/* Main stock chart line */}
+        {/* Main stock chart line - no filters for performance */}
         <path
           d={stockChartPath}
           stroke="url(#stockGradient)"
           strokeWidth="1.5"
           fill="none"
-          filter="url(#subtleGlow)"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="animate-line-draw"
+          className="chart-line"
         />
 
-        {/* Secondary trend line (dashed) */}
-        <path
-          d={stockChartPath2}
-          stroke="rgba(0,212,170,0.15)"
-          strokeWidth="1"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="6 4"
-          className="animate-line-draw-delayed"
-        />
-
-        {/* Animated dot moving along the main line */}
-        <circle r="4" fill="#00E273" filter="url(#dotGlow)" opacity="0.8">
-          <animateMotion
-            dur="6s"
-            repeatCount="indefinite"
-            path={stockChartPath}
-          />
-        </circle>
-        
-        {/* Second animated dot - slightly delayed */}
-        <circle r="3" fill="#00D4AA" filter="url(#dotGlow)" opacity="0.5">
-          <animateMotion
-            dur="8s"
-            repeatCount="indefinite"
-            begin="2s"
-            path={stockChartPath}
-          />
-        </circle>
-
-        {/* Key data points along the growth curve */}
+        {/* Static data points - no animations */}
         {[
           { x: 240, y: 420 },
           { x: 480, y: 380 },
           { x: 720, y: 310 },
           { x: 960, y: 180 },
         ].map((point, i) => (
-          <g key={i}>
-            <circle
-              cx={point.x}
-              cy={point.y}
-              r="2"
-              fill="#00E273"
-              opacity="0.3"
-              className={`animate-point-pulse-${i + 1}`}
-            />
-          </g>
+          <circle
+            key={i}
+            cx={point.x}
+            cy={point.y}
+            r="3"
+            fill="#00E273"
+            opacity="0.4"
+          />
         ))}
       </svg>
 
       <style jsx>{`
-        @keyframes line-draw {
-          0% {
-            stroke-dashoffset: 3000;
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          100% {
+        .chart-area {
+          opacity: 0;
+          animation: fadeIn 2s ease-out 0.5s forwards;
+        }
+        
+        .chart-line {
+          stroke-dasharray: 2500;
+          stroke-dashoffset: 2500;
+          animation: drawLine 3s ease-out forwards;
+        }
+        
+        @keyframes drawLine {
+          to {
             stroke-dashoffset: 0;
+          }
+        }
+        
+        @keyframes fadeIn {
+          to {
             opacity: 1;
           }
         }
-        
-        @keyframes area-fill {
-          0% {
-            opacity: 0;
-          }
-          50% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-        
-        .animate-line-draw {
-          stroke-dasharray: 3000;
-          animation: line-draw 4s ease-out forwards;
-        }
-        
-        .animate-line-draw-delayed {
-          stroke-dasharray: 3000;
-          animation: line-draw 5s ease-out 1s forwards;
-        }
-        
-        .animate-area-fill {
-          animation: area-fill 4s ease-out forwards;
-        }
-        
-        @keyframes point-pulse {
-          0%, 100% {
-            opacity: 0.2;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.5;
-            transform: scale(1.8);
-          }
-        }
-        
-        .animate-point-pulse-1, .animate-point-pulse-2, .animate-point-pulse-3, .animate-point-pulse-4 {
-          transform-origin: center;
-          animation: point-pulse 3s ease-in-out infinite;
-        }
-        
-        .animate-point-pulse-2 { animation-delay: 0.5s; }
-        .animate-point-pulse-3 { animation-delay: 1s; }
-        .animate-point-pulse-4 { animation-delay: 1.5s; }
       `}</style>
     </div>
   );

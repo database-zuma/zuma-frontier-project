@@ -3,13 +3,13 @@
 > **Live URL:** https://frontier-landing-page.vercel.app  
 > **GitHub:** https://github.com/database-zuma/zuma-frontier-project  
 > **Last Updated:** February 1, 2026  
-> **Current Version:** v1.27
+> **Current Version:** v1.28
 
 ---
 
-## Current Status: v1.27 - Financial Growth Chart & Final Polish
+## Current Status: v1.28 - Performance Optimized & Mobile Ready
 
-The landing page now features **stock-style growth chart** in Hero (realistic volatility with upward trend), **properly fixed image zoom** (no overlay trimming), and all previous features. Production-ready with premium financial data visualization.
+The landing page now features **optimized stock-style growth chart** (no lag), **mobile hamburger menu** (already built), and cleaned up TODO list. Production-ready with smooth performance.
 
 ---
 
@@ -103,6 +103,7 @@ The landing page now features **stock-style growth chart** in Hero (realistic vo
 
 | Date | Version | Changes |
 |------|---------|---------|
+| Feb 1, 2026 | **v1.28** | Performance optimization: removed SVG blur filters and animateMotion (causes lag), simplified to static chart with draw animation, confirmed mobile hamburger menu exists, removed pitching TODOs |
 | Feb 1, 2026 | **v1.27** | Stock-style financial growth chart (realistic volatility, upward trend, area fill gradient, subtle 60% opacity), Image zoom overlay fix (gradient now properly contained, no trimming artifacts) |
 | Feb 1, 2026 | **v1.26** | Animated line chart added to Hero (looping upward trend with moving dots), Pitch Deck CTA made seamless (no glassmorphism box), Image zoom glitch fixed (GPU-accelerated with inner container for clean edges) |
 | Feb 1, 2026 | **v1.25** | Pitch deck CTA moved before FAQ - bigger, centered design with green gradient background. Removed from footer. |
@@ -135,43 +136,11 @@ The landing page now features **stock-style growth chart** in Hero (realistic vo
 
 ## TODO: Future Improvements
 
-### High Priority (For Better Pitching)
-
-Based on Oracle consultation for funding pitch optimization:
-
-- [ ] **Add "Cost of Inaction" Section**
-  - Risk of waiting / falling behind competitors
-  - "What happens if we don't act?"
-  - Loss aversion is powerful for decision-makers
-
-- [ ] **Add ROI Metrics Section (replaces Impact)**
-   - Concrete ROI projections
-     - "40% Time Savings (projected)"
-     - "Rp 2.4B Cost Avoidance (estimated)"
-     - "3x Faster Decisions"
-     - "85% Error Reduction"
-
-
-- [ ] **Add Investment Asks to Roadmap**
-  - Phase 1: Rp XXX million (current)
-  - Phase 2: Rp XXX million (requesting)
-  - Phase 3: Self-funded from savings
-  - Show clear ROI per phase
-
-- [ ] **Add "Request Funding" CTA**
-  - Make the ask explicit
-  - Sticky button or final section
-  - "Approve Phase 2 Funding" or "Schedule Deep Dive"
-
-- [ ] **Add Downloadable Pitch Deck**
-  - PDF export of key slides
-  - Let stakeholders share with peers
-
 ### Medium Priority
 
-- [ ] **Mobile Navigation**
-  - Add hamburger menu for mobile
-  - Currently all nav items show (crowded)
+- [x] **Mobile Navigation** ✅ Done (v1.28)
+  - Hamburger menu with glassmorphism dropdown
+  - Smooth open/close animations
 
 - [ ] **Real Project URLs**
   - Branch Super App: https://zuma-ro-pwa.vercel.app (LIVE)
@@ -203,11 +172,8 @@ Based on Oracle consultation for funding pitch optimization:
 
 | Item | Purpose | Status |
 |------|---------|--------|
-| Real ROI projections | Impact section metrics | ⏳ Waiting |
-| Investment amounts per phase | Roadmap section | ⏳ Waiting |
-| Competitor names (optional) | "Cost of Inaction" section | ⏳ Waiting |
-| Internal stakeholder quotes | Testimonials | ⏳ Optional |
-| Leadership approval on copy | Final sign-off | ⏳ Waiting |
+| Real project URLs | Link to live apps | ⏳ Branch Super App ready |
+| Leadership approval on copy | Final sign-off | ⏳ Optional |
 
 ### Auto-Generated (AI Can Create)
 
@@ -218,6 +184,7 @@ Based on Oracle consultation for funding pitch optimization:
 | "Powered by" AI badges | ✅ Done |
 | Vision inspirational copy | ✅ Done |
 | Project descriptions | ✅ Done |
+| Mobile hamburger menu | ✅ Done |
 
 ---
 

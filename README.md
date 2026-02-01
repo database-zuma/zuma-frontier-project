@@ -5,7 +5,7 @@
 ### The Future of Retail Operations
 
 [![Live Demo](https://img.shields.io/badge/LIVE-frontier--landing--page.vercel.app-00E273?style=for-the-badge&logo=vercel)](https://frontier-landing-page.vercel.app)
-[![Version](https://img.shields.io/badge/Version-1.27-00E273?style=flat-square)](./PROGRESS.md)
+[![Version](https://img.shields.io/badge/Version-1.28-00E273?style=flat-square)](./PROGRESS.md)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
@@ -166,22 +166,21 @@ frontier-landing-page/
 ├── docs/
 │   ├── DESIGN_BRIEF.md       # Full design specification
 │   └── IMPLEMENTATION_PLAN.md
-└── PROGRESS.md               # Development changelog (v1.27)
+└── PROGRESS.md               # Development changelog (v1.28)
 ```
 
 ---
 
 ## TODO
 
-### High Priority (For Pitching)
-- [ ] Add "Cost of Inaction" section
-- [ ] Add ROI metrics with concrete projections
-- [ ] Add investment amounts to Roadmap phases
-- [ ] Create downloadable pitch deck PDF
+### Remaining Tasks
+- [ ] Real project URLs (Branch Super App is live at zuma-ro-pwa.vercel.app)
 
-### Medium Priority
-- [ ] Mobile hamburger navigation
-- [ ] Real project URLs (Branch Super App is live)
+### Completed
+- [x] Mobile hamburger navigation
+- [x] Performance optimized animations
+- [x] SEO & Analytics
+- [x] FAQ section
 
 See [PROGRESS.md](./PROGRESS.md) for full changelog and roadmap.
 
@@ -200,6 +199,6 @@ This is an internal Zuma Indonesia project. For questions or collaboration:
 
 **Built with precision for Zuma Indonesia**
 
-`v1.27` · `#00E273` · 2026
+`v1.28` · `#00E273` · 2026
 
 </div>
