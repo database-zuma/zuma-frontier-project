@@ -32,9 +32,9 @@ const phases = [
 
 export function Roadmap() {
   return (
-    <section id="roadmap" className="relative py-32 overflow-hidden bg-[#faf9f7]">
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
+    <section id="roadmap" className="relative py-32 overflow-hidden bg-[#0a0a0a]">
+      {/* Dark background */}
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -46,12 +46,12 @@ export function Roadmap() {
           className="text-center mb-16 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Strategic Roadmap</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6 font-mono">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 sm:mb-6 font-mono">
             our path to the
             <br />
             <span className="text-[#00E273]">future</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/50 max-w-2xl mx-auto font-light px-4 sm:px-0">
             From first steps to full transformation. This is how we build the future, one breakthrough at a time.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export function Roadmap() {
         {/* Timeline */}
         <div className="relative">
           {/* Connection line - desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
           {/* Phases */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -74,36 +74,33 @@ export function Roadmap() {
               >
                 {/* Card */}
                 <div 
-                  className="relative p-6 sm:p-8 rounded-lg sm:rounded-xl h-full transition-all duration-500 hover:scale-[1.02]"
+                  className="relative p-6 sm:p-8 rounded-md h-full transition-all duration-500 hover:scale-[1.02]"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)',
                     backdropFilter: 'blur(20px)',
-                    border: phase.status === 'current' ? '1px solid rgba(0, 226, 115, 0.3)' : '1px solid rgba(0, 0, 0, 0.05)',
-                    boxShadow: phase.status === 'current' 
-                      ? '0 8px 32px rgba(0, 226, 115, 0.1)' 
-                      : '0 8px 32px rgba(0, 0, 0, 0.04)',
+                    border: phase.status === 'current' ? '1px solid rgba(0, 226, 115, 0.3)' : '1px solid rgba(255, 255, 255, 0.08)',
                   }}
                 >
                   {/* Phase number */}
-                  <div className="text-5xl sm:text-6xl font-extralight text-gray-200 mb-4">
+                  <div className="text-5xl sm:text-6xl font-extralight text-white/10 mb-4">
                     {phase.number}
                   </div>
 
                   {/* Icon */}
                   <div 
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                    className={`w-12 h-12 rounded-md flex items-center justify-center mb-4 ${
                       phase.status === 'current' 
                         ? 'bg-gradient-to-br from-[#00E273] to-[#00b35f] text-white' 
-                        : 'bg-gray-100 text-gray-400'
+                        : 'bg-white/5 text-white/40'
                     }`}
                   >
                     <phase.icon className="w-6 h-6" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-normal text-gray-900 mb-2">{phase.title}</h3>
+                  <h3 className="text-xl font-normal text-white mb-2">{phase.title}</h3>
                   <p className="text-sm text-[#00E273] font-light mb-3">{phase.subtitle}</p>
-                  <p className="text-sm text-gray-500 font-light leading-relaxed">{phase.description}</p>
+                  <p className="text-sm text-white/50 font-light leading-relaxed">{phase.description}</p>
 
                   {/* Status indicator */}
                   {phase.status === 'current' && (
@@ -119,7 +116,7 @@ export function Roadmap() {
                 {/* Connector dot - desktop */}
                 {index < phases.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
-                    <div className="w-3 h-3 rounded-full bg-gray-200" />
+                    <div className="w-3 h-3 rounded-full bg-white/10" />
                   </div>
                 )}
               </motion.div>

@@ -41,9 +41,9 @@ const visionCards = [
 
 export function Vision() {
   return (
-    <section id="vision" className="relative py-32 overflow-hidden bg-[#faf9f7]">
-      {/* Light section background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
+    <section id="vision" className="relative py-32 overflow-hidden bg-[#0a0a0a]">
+      {/* Dark section background */}
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -55,12 +55,12 @@ export function Vision() {
           className="text-center mb-12 sm:mb-20"
         >
           <p className="text-xs text-[#00E273] uppercase tracking-[0.2em] mb-4 font-light">Our Vision</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4 sm:mb-6 font-mono">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 sm:mb-6 font-mono">
             the dawn of a
             <br />
             <span className="text-[#00E273]">new era</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto font-light px-4 sm:px-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/50 max-w-2xl mx-auto font-light px-4 sm:px-0">
             We stand at the frontier of transformation. Where artificial intelligence 
             meets human ingenuity, and where Zuma Indonesia leads the future of operations.
           </p>
@@ -77,13 +77,12 @@ export function Vision() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="group relative h-full">
-                {/* Glass Card - Light version */}
+                {/* Glass Card - Dark version */}
                 <div
-                  className="relative h-full p-5 sm:p-6 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-gray-100"
+                  className="relative h-full p-5 sm:p-6 rounded-md overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-white/10"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)',
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
                     backdropFilter: 'blur(20px)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)',
                   }}
                 >
                   {/* Hover gradient */}
@@ -97,9 +96,9 @@ export function Vision() {
                       <card.icon className="w-6 h-6" />
                     </div>
                     
-                    <h3 className="text-lg font-normal text-gray-900 mb-2">{card.title}</h3>
+                    <h3 className="text-lg font-normal text-white mb-2">{card.title}</h3>
                     
-                    <p className="text-sm text-gray-500 font-light leading-relaxed">{card.description}</p>
+                    <p className="text-sm text-white/50 font-light leading-relaxed">{card.description}</p>
                   </div>
                 </div>
               </div>

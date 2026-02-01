@@ -38,11 +38,11 @@ function VanishingPointGrid() {
         {/* Subtle glow at vanishing point */}
         <ellipse cx="750" cy="210" rx="300" ry="200" fill="url(#vanishGlow)" />
 
-        {/* Horizontal lines converging to vanishing point (right side) */}
-        {[...Array(20)].map((_, i) => {
-          const yStart = 30 + i * 30;
+        {/* Horizontal lines converging to vanishing point (right side) - SUBTLE */}
+        {[...Array(8)].map((_, i) => {
+          const yStart = 60 + i * 70;
           const yEnd = 210 + (yStart - 300) * 0.15;
-          const opacity = 0.03 + (i % 3) * 0.02;
+          const opacity = 0.02 + (i % 2) * 0.015;
           return (
             <motion.line
               key={`h-${i}`}
@@ -50,24 +50,24 @@ function VanishingPointGrid() {
               y1={yStart}
               x2="750"
               y2={yEnd}
-              stroke={i % 5 === 0 ? "rgba(0,226,115,0.1)" : `rgba(255,255,255,${opacity})`}
-              strokeWidth={i % 5 === 0 ? "1" : "0.5"}
+              stroke={i % 4 === 0 ? "rgba(0,226,115,0.06)" : `rgba(255,255,255,${opacity})`}
+              strokeWidth={i % 4 === 0 ? "0.8" : "0.3"}
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 2, delay: i * 0.05, ease: "easeOut" }}
+              transition={{ duration: 2, delay: i * 0.1, ease: "easeOut" }}
             />
           );
         })}
 
-        {/* Vertical lines with perspective */}
-        {[...Array(25)].map((_, i) => {
-          const xPos = i * 40;
+        {/* Vertical lines with perspective - SPARSE */}
+        {[...Array(6)].map((_, i) => {
+          const xPos = 100 + i * 150;
           const topY = 0;
           const bottomY = 600;
           // Lines converge toward vanishing point
           const perspectiveFactor = 1 - (xPos / 1000) * 0.5;
           const xEnd = xPos + (750 - xPos) * (1 - perspectiveFactor);
-          const opacity = 0.02 + (i % 4) * 0.01;
+          const opacity = 0.015;
           return (
             <motion.line
               key={`v-${i}`}
@@ -75,20 +75,20 @@ function VanishingPointGrid() {
               y1={topY}
               x2={xEnd}
               y2={bottomY}
-              stroke={i % 6 === 0 ? "rgba(0,226,115,0.08)" : `rgba(255,255,255,${opacity})`}
-              strokeWidth="0.5"
+              stroke={i % 3 === 0 ? "rgba(0,226,115,0.05)" : `rgba(255,255,255,${opacity})`}
+              strokeWidth="0.4"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5 + i * 0.03, ease: "easeOut" }}
+              transition={{ duration: 1.5, delay: 0.5 + i * 0.1, ease: "easeOut" }}
             />
           );
         })}
 
-        {/* Diagonal perspective lines from vanishing point */}
-        {[...Array(12)].map((_, i) => {
-          const angle = -60 + i * 10;
+        {/* Diagonal perspective lines from vanishing point - MINIMAL */}
+        {[...Array(4)].map((_, i) => {
+          const angle = -45 + i * 30;
           const radians = (angle * Math.PI) / 180;
-          const length = 800;
+          const length = 600;
           const x2 = 750 - Math.cos(radians) * length;
           const y2 = 210 - Math.sin(radians) * length;
           return (
@@ -98,35 +98,34 @@ function VanishingPointGrid() {
               y1="210"
               x2={x2}
               y2={y2}
-              stroke={i % 3 === 0 ? "rgba(0,226,115,0.06)" : "rgba(255,255,255,0.03)"}
-              strokeWidth="0.5"
+              stroke={i % 2 === 0 ? "rgba(0,226,115,0.04)" : "rgba(255,255,255,0.02)"}
+              strokeWidth="0.4"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ duration: 2, delay: 1 + i * 0.1, ease: "easeOut" }}
+              transition={{ duration: 2, delay: 1 + i * 0.2, ease: "easeOut" }}
             />
           );
         })}
 
-        {/* Grid intersection points - subtle dots */}
-        {[...Array(8)].map((_, row) => 
-          [...Array(6)].map((_, col) => {
-            const x = 100 + col * 120 + row * 20;
-            const y = 80 + row * 60;
-            const size = 1.5 - row * 0.15;
-            return (
-              <motion.circle
-                key={`dot-${row}-${col}`}
-                cx={x}
-                cy={y}
-                r={size}
-                fill="rgba(0,226,115,0.3)"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 0.4 - row * 0.04 }}
-                transition={{ duration: 0.5, delay: 1.5 + (row * 6 + col) * 0.02 }}
-              />
-            );
-          })
-        )}
+        {/* Few accent dots near vanishing point */}
+        {[...Array(5)].map((_, i) => {
+          const angle = (i * 72) * Math.PI / 180;
+          const distance = 80 + i * 25;
+          const x = 750 - Math.cos(angle) * distance;
+          const y = 210 - Math.sin(angle) * distance * 0.5;
+          return (
+            <motion.circle
+              key={`dot-${i}`}
+              cx={x}
+              cy={y}
+              r={1.2}
+              fill="rgba(0,226,115,0.2)"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 0.3 }}
+              transition={{ duration: 0.5, delay: 1.5 + i * 0.1 }}
+            />
+          );
+        })}
 
         {/* Animated scan line effect */}
         <motion.line
@@ -370,7 +369,7 @@ export function Hero() {
                   size="lg"
                   className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 px-8 py-6 text-sm rounded-full transition-all duration-300 font-normal"
                 >
-                  View Projects
+                  Login
                 </Button>
               </motion.div>
             </motion.div>
