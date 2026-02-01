@@ -5,6 +5,89 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { AbstractGraphic } from "@/components/AbstractGraphics";
 
+// Unified green gradient background - same style across all sections
+function UnifiedGreenBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* Base dark */}
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
+      
+      {/* Animated gradient orbs - positioned for this section */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.15, 0.25, 0.15],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 226, 115, 0.3) 0%, transparent 70%)',
+          filter: 'blur(100px)',
+        }}
+      />
+      
+      <motion.div
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 212, 170, 0.25) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+        }}
+      />
+      
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.08, 0.15, 0.08],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+        className="absolute top-1/2 right-1/4 w-[400px] h-[400px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 184, 153, 0.3) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
+
+      {/* Mesh gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            radial-gradient(at 30% 20%, rgba(0, 226, 115, 0.1) 0px, transparent 50%),
+            radial-gradient(at 80% 70%, rgba(0, 212, 170, 0.08) 0px, transparent 50%),
+            radial-gradient(at 50% 50%, rgba(122, 224, 96, 0.05) 0px, transparent 50%)
+          `,
+        }}
+      />
+
+      {/* Noise texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+    </div>
+  );
+}
+
 const projects = [
   {
     id: 1,
@@ -47,25 +130,8 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="relative py-32 overflow-hidden bg-[#0a0a0a]">
-      {/* Animated background */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(0, 226, 115, 0.3) 0%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-        />
-      </div>
+      {/* Unified green gradient background */}
+      <UnifiedGreenBackground />
 
       <div className="relative z-10">
         {/* Section Header */}
