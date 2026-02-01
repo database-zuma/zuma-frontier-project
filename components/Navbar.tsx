@@ -10,10 +10,10 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Projects", href: "#projects" },
     { label: "Vision", href: "#vision" },
-    { label: "Technology", href: "#tech-stack" },
+    { label: "What We Do", href: "#projects" },
     { label: "Roadmap", href: "#roadmap" },
+    { label: "Technology", href: "#tech-stack" },
   ];
 
   return (
