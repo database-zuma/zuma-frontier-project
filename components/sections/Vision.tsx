@@ -4,10 +4,6 @@ import { motion } from "framer-motion";
 
 const visionCards = [
   {
-    title: "Agentic Workflows",
-    description: "AI agents that handle complex tasks autonomously, from start to finish without human intervention.",
-  },
-  {
     title: "Single Source of Truth",
     description: "One centralized platform where all teams access accurate, real-time information.",
   },
@@ -16,8 +12,12 @@ const visionCards = [
     description: "Intelligence embedded in every workflow, decision, and process from day one.",
   },
   {
-    title: "Continuous Improvement",
+    title: "Continuous Improvements",
     description: "Self-optimizing systems that learn from every interaction and evolve constantly.",
+  },
+  {
+    title: "Agentic Workflows",
+    description: "AI agents that handle complex tasks autonomously, from start to finish without human intervention.",
   },
 ];
 

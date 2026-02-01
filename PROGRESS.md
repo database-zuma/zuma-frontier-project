@@ -99,6 +99,8 @@ The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twi
 
 | Date | Version | Changes |
 |------|---------|---------|
+| Feb 1, 2026 | **v1.23** | Vision cards reordered: Single Source of Truth → AI-First Operations → Continuous Improvements → Agentic Workflows |
+| Feb 1, 2026 | **v1.22** | Compressed What We Do images (99.5% reduction), Privacy & Terms pages created, Claude logo centering fixed, Footer links updated |
 | Feb 1, 2026 | **v1.21** | Medium priority features: FAQ section added, SEO optimization (Open Graph, Twitter Cards, structured data), Vercel Analytics & Speed Insights integration, pitch deck download link in footer, "project" changed to "projects", "Get in touch" button changed to "Are you Zumans?" |
 | Feb 1, 2026 | **v1.20** | Updated navbar order: Vision → What We Do → Roadmap → Technology, "Projects" renamed to "What We Do" in navigation |
 | Feb 1, 2026 | v1.19 | Vision card updated - "Agentic Workflows" replaces "Integrated Data Management" |
