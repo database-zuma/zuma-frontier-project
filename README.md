@@ -5,6 +5,7 @@
 ### The Future of Retail Operations
 
 [![Live Demo](https://img.shields.io/badge/LIVE-frontier--landing--page.vercel.app-00E273?style=for-the-badge&logo=vercel)](https://frontier-landing-page.vercel.app)
+[![Version](https://img.shields.io/badge/Version-1.27-00E273?style=flat-square)](./PROGRESS.md)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
@@ -16,7 +17,7 @@
 **By 2027, 75% of retail operations will be AI-augmented.**  
 *The question isn't whether to adopt—it's whether Zuma leads or follows.*
 
-[View Live](https://frontier-landing-page.vercel.app) | [Projects](#projects) | [Tech Stack](#tech-stack)
+[View Live](https://frontier-landing-page.vercel.app) | [Features](#features) | [Tech Stack](#tech-stack) | [Progress](./PROGRESS.md)
 
 </div>
 
@@ -30,14 +31,42 @@ We're not just building apps. We're building the **operational backbone of tomor
 
 ---
 
-## Projects
+## Features
 
-| Project | Status | Description |
-|---------|--------|-------------|
-| **Branch Super App** | `Live` | Mobile-first PWA for Area Supervisors. Real-time replenishment tracking with AI recommendations. |
-| **Warehouse Super App** | `Planning` | Desktop operations platform with smart automation and predictive alerts. |
-| **Multi-MoltBot System** | `Brainstorm` | AI workforce—ARIA, DATUM, and CODER working 24/7 to amplify human potential. |
-| **Creative Hub Agents** | `Developing` | AI-powered creative workflows maintaining brand consistency at scale. |
+### Visual Design
+- **Stock-style growth chart** - Financial/business growth visualization with realistic volatility
+- **Vanishing point perspective grid** - Wireframe aesthetic in hero section
+- **Glassmorphism cards** - Premium floating UI elements
+- **Animated department ticker** - 14 Zuma departments scrolling
+- **Green-adjacent color system** - Cohesive monochrome aesthetic
+
+### Sections
+| Section | Description |
+|---------|-------------|
+| **Hero** | FRONTIER branding with urgency copy, growth chart, floating glassmorphism cards |
+| **Vision** | "The Dawn of a New Era" - 4 strategic pillars in glass cards |
+| **What We Do** | 4 initiative cards with real images, horizontal scroll |
+| **Roadmap** | 3-phase timeline with current phase indicator |
+| **Tech Stack** | AI Foundation tier (Claude + Kimi) + 15 tech logos |
+| **Pitch Deck CTA** | Download call-to-action with seamless design |
+| **FAQ** | 6 common questions with accordion-style answers |
+
+### Technical
+- **SEO Optimized** - Open Graph, Twitter Cards, structured data
+- **Analytics** - Vercel Analytics & Speed Insights
+- **Performance** - GPU-accelerated animations, optimized images (99.5% compression)
+- **Legal Pages** - Privacy Policy & Terms of Service
+
+---
+
+## What We Do
+
+| Initiative | Description |
+|------------|-------------|
+| **AI Powered Apps** | Custom applications that think, learn, and adapt to your workflow |
+| **AI Assistants** | Intelligent agents that handle tasks, answer questions, and boost productivity |
+| **Auto Workflows** | Self-running processes that eliminate manual steps and human error |
+| **Data Strategy** | Turn raw data into actionable insights that drive smarter moves |
 
 ---
 
@@ -57,10 +86,10 @@ We're not just building apps. We're building the **operational backbone of tomor
 </div>
 
 ```
-Frontend        Next.js 16 | React | TypeScript | Tailwind CSS
+Frontend        Next.js 16 | React | TypeScript | Tailwind CSS | Framer Motion
 Backend         Python | FastAPI | Node.js
 Database        Supabase | PostgreSQL
-AI/ML           Gemini | OpenAI | LangChain
+AI/ML           Gemini | Claude | LangChain | LangGraph
 Cloud           GCP | Vercel | Docker
 ```
 
@@ -71,9 +100,11 @@ Cloud           GCP | Vercel | Docker
 > **Monochrome. Minimal. Meaningful.**
 
 - **Color Palette:** Green-adjacent spectrum (`#00E273` → `#00D4AA` → `#00B899` → `#7AE060`)
-- **Typography:** Plus Jakarta Sans (body) + Geist Mono (headings)
+- **Dark Background:** `#050505` unified across all sections
+- **Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight)
 - **Aesthetic:** Japandi minimalism meets tech precision
 - **Motion:** Subtle, purposeful Framer Motion animations
+- **Corners:** Sharp `rounded-md` (almost square)
 
 ---
 
@@ -114,19 +145,45 @@ npx vercel --prod
 ```
 frontier-landing-page/
 ├── app/
-│   ├── page.tsx           # Main landing page
-│   ├── layout.tsx         # Root layout with fonts
-│   └── globals.css        # Tailwind + custom styles
+│   ├── page.tsx              # Main landing page
+│   ├── layout.tsx            # Root layout with fonts
+│   ├── globals.css           # Tailwind + custom styles
+│   ├── privacy/page.tsx      # Privacy Policy
+│   └── terms/page.tsx        # Terms of Service
 ├── components/
-│   ├── sections/          # Hero, Vision, Projects, TechStack, Roadmap
-│   ├── AbstractGraphics.tsx
-│   ├── Navbar.tsx
-│   └── Footer.tsx
+│   ├── sections/
+│   │   ├── Hero.tsx          # Growth chart, vanishing grid, floating cards
+│   │   ├── Vision.tsx        # 4 strategic glass cards
+│   │   ├── Projects.tsx      # What We Do - 4 initiative cards
+│   │   ├── Roadmap.tsx       # 3-phase timeline
+│   │   ├── TechStack.tsx     # AI Foundation + tech logos
+│   │   └── FAQ.tsx           # Pitch Deck CTA + FAQ accordion
+│   ├── PageBackground.tsx    # Unified green gradient orbs
+│   ├── Navbar.tsx            # Fixed glassmorphism navigation
+│   └── Footer.tsx            # Links + social
+├── public/
+│   └── images/what-we-do/    # Compressed initiative images
 ├── docs/
-│   ├── DESIGN_BRIEF.md
+│   ├── DESIGN_BRIEF.md       # Full design specification
 │   └── IMPLEMENTATION_PLAN.md
-└── PROGRESS.md            # Development changelog
+└── PROGRESS.md               # Development changelog (v1.27)
 ```
+
+---
+
+## TODO
+
+### High Priority (For Pitching)
+- [ ] Add "Cost of Inaction" section
+- [ ] Add ROI metrics with concrete projections
+- [ ] Add investment amounts to Roadmap phases
+- [ ] Create downloadable pitch deck PDF
+
+### Medium Priority
+- [ ] Mobile hamburger navigation
+- [ ] Real project URLs (Branch Super App is live)
+
+See [PROGRESS.md](./PROGRESS.md) for full changelog and roadmap.
 
 ---
 
@@ -143,6 +200,6 @@ This is an internal Zuma Indonesia project. For questions or collaboration:
 
 **Built with precision for Zuma Indonesia**
 
-`#00E273` · 2026
+`v1.27` · `#00E273` · 2026
 
 </div>

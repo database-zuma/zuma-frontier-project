@@ -83,10 +83,17 @@ function HeroBackground() {
   );
 }
 
-// Animated Line Chart - Looping upward with dots
+// Animated Line Chart - Stock/Financial Growth Style
 function AnimatedLineChart() {
+  // Stock chart path - upward trend with realistic volatility
+  // Format: starts low, has dips and rises, ends high
+  const stockChartPath = "M 0 480 L 40 470 L 80 490 L 120 460 L 160 440 L 200 455 L 240 420 L 280 430 L 320 390 L 360 410 L 400 370 L 440 350 L 480 380 L 520 340 L 560 320 L 600 350 L 640 300 L 680 280 L 720 310 L 760 260 L 800 240 L 840 270 L 880 220 L 920 200 L 960 180 L 1000 150";
+  
+  // Secondary line - similar pattern but offset
+  const stockChartPath2 = "M 0 520 L 50 510 L 100 530 L 150 500 L 200 480 L 250 500 L 300 460 L 350 475 L 400 440 L 450 460 L 500 420 L 550 400 L 600 430 L 650 390 L 700 370 L 750 395 L 800 350 L 850 330 L 900 355 L 950 310 L 1000 280";
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
       <svg 
         viewBox="0 0 1000 600" 
         className="absolute inset-0 w-full h-full"
@@ -95,26 +102,31 @@ function AnimatedLineChart() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {/* Gradient for the line */}
-          <linearGradient id="lineGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(0,226,115,0)" />
-            <stop offset="30%" stopColor="rgba(0,226,115,0.4)" />
-            <stop offset="70%" stopColor="rgba(0,226,115,0.6)" />
-            <stop offset="100%" stopColor="rgba(0,226,115,0.8)" />
+          {/* Gradient for the main line */}
+          <linearGradient id="stockGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(0,226,115,0.1)" />
+            <stop offset="50%" stopColor="rgba(0,226,115,0.3)" />
+            <stop offset="100%" stopColor="rgba(0,226,115,0.5)" />
           </linearGradient>
           
-          {/* Glow filter for the line */}
-          <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
+          {/* Area fill gradient */}
+          <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="rgba(0,226,115,0.08)" />
+            <stop offset="100%" stopColor="rgba(0,226,115,0)" />
+          </linearGradient>
+          
+          {/* Subtle glow filter */}
+          <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
           
-          {/* Glow filter for dots */}
+          {/* Dot glow */}
           <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
@@ -122,84 +134,71 @@ function AnimatedLineChart() {
           </filter>
         </defs>
 
-        {/* Line Chart 1 - Main upward trend */}
-        <g className="animate-chart-line-1">
-          <path
-            d="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
-            stroke="url(#lineGradient)"
-            strokeWidth="2"
-            fill="none"
-            filter="url(#lineGlow)"
-            strokeLinecap="round"
-            className="animate-line-draw"
-          />
-        </g>
+        {/* Area fill under main chart */}
+        <path
+          d={`${stockChartPath} L 1000 600 L 0 600 Z`}
+          fill="url(#areaGradient)"
+          className="animate-area-fill"
+        />
 
-        {/* Line Chart 2 - Secondary trend (offset) */}
-        <g className="animate-chart-line-2">
-          <path
-            d="M 100 580 Q 200 520 300 480 T 500 380 T 700 280 T 900 180"
-            stroke="rgba(0,212,170,0.3)"
-            strokeWidth="1.5"
-            fill="none"
-            strokeLinecap="round"
-            strokeDasharray="8 4"
-            className="animate-line-draw-delayed"
-          />
-        </g>
+        {/* Main stock chart line */}
+        <path
+          d={stockChartPath}
+          stroke="url(#stockGradient)"
+          strokeWidth="1.5"
+          fill="none"
+          filter="url(#subtleGlow)"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="animate-line-draw"
+        />
 
-        {/* Animated dots moving along the line */}
-        <circle className="animate-dot-1" r="6" fill="#00E273" filter="url(#dotGlow)">
+        {/* Secondary trend line (dashed) */}
+        <path
+          d={stockChartPath2}
+          stroke="rgba(0,212,170,0.15)"
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="6 4"
+          className="animate-line-draw-delayed"
+        />
+
+        {/* Animated dot moving along the main line */}
+        <circle r="4" fill="#00E273" filter="url(#dotGlow)" opacity="0.8">
           <animateMotion
-            dur="4s"
+            dur="6s"
             repeatCount="indefinite"
-            path="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
+            path={stockChartPath}
           />
         </circle>
         
-        <circle className="animate-dot-2" r="4" fill="#00D4AA" filter="url(#dotGlow)" opacity="0.8">
+        {/* Second animated dot - slightly delayed */}
+        <circle r="3" fill="#00D4AA" filter="url(#dotGlow)" opacity="0.5">
           <animateMotion
-            dur="5s"
-            repeatCount="indefinite"
-            begin="1s"
-            path="M 100 580 Q 200 520 300 480 T 500 380 T 700 280 T 900 180"
-          />
-        </circle>
-        
-        <circle className="animate-dot-3" r="5" fill="#00E273" filter="url(#dotGlow)" opacity="0.6">
-          <animateMotion
-            dur="4.5s"
+            dur="8s"
             repeatCount="indefinite"
             begin="2s"
-            path="M 50 550 Q 150 480 250 420 T 450 320 T 650 200 T 850 100"
+            path={stockChartPath}
           />
         </circle>
 
-        {/* Data point markers */}
+        {/* Key data points along the growth curve */}
         {[
-          { x: 250, y: 420 },
-          { x: 450, y: 320 },
-          { x: 650, y: 200 },
-          { x: 850, y: 100 },
+          { x: 240, y: 420 },
+          { x: 480, y: 380 },
+          { x: 720, y: 310 },
+          { x: 960, y: 180 },
         ].map((point, i) => (
           <g key={i}>
             <circle
               cx={point.x}
               cy={point.y}
-              r="3"
+              r="2"
               fill="#00E273"
-              opacity="0.4"
+              opacity="0.3"
               className={`animate-point-pulse-${i + 1}`}
-            />
-            <circle
-              cx={point.x}
-              cy={point.y}
-              r="6"
-              fill="none"
-              stroke="#00E273"
-              strokeWidth="1"
-              opacity="0.2"
-              className={`animate-point-ring-${i + 1}`}
             />
           </g>
         ))}
@@ -208,10 +207,10 @@ function AnimatedLineChart() {
       <style jsx>{`
         @keyframes line-draw {
           0% {
-            stroke-dashoffset: 2000;
+            stroke-dashoffset: 3000;
             opacity: 0;
           }
-          20% {
+          10% {
             opacity: 1;
           }
           100% {
@@ -220,55 +219,51 @@ function AnimatedLineChart() {
           }
         }
         
+        @keyframes area-fill {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        
         .animate-line-draw {
-          stroke-dasharray: 2000;
-          animation: line-draw 3s ease-out forwards;
+          stroke-dasharray: 3000;
+          animation: line-draw 4s ease-out forwards;
         }
         
         .animate-line-draw-delayed {
-          stroke-dasharray: 2000;
-          animation: line-draw 4s ease-out 0.5s forwards;
+          stroke-dasharray: 3000;
+          animation: line-draw 5s ease-out 1s forwards;
+        }
+        
+        .animate-area-fill {
+          animation: area-fill 4s ease-out forwards;
         }
         
         @keyframes point-pulse {
           0%, 100% {
-            opacity: 0.3;
+            opacity: 0.2;
             transform: scale(1);
           }
           50% {
-            opacity: 0.6;
-            transform: scale(1.5);
-          }
-        }
-        
-        @keyframes point-ring {
-          0% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(2.5);
+            opacity: 0.5;
+            transform: scale(1.8);
           }
         }
         
         .animate-point-pulse-1, .animate-point-pulse-2, .animate-point-pulse-3, .animate-point-pulse-4 {
           transform-origin: center;
-          animation: point-pulse 2s ease-in-out infinite;
+          animation: point-pulse 3s ease-in-out infinite;
         }
         
-        .animate-point-pulse-2 { animation-delay: 0.3s; }
-        .animate-point-pulse-3 { animation-delay: 0.6s; }
-        .animate-point-pulse-4 { animation-delay: 0.9s; }
-        
-        .animate-point-ring-1, .animate-point-ring-2, .animate-point-ring-3, .animate-point-ring-4 {
-          transform-origin: center;
-          animation: point-ring 2s ease-out infinite;
-        }
-        
-        .animate-point-ring-2 { animation-delay: 0.3s; }
-        .animate-point-ring-3 { animation-delay: 0.6s; }
-        .animate-point-ring-4 { animation-delay: 0.9s; }
+        .animate-point-pulse-2 { animation-delay: 0.5s; }
+        .animate-point-pulse-3 { animation-delay: 1s; }
+        .animate-point-pulse-4 { animation-delay: 1.5s; }
       `}</style>
     </div>
   );
