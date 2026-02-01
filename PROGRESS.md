@@ -6,9 +6,9 @@
 
 ---
 
-## Current Status: v1.21 - Medium Priority Features Complete
+## Current Status: v1.25 - Pitch Deck CTA & Polish Complete
 
-The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twitter Cards, structured data), **Vercel Analytics & Speed Insights**, **downloadable pitch deck link**, and updated copy ("frontier projects", "Are you Zumans?" button). All medium priority features implemented while maintaining the existing visual design.
+The landing page now includes **big centered pitch deck CTA** before FAQ section, **fixed image zoom jaggy edges**, **reordered Vision cards**, **compressed images** (99.5% reduction), **Privacy & Terms pages**, and all previous features. Production-ready with polished UX.
 
 ---
 
@@ -33,7 +33,7 @@ The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twi
 - **Industry benchmarks:** Replaced placeholder partners with real stats
 - **Enterprise credibility:** "Built on Enterprise-Grade AI" messaging
 - **FAQ Section:** Preempts common questions and objections
-- **Pitch Deck Download:** Direct PDF download link in footer
+- **Pitch Deck CTA:** Big centered call-to-action before FAQ section with green gradient background
 
 ### Technical Infrastructure
 - **SEO Optimized:** Open Graph, Twitter Cards, structured data, meta tags
@@ -58,8 +58,9 @@ The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twi
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
 | **Tech Stack** | ✅ Done | AI Foundation tier + 15 tech logos in scrolling ticker with hover glow |
+| **Pitch Deck CTA** | ✅ Done | Big centered call-to-action before FAQ with green gradient background |
 | **FAQ** | ✅ Done | 6 common questions with accordion-style expandable answers |
-| **Footer** | ✅ Done | Zuma logo, navigation, social links, pitch deck download, copyright |
+| **Footer** | ✅ Done | Zuma logo, navigation, social links, copyright |
 
 ### Technical Stack
 
@@ -99,6 +100,8 @@ The landing page now includes **FAQ section**, **enhanced SEO** (Open Graph, Twi
 
 | Date | Version | Changes |
 |------|---------|---------|
+| Feb 1, 2026 | **v1.25** | Pitch deck CTA moved before FAQ - bigger, centered design with green gradient background. Removed from footer. |
+| Feb 1, 2026 | **v1.24** | Fixed image zoom jaggy edges - added scale buffer (1.05 base → 1.15 hover) to prevent boundary artifacts on What We Do cards |
 | Feb 1, 2026 | **v1.23** | Vision cards reordered: Single Source of Truth → AI-First Operations → Continuous Improvements → Agentic Workflows |
 | Feb 1, 2026 | **v1.22** | Compressed What We Do images (99.5% reduction), Privacy & Terms pages created, Claude logo centering fixed, Footer links updated |
 | Feb 1, 2026 | **v1.21** | Medium priority features: FAQ section added, SEO optimization (Open Graph, Twitter Cards, structured data), Vercel Analytics & Speed Insights integration, pitch deck download link in footer, "project" changed to "projects", "Get in touch" button changed to "Are you Zumans?" |
