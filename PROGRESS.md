@@ -2,7 +2,8 @@
 
 > **Live URL:** https://frontier-landing-page.vercel.app  
 > **GitHub:** https://github.com/database-zuma/zuma-frontier-project  
-> **Last Updated:** February 1, 2026
+> **Last Updated:** February 1, 2026  
+> **Current Version:** v1.26
 
 ---
 
@@ -15,6 +16,7 @@ The landing page now includes **animated line chart in Hero** (looping upward wi
 ## Key Achievements
 
 ### Design Excellence
+- **Animated line chart in Hero** - SVG-based upward-trending chart with looping dots, data point markers with pulse animations
 - **Unified continuous background** - One green gradient spans entire page (no section breaks)
 - **Premium Typography:** Plus Jakarta Sans (body) + Geist Mono (headings, light weight, tight letter-spacing)
 - **Monochrome tech icons** - 15 logos in white/gray for cohesive aesthetic
@@ -23,9 +25,10 @@ The landing page now includes **animated line chart in Hero** (looping upward wi
 - **Zuma departments ticker** - 14 departments scrolling in hero
 - **Full grain texture** on all project card graphics
 - **Sharp corners** - refined to `rounded-md` (almost square)
-- **Glassmorphism effects** throughout
+- **Glassmorphism effects** throughout (except seamless Pitch Deck CTA)
 - **Smooth Framer Motion animations** (optimized for performance)
 - **Official AI logos** - Claude (Anthropic) and Kimi (Moonshot AI) brand SVGs
+- **GPU-accelerated image zoom** - No edge artifacts on What We Do cards
 
 ### Pitching Optimizations (Oracle-Guided)
 - **"Powered by" badges:** Claude Opus 4.5 & Kimi K2.5 in Tech Stack
@@ -51,14 +54,14 @@ The landing page now includes **animated line chart in Hero** (looping upward wi
 | Section | Status | Key Features |
 |---------|--------|--------------|
 | **Navbar** | ✅ Done | Fixed top, glassmorphism, responsive - Links: Vision, What We Do, Roadmap, Technology, Contact, Login |
-| **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards, vanishing grid |
+| **Hero** | ✅ Done | FRONTIER branding, urgency copy, floating cards, vanishing grid, **animated line chart with moving dots** |
 | **Departments Ticker** | ✅ Done | 14 Zuma departments scrolling (HR, Finance, Operations, etc.) |
 | **Vision** | ✅ Done | "The Dawn of a New Era", 4 glass cards |
-| **What We Do** | ✅ Done | 4 initiative cards (AI Apps, Assistants, Workflows, Data Strategy), no "Learn more", horizontal scroll |
+| **What We Do** | ✅ Done | 4 initiative cards (AI Apps, Assistants, Workflows, Data Strategy), horizontal scroll, **GPU-accelerated image zoom** |
 | ~~Impact~~ | ❌ Removed | Section removed - not needed for pitch |
 | **Roadmap** | ✅ Done | 3-phase timeline with current phase indicator |
 | **Tech Stack** | ✅ Done | AI Foundation tier + 15 tech logos in scrolling ticker with hover glow |
-| **Pitch Deck CTA** | ✅ Done | Big centered call-to-action before FAQ with green gradient background |
+| **Pitch Deck CTA** | ✅ Done | Big centered call-to-action before FAQ, **seamless design** (no glassmorphism box) |
 | **FAQ** | ✅ Done | 6 common questions with accordion-style expandable answers |
 | **Footer** | ✅ Done | Zuma logo, navigation, social links, copyright |
 
@@ -92,7 +95,7 @@ The landing page now includes **animated line chart in Hero** (looping upward wi
 | **Graphics Style** | Organic blob gradients with full grain texture, green-adjacent spectrums |
 | **Card Colors** | Pure Green `#00E273`, Aqua-Teal `#00D4AA`, Deep Teal `#00B899`, Lime `#7AE060` |
 | **Tech Icons** | Monochrome white/gray (no colors) |
-| **Hero Background** | Vanishing point perspective grid (wireframe only) + unified page gradient |
+| **Hero Background** | Vanishing point perspective grid + **animated line chart** (SVG with looping dots) + unified page gradient |
 
 ---
 
@@ -173,18 +176,14 @@ Based on Oracle consultation for funding pitch optimization:
   - Branch Super App: https://zuma-ro-pwa.vercel.app (LIVE)
   - Others: Link when available
 
-- [ ] **FAQ Section**
-  - Preempt objections
-  - "Is this secure?", "What if it fails?", "What's the timeline?"
+- [x] **FAQ Section** ✅ Done (v1.21)
+  - 6 common questions with accordion-style expandable answers
 
-- [ ] **SEO Optimization**
-  - Open Graph images
-  - Structured data (JSON-LD)
-  - Sitemap.xml
+- [x] **SEO Optimization** ✅ Done (v1.21)
+  - Open Graph, Twitter Cards, structured data, meta tags
 
-- [ ] **Analytics Integration**
-  - Vercel Analytics or Google Analytics
-  - Track engagement for pitch meetings
+- [x] **Analytics Integration** ✅ Done (v1.21)
+  - Vercel Analytics & Speed Insights integrated
 
 ### Low Priority / Nice to Have
 
@@ -232,11 +231,12 @@ frontier-landing-page/
 │   └── favicon.ico
 ├── components/
 │   ├── sections/
-│   │   ├── Hero.tsx          # ✅ Urgency copy, industry ticker
+│   │   ├── Hero.tsx          # ✅ Urgency copy, vanishing grid, animated line chart
 │   │   ├── Vision.tsx        # ✅ Glass cards
-│   │   ├── Projects.tsx      # ✅ Multi-color cards with grain texture
+│   │   ├── Projects.tsx      # ✅ What We Do cards with GPU-accelerated zoom
 │   │   ├── Roadmap.tsx       # ✅ 3-phase timeline
-│   │   └── TechStack.tsx     # ✅ AI Foundation + tech badges
+│   │   ├── TechStack.tsx     # ✅ AI Foundation + tech badges
+│   │   ├── FAQ.tsx           # ✅ Pitch Deck CTA + 6 FAQ accordion
 │   │   └── ~~Impact.tsx~~    # ❌ Removed
 │   ├── AbstractGraphics.tsx  # Project card visuals
 │   ├── Navbar.tsx            # ✅ Glassmorphism
@@ -283,7 +283,9 @@ git add -A && git commit -m "message" && git push origin main
 | Date | Session ID | Work Done |
 |------|------------|-----------|
 | Jan 31, 2026 | `ses_3ebd5b2f7ffe3uYSN5ChG8CQF1` | Initial setup, Hero, design iterations |
-| Jan 31, 2026 | Current | All sections, pitching optimization, font upgrade |
+| Jan 31, 2026 | - | All sections, pitching optimization, font upgrade |
+| Feb 1, 2026 | - | v1.17-v1.25: Real images, FAQ, SEO, Analytics, Privacy/Terms pages, compressed images |
+| Feb 1, 2026 | Current | **v1.26**: Animated line chart, seamless Pitch Deck CTA, GPU-accelerated image zoom |
 
 ---
 
@@ -331,7 +333,8 @@ Key insights from Oracle consultation for funding pitch:
 2. **Investment amounts** - Budget per phase for Roadmap
 3. **Leadership review** - Get sign-off on copy before final pitch
 4. **Mobile testing** - Test on real devices
-5. **Consider adding FAQ** - Preempt stakeholder objections
+5. ~~Consider adding FAQ~~ ✅ Done - 6 questions with accordion style
+6. **Add actual pitch deck PDF** - Currently `/pitch-deck.pdf` is placeholder
 
 ---
 
